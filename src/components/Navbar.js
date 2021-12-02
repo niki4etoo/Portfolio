@@ -6,13 +6,11 @@ function mainNavButtonsAnimations(){
 	let nameLink = document.querySelector(".name");
 	let projectLink = document.querySelector(".projects");
 	let skillsLink = document.querySelector(".skills");
-	let testimonialsLink = document.querySelector(".testimonials");
 	let contactLink = document.querySelector(".contacts");
 	
 	let nameButtonAnim = gsap.to(nameLink, { backgroundColor: 'white', color: 'black', duration: 1 }).pause();
 	let projectButtonAnim = gsap.to(projectLink, { backgroundColor: 'white', color: 'black', duration: 1 }).pause();
 	let skillsButtonAnim = gsap.to(skillsLink, { backgroundColor: 'white', color: 'black', duration: 1 }).pause();
-	let testimonialsButtonAnim = gsap.to(testimonialsLink, { backgroundColor: 'white', color: 'black', duration: 1 }).pause();
 	let contactButtonAnim = gsap.to(contactLink, { backgroundColor: 'white', color: 'black', duration: 1 }).pause();
 	
 	
@@ -25,9 +23,6 @@ function mainNavButtonsAnimations(){
 	
 	skillsLink.addEventListener('mouseenter', () => skillsButtonAnim.play());
 	skillsLink.addEventListener('mouseleave', () => skillsButtonAnim.reverse());
-	
-	testimonialsLink.addEventListener('mouseenter', () => testimonialsButtonAnim.play());
-	testimonialsLink.addEventListener('mouseleave', () => testimonialsButtonAnim.reverse());
 	
 	contactLink.addEventListener('mouseenter', () => contactButtonAnim.play());
 	contactLink.addEventListener('mouseleave', () => contactButtonAnim.reverse());
@@ -63,15 +58,6 @@ export default function Navbar() {
 				<a href="#skills">
 				Skills
 				</a>
-			</div>
-			<div className="nav testimonials">
-				<a href="#testimonials">
-				Testimonials
-				</a>
-			</div>
-			<div className="nav empty">
-			</div>	
-			<div className="nav empty">
 			</div>
 			<div className="nav contacts">
 				<a href="#contact"> Contact Me </a>

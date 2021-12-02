@@ -4,10 +4,10 @@ import { projects } from '../data';
 export default function Projects() {
 		return (
 			<section id="projects">
-				<div>
-					<div>
+				<div className="container">
+					<div className="projects">
 						<h1>
-							Created apps
+							Projects
 						</h1>
 						<p>
 							The next part shows different projects that I
@@ -15,17 +15,14 @@ export default function Projects() {
 							Javascript and HTML&CSS.
 						</p>
 					</div>
-					<div>
+					<div className="projectList">
 						{projects.map((project) => (
 							<a
 								href={project.link}
 								key={project.image}
 								>
-							<div>
-								<img
-									alt="gallery"
-									src={project.image}
-								/>
+							<div className="projectGallery">
+								<img alt="gallery" src={project.image}	width="350" height="350" />
 								<div>
 									<h2>
 										{project.subtitle}
