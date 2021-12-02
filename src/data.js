@@ -8,19 +8,19 @@ export const projects = [
     link: "https://github.com/niki4etoo/coffee-time-v2.0.git",
   },
   {
-    title: "Example Text Animations",
-    subtitle: "Example Text Animations with React, styled-components and CSS animations",
+    title: "Flip Flop memory card game",
+    subtitle: "FlipFlop is a simple memory card game created by React and Javascript",
     description:
-      "Very short project with text animations paragraphs and titles. Example usage of styled-components, CSS animations and transitions",
-    image: "./text-animation.gif",
-    link: "https://github.com/niki4etoo/example-text-animation.git",
+      "It is flipping cards game where the player must flip all of the cards in order to win the game.",
+    image: "",
+    link: "https://github.com/niki4etoo/flipflop.git",
   },
   {
     title: "Example Box Animations",
     subtitle: "Example Box Animations with React, styled-components and CSS animations",
     description:
       "It is almost the same project as text animation, but instead of text there are several boxes and applied animation on them.",
-    image: "./box-animation.gif",
+    image: "",
     link: "https://github.com/niki4etoo/example-box-animation.git",
   },
   {
@@ -28,7 +28,7 @@ export const projects = [
     subtitle: "Coffee shop is a web online shop",
     description:
       "Coffee shop is a web online shop for buying different coffee drinks. Now it is under development.",
-    image: "./coffee-time.png",
+    image: "",
     link: "https://github.com/niki4etoo/coffee-shop.git",
   },
 ];
