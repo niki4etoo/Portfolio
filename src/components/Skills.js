@@ -6,9 +6,9 @@ export default function Skills() {
 		<section id="skills">
 		  <div className="container">
 			<div className="skills">
-			  <h1>
-				Skills &amp; Technologies
-			  </h1>
+			
+			  <h1>Skills</h1>
+			  
 				<div className="skillsList">
 				  {skills.map((skill) => (
 					<div className="skillItem" key={skill}>

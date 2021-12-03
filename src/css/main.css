@@ -12,9 +12,10 @@ body {
 	
 	gap: 15px 15px;
 	
-	margin: 10px;
+	top: 20px;
+	left: 30px;
 	padding: 20px;
-	width: 300px;
+	width: 280px;
 	
 	background-color: cadetblue;
 	color: white;
@@ -51,6 +52,7 @@ body {
 .name {
 	font-size: 28px;
 	grid-column: 1 / span 2;
+	cursor: pointer;
 }
 
 .empty {
@@ -106,10 +108,16 @@ body {
 	
 	letter-spacing: 5px;
 	word-spacing: 12px;
+	
+	cursor: pointer;
 }
 
 .right {
 	text-align: right;
+}
+
+.projects {
+	cursor: pointer;
 }
 
 .projects h1 {
@@ -158,6 +166,7 @@ body {
 
 .skills {
 	text-align: left;
+	cursor: pointer;
 }
 
 .skills h1 {
@@ -197,6 +206,10 @@ body {
 	
 	letter-spacing: 2px;
 	word-spacing: 10px;
+}
+
+.contacts {
+	cursor: pointer;
 }
 
 .contacts h1 {
