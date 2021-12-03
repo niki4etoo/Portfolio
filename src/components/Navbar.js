@@ -1,6 +1,7 @@
-import React, { useEffect } from "react";
+import React from "react";
 
-import { gsap } from 'gsap';
+import { gsap, Expo } from 'gsap';
+import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
 
 function mainNavButtonsAnimations(){
 	let nameLink = document.querySelector(".name");
@@ -12,8 +13,6 @@ function mainNavButtonsAnimations(){
 	let projectButtonAnim = gsap.to(projectLink, { backgroundColor: 'white', color: 'black', duration: 1 }).pause();
 	let skillsButtonAnim = gsap.to(skillsLink, { backgroundColor: 'white', color: 'black', duration: 1 }).pause();
 	let contactButtonAnim = gsap.to(contactLink, { backgroundColor: 'white', color: 'black', duration: 1 }).pause();
-	
-	
 	
 	nameLink.addEventListener('mouseenter', () => nameButtonAnim.play());
 	nameLink.addEventListener('mouseleave', () => nameButtonAnim.reverse());
@@ -28,40 +27,59 @@ function mainNavButtonsAnimations(){
 	contactLink.addEventListener('mouseleave', () => contactButtonAnim.reverse());
 }
 
-export default function Navbar() {
+export default class Navbar extends React.Component {
 	
-	
-	
-	useEffect(() => {
+	constructor(props){
+		super(props);
 		
+		this.handleLinkToAbout = this.handleLinkToAbout.bind(this);
+		this.handleLinkToProjects = this.handleLinkToProjects.bind(this);
+		this.handleLinkToSkills = this.handleLinkToSkills.bind(this);
+		this.handleLinkToContacts = this.handleLinkToContacts.bind(this);
+	}
+	
+	componentDidMount () {
+		gsap.registerPlugin(ScrollToPlugin);
 		mainNavButtonsAnimations();
-
-		
-
-	}, []);
+	}
 	
-	return (
-		<nav className="navbar">
-			<div className="nav name">
-				<a href="#about">Nikolai Nanev</a>
-			</div>
-			<div className="nav projects">
-				<a href="#projects">
-				Projects
-				</a>
-			</div>
-			<div className="nav empty">
-			</div>
-			<div className="nav empty">
-			</div>
-			<div className="nav skills">
-				<a href="#skills">
-				Skills
-				</a>
-			</div>
-			<div className="nav contacts">
-				<a href="#contact"> Contact Me </a>
-			</div>
-		</nav>
-	);
+	handleLinkToAbout () {
+		gsap.to(window, { duration: 2, scrollTo: '#about', ease: Expo.easeIn });
+	}
+	
+	handleLinkToProjects () {
+		gsap.to(window, { duration: 2, scrollTo: '#projects', ease: Expo.easeIn });
+	}
+	
+	handleLinkToSkills () {
+		gsap.to(window, { duration: 2, scrollTo: '#skills', ease: Expo.easeIn });
+	}
+	
+	handleLinkToContacts () {
+		gsap.to(window, { duration: 2, scrollTo: '#contacts', ease: Expo.easeIn });
+	}
+	
+	
+	render () {
+		return (
+			<nav className="navbar">
+				<div className="nav name" id="linkAbout" onClick={this.handleLinkToAbout}>
+					<i>Nikolai Nanev</i>
+				</div>
+				<div className="nav projects" id="linkProjects" onClick={this.handleLinkToProjects}>
+					<i>Projects</i>
+				</div>
+				<div className="nav empty">
+				</div>
+				<div className="nav empty">
+				</div>
+				<div className="nav skills" id="linkSkills" onClick={this.handleLinkToSkills}>
+					<i>Skills</i>
+				</div>
+				<div className="nav contacts" id="linkContact" onClick={this.handleLinkToContacts}>
+					<i>Contact Me</i>
+				</div>
+			</nav>
+		);
+	}
 }
