@@ -9,7 +9,7 @@ export default function Work() {
 				My Work on CodePen
 			  </h1>
 				<div className="WorkList">
-				  
+				  Under construction :)
 				</div>
 			</div>
 		  </div>
