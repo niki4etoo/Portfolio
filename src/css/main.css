@@ -3,6 +3,23 @@ body {
 	color: white;
 }
 
+#buttonScrollUp {
+	display: none;
+
+	position: fixed;
+	bottom: 20px;
+	right: 20px;
+	
+	background-color: cadetblue;
+	color: white;
+	
+	border-style: solid;
+	border-width: 3px;
+	border-color: white;
+	
+	border-radius: 5px;
+}
+
 .navbar {
 	position: fixed;
 	
