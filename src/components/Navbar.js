@@ -8,23 +8,29 @@ function mainNavButtonsAnimations(){
 	let projectLink = document.querySelector(".projects");
 	let skillsLink = document.querySelector(".skills");
 	let contactLink = document.querySelector(".contacts");
+	let workLink = document.querySelector(".work");
 	
-	let nameButtonAnim = gsap.to(nameLink, { backgroundColor: 'white', color: 'black', duration: 1 }).pause();
-	let projectButtonAnim = gsap.to(projectLink, { backgroundColor: 'white', color: 'black', duration: 1 }).pause();
-	let skillsButtonAnim = gsap.to(skillsLink, { backgroundColor: 'white', color: 'black', duration: 1 }).pause();
-	let contactButtonAnim = gsap.to(contactLink, { backgroundColor: 'white', color: 'black', duration: 1 }).pause();
+	let optionsAnim = { backgroundColor: 'white', color: 'black', duration: 1 };
+	let nameBtnAnim = gsap.to(nameLink, optionsAnim).pause();
+	let projectBtnAnim = gsap.to(projectLink, optionsAnim).pause();
+	let skillsBtnAnim = gsap.to(skillsLink, optionsAnim).pause();
+	let contactBtnAnim = gsap.to(contactLink, optionsAnim).pause();
+	let workBtnAnim = gsap.to(workLink, optionsAnim).pause();
 	
-	nameLink.addEventListener('mouseenter', () => nameButtonAnim.play());
-	nameLink.addEventListener('mouseleave', () => nameButtonAnim.reverse());
+	nameLink.addEventListener('mouseenter', () => nameBtnAnim.play());
+	nameLink.addEventListener('mouseleave', () => nameBtnAnim.reverse());
 	
-	projectLink.addEventListener('mouseenter', () => projectButtonAnim.play());
-	projectLink.addEventListener('mouseleave', () => projectButtonAnim.reverse());
+	projectLink.addEventListener('mouseenter', () => projectBtnAnim.play());
+	projectLink.addEventListener('mouseleave', () => projectBtnAnim.reverse());
 	
-	skillsLink.addEventListener('mouseenter', () => skillsButtonAnim.play());
-	skillsLink.addEventListener('mouseleave', () => skillsButtonAnim.reverse());
+	skillsLink.addEventListener('mouseenter', () => skillsBtnAnim.play());
+	skillsLink.addEventListener('mouseleave', () => skillsBtnAnim.reverse());
 	
-	contactLink.addEventListener('mouseenter', () => contactButtonAnim.play());
-	contactLink.addEventListener('mouseleave', () => contactButtonAnim.reverse());
+	contactLink.addEventListener('mouseenter', () => contactBtnAnim.play());
+	contactLink.addEventListener('mouseleave', () => contactBtnAnim.reverse());
+	
+	workLink.addEventListener('mouseenter', () => workBtnAnim.play());
+	workLink.addEventListener('mouseleave', () => workBtnAnim.reverse());
 }
 
 export default class Navbar extends React.Component {
@@ -36,6 +42,7 @@ export default class Navbar extends React.Component {
 		this.handleLinkToProjects = this.handleLinkToProjects.bind(this);
 		this.handleLinkToSkills = this.handleLinkToSkills.bind(this);
 		this.handleLinkToContacts = this.handleLinkToContacts.bind(this);
+		this.handleLinkToWork = this.handleLinkToWork.bind(this);
 	}
 	
 	componentDidMount () {
@@ -59,6 +66,9 @@ export default class Navbar extends React.Component {
 		gsap.to(window, { duration: 2, scrollTo: '#contacts', ease: Expo.easeIn });
 	}
 	
+	handleLinkToWork () {
+		gsap.to(window, { duration: 2, scrollTo: '#work', ease: Expo.easeIn });
+	}
 	
 	render () {
 		return (
@@ -69,13 +79,16 @@ export default class Navbar extends React.Component {
 				<div className="nav projects" id="linkProjects" onClick={this.handleLinkToProjects}>
 					<i>Projects</i>
 				</div>
-				<div className="nav empty">
-				</div>
-				<div className="nav empty">
-				</div>
+				<div className="nav empty"></div>
+				<div className="nav empty"></div>
 				<div className="nav skills" id="linkSkills" onClick={this.handleLinkToSkills}>
 					<i>Skills</i>
 				</div>
+				<div className="nav work" id="linkWork" onClick={this.handleLinkToWork}>
+					<i>CodePen</i>
+				</div>
+				<div className="nav empty"></div>
+				<div className="nav empty"></div>
 				<div className="nav contacts" id="linkContact" onClick={this.handleLinkToContacts}>
 					<i>Contact Me</i>
 				</div>
