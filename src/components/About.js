@@ -3,6 +3,27 @@ import React from 'react';
 import { gsap, Expo } from 'gsap';
 import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
 
+function linkButtonsAnimations () {
+	let btnContacts = document.querySelector('.linkContacts');
+	let btnProjects = document.querySelector('.linkProjects');
+	let btnWork = document.querySelector('.linkWork');
+	
+	let btnAnimationProps = { backgroundColor: 'rgb(95, 158, 160)', color: 'rgb(255, 255, 255)', duration: 0.8, ease: Expo.easeIn };
+	
+	let btnContactsAnimation = gsap.to(btnContacts, btnAnimationProps).pause();
+	let btnProjectsAnimation = gsap.to(btnProjects, btnAnimationProps).pause();
+	let btnWorkAnimation = gsap.to(btnWork, btnAnimationProps).pause();
+	
+	btnContacts.addEventListener('mouseenter', () => btnContactsAnimation.play());
+	btnContacts.addEventListener('mouseleave', () => btnContactsAnimation.reverse());
+	
+	btnProjects.addEventListener('mouseenter', () => btnProjectsAnimation.play());
+	btnProjects.addEventListener('mouseleave', () => btnProjectsAnimation.reverse());
+	
+	btnWork.addEventListener('mouseenter', () => btnWorkAnimation.play());
+	btnWork.addEventListener('mouseleave', () => btnWorkAnimation.reverse());
+}
+
 export default class About extends React.Component {
 	
 	constructor(props){
@@ -15,6 +36,9 @@ export default class About extends React.Component {
 	
 	componentDidMount () {
 		gsap.registerPlugin(ScrollToPlugin);
+		
+		linkButtonsAnimations();
+		
 	}
 	
 	handleButtonContacts () {
@@ -35,7 +59,7 @@ export default class About extends React.Component {
 				<div className="container">
 					<div className="intro">
 						<h1>
-							Hi, good creature of the nature.
+							Hi, good creature of the nature. Welcome to my portfolio.
 						</h1>
 						<h2>
 						 I love to build amazing apps.
@@ -51,14 +75,14 @@ export default class About extends React.Component {
 							libraries and frameworks is amazing practice that includes challenges
 							along the way.
 						</p>
-						<div className="buttons right" id="linkContacts" onClick={this.handleButtonContacts}>
-							<a>Let's collaborate</a>
+						<div className="buttons linkContacts" onClick={this.handleButtonContacts}>
+							<i>Let's collaborate</i>
 						</div>
-						<div className="buttons" id="linkProjects" onClick={this.handleButtonProjects}>
-							<a>Go to Projects</a>
+						<div className="buttons linkProjects" onClick={this.handleButtonProjects}>
+							<i>Go to Projects</i>
 						</div>
-						<div className="buttons right" id="linkWork"  onClick={this.handleButtonWork}>
-							<a>Go to My Work</a>
+						<div className="buttons linkWork" onClick={this.handleButtonWork}>
+							<i>Go to My Work</i>
 						</div>
 					</div>
 					<div className="coder">
