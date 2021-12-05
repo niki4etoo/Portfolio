@@ -73,23 +73,23 @@ export default class Navbar extends React.Component {
 	render () {
 		return (
 			<nav className="navbar">
-				<div className="nav name" id="linkAbout" onClick={this.handleLinkToAbout}>
+				<div className="nav name" onClick={this.handleLinkToAbout}>
 					<i>Nikolai Nanev</i>
 				</div>
-				<div className="nav projects" id="linkProjects" onClick={this.handleLinkToProjects}>
+				<div className="nav projects" onClick={this.handleLinkToProjects}>
 					<i>Projects</i>
 				</div>
 				<div className="nav empty"></div>
 				<div className="nav empty"></div>
-				<div className="nav skills" id="linkSkills" onClick={this.handleLinkToSkills}>
+				<div className="nav skills" onClick={this.handleLinkToSkills}>
 					<i>Skills</i>
 				</div>
-				<div className="nav work" id="linkWork" onClick={this.handleLinkToWork}>
+				<div className="nav work" onClick={this.handleLinkToWork}>
 					<i>CodePen</i>
 				</div>
 				<div className="nav empty"></div>
 				<div className="nav empty"></div>
-				<div className="nav contacts" id="linkContact" onClick={this.handleLinkToContacts}>
+				<div className="nav contacts" onClick={this.handleLinkToContacts}>
 					<i>Contact Me</i>
 				</div>
 			</nav>
