@@ -59,7 +59,7 @@ export default class About extends React.Component {
 				<div className="container">
 					<div className="intro">
 						<h1>
-							Hi, good creature of the nature. Welcome to my portfolio.
+							Hello and welcome to my portfolio.
 						</h1>
 						<h2>
 						 I love to build amazing apps.
@@ -70,6 +70,7 @@ export default class About extends React.Component {
 							different techniques, methods and approaches for the realization of the
 							final products.
 						</p>
+						<br />
 						<p>
 							Learning Javascript, React, HTML&CSS and different JS
 							libraries and frameworks is amazing practice that includes challenges
