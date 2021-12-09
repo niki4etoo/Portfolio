@@ -15,7 +15,16 @@ export default function Contact() {
 	function handleSubmit(e) {
 		e.preventDefault();
 		
-		//to do
+		var errorMessages = [];
+		
+		//Filters
+		//Length
+		if(title.length < 3) errorMessages['title']['tooShort'] = "The title should be at least 3 symbols";
+		if(title.length > 250) errorMessages['title']['tooLong'] = "The title is too long. No more than 250 symbols";
+		
+		if(message.length < 20) errorMessages['message']['tooShort'] = "The message is too short. At least 20 symbols";
+		if(message.length > 800) errorMessages['message']['tooLong'] = "The message is too long. No More than 800 symbols";
+		
 	}
 	
 	return (
