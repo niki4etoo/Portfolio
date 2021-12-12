@@ -87,7 +87,9 @@ export default class About extends React.Component {
 						</div>
 					</div>
 					<div className="coder">
-						<img alt="hero" src="./coding.svg" width="500" height="400" />
+						<a href="https://github.com/niki4etoo">
+						<img alt="git wall" src="./git.webp" width="600" height="400" />
+						</a>
 					</div>
 				</div>
 			</section>
