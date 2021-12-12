@@ -6,7 +6,7 @@ export default function Work() {
 		  <div className="container">
 			<div className="work">
 			  <h1>
-				My Work on CodePen
+				Work on CodePen
 			  </h1>
 				<div className="WorkList">
 				  Under construction :)
