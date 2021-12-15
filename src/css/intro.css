@@ -1,0 +1,21 @@
+.wrapper {
+	
+	position: absolute;
+	
+	border-left: 6px solid white;
+	padding: 20px;
+	
+	text-align: center;
+	
+	overflow: hidden;
+}
+
+.introline {
+	font-size: 4vw;
+	letter-spacing: 2px;
+}
+
+.bigline {
+	font-size: 2vw;
+	letter-spacing: 3px;
+}
