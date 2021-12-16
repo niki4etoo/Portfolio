@@ -2,8 +2,10 @@ import React from "react";
 import { gsap, Power2 } from 'gsap';
 import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
 import { Link } from 'react-router-dom';
+import $ from 'jquery';
 
 import './css/intro.css';
+import './js/jquery.drawsvg.js';
 
 export default class App extends React.Component {
 	
@@ -24,14 +26,22 @@ export default class App extends React.Component {
 		gsap.to(introline, { duration: 2, x: "0%", ease: Power2.easeOut });
 		gsap.to(bigline, { duration: 2, x: "0%", ease: Power2.easeOut }, "+=0.3");
 		
-		const hoverIntroline = gsap.to(introline, { duration: 1, scaleX: 1.05, scaleY: 1.05, paused: true });
-		const hoverBigline = gsap.to(bigline, { duration: 1, scaleX: 1.05, scaleY: 1.05, paused: true });
+		const hoverIntroline = gsap.to(introline, { duration: 1, scaleX: 1.03, scaleY: 1.03, paused: true });
+		const hoverBigline = gsap.to(bigline, { duration: 1, scaleX: 1.03, scaleY: 1.03, paused: true });
 		
 		introline.addEventListener('mouseenter', () => hoverIntroline.play());
 		introline.addEventListener('mouseleave', () => hoverIntroline.reverse());
 		
 		bigline.addEventListener('mouseenter', () => hoverBigline.play());
 		bigline.addEventListener('mouseleave', () => hoverBigline.reverse());
+		
+		
+
+		var $svg = $('svg').drawsvg();
+
+		$svg.drawsvg('animate');
+
+
 	}
 	
 	componentDidUpdate(){
@@ -40,6 +50,7 @@ export default class App extends React.Component {
 	
 	render () {
 		return (
+			<>
 				<div className="wrapper">
 						<div className="introline">
 							<Link to="/Home">
@@ -48,10 +59,27 @@ export default class App extends React.Component {
 						</div>
 						<div className="bigline">
 							<Link to="/Home">
-								Click on the text
+								Click Here to proceed
 							</Link>
 						</div>
 				</div>
+				<div className="svgPath">
+					<svg viewBox="0 0 175 256" xmlns="http://www.w3.org/2000/svg" width="175" height="256">
+						<g stroke="#FFF" stroke-width="2" fill="none">
+						  <path d="M157.068 33H165c4.77 0 9 4.464 9 9.706v202.758c0 5.243-4.288 9.536-9.524 9.536H10.524C5.288 255 1 250.707 1 245.464V42.707C1 37.464 5.06 33 10.017 33h9.203" />
+						  <path d="M67 33V22.35c0-11.286 8.974-20.56 20.353-20.56 5.688 0 10.91 2.327 14.574 6.08C105.69 11.547 108 16.66 108 22.35V33" />
+						  <path d="M103.302 33H157v45H19V33h52.72" />
+						  <path d="M95.068 25.237c0 4.293-3.474 7.785-7.76 7.785-4.284 0-7.758-3.492-7.758-7.785 0-4.302 3.474-7.785 7.757-7.785 4.287 0 7.76 3.482 7.76 7.785z" />
+						  <path d="M18.696 103h137.896v.17" />
+						  <path d="M18.738 127h42.64v.308" />
+						  <path d="M18.738 155h137.854v.068" />
+						  <path d="M18.738 178h137.854v-.006" />
+						  <path d="M18.696 227h137.868v-.21" />
+						</g>
+					  </svg>
+
+				</div>
+			</>	
 		 );
 	}  
 }

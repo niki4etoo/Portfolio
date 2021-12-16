@@ -19,3 +19,16 @@
 	font-size: 2vw;
 	letter-spacing: 3px;
 }
+
+svg {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+}
+
+.svgPath {
+	position: absolute;
+}
