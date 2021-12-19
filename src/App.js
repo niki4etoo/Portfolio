@@ -35,13 +35,12 @@ export default class App extends React.Component {
 		bigline.addEventListener('mouseenter', () => hoverBigline.play());
 		bigline.addEventListener('mouseleave', () => hoverBigline.reverse());
 		
-		
-
-		var $svg = $('svg').drawsvg();
+		var $svg = $('svg').drawsvg({
+				duration: 2500,
+				stagger: 500
+			});
 
 		$svg.drawsvg('animate');
-
-
 	}
 	
 	componentDidUpdate(){
@@ -77,7 +76,6 @@ export default class App extends React.Component {
 						  <path d="M18.696 227h137.868v-.21" />
 						</g>
 					  </svg>
-
 				</div>
 			</>	
 		 );
