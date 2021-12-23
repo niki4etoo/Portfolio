@@ -26,10 +26,10 @@ export default class Home extends React.Component {
 		var scrollUpDuration = 1;
 		var docScroll = document.documentElement.scrollTop;
 		
-		if(docScroll <= 10000) scrollUpDuration = 5;
-		if(docScroll <= 8000) scrollUpDuration = 4;
-		if(docScroll <= 6000) scrollUpDuration = 3;
-		if(docScroll <= 4000) scrollUpDuration = 2;
+		if(docScroll <= 10000) scrollUpDuration = 2;
+		if(docScroll <= 8000) scrollUpDuration = 1.8;
+		if(docScroll <= 6000) scrollUpDuration = 1.5;
+		if(docScroll <= 4000) scrollUpDuration = 1.2;
 		if(docScroll <= 2000) scrollUpDuration = 1;
 		gsap.to(window, { duration: scrollUpDuration, scrollTo: 0 });
 		

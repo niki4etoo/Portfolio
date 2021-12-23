@@ -10,7 +10,7 @@ function mainNavButtonsAnimations(){
 	let contactLink = document.querySelector(".contacts");
 	let workLink = document.querySelector(".work");
 	
-	let optionsAnim = { backgroundColor: 'white', color: 'black', duration: 1 };
+	let optionsAnim = { backgroundColor: 'white', color: 'black', duration: 0.4 };
 	let nameBtnAnim = gsap.to(nameLink, optionsAnim).pause();
 	let projectBtnAnim = gsap.to(projectLink, optionsAnim).pause();
 	let skillsBtnAnim = gsap.to(skillsLink, optionsAnim).pause();
@@ -51,23 +51,23 @@ export default class Navbar extends React.Component {
 	}
 	
 	handleLinkToAbout () {
-		gsap.to(window, { duration: 2, scrollTo: '#about', ease: Expo.easeIn });
+		gsap.to(window, { duration: 0.5, scrollTo: '#about', ease: Expo.easeIn });
 	}
 	
 	handleLinkToProjects () {
-		gsap.to(window, { duration: 2, scrollTo: '#projects', ease: Expo.easeIn });
+		gsap.to(window, { duration: 0.5, scrollTo: '#projects', ease: Expo.easeIn });
 	}
 	
 	handleLinkToSkills () {
-		gsap.to(window, { duration: 2, scrollTo: '#skills', ease: Expo.easeIn });
+		gsap.to(window, { duration: 0.5, scrollTo: '#skills', ease: Expo.easeIn });
 	}
 	
 	handleLinkToContacts () {
-		gsap.to(window, { duration: 2, scrollTo: '#contacts', ease: Expo.easeIn });
+		gsap.to(window, { duration: 0.5, scrollTo: '#contacts', ease: Expo.easeIn });
 	}
 	
 	handleLinkToWork () {
-		gsap.to(window, { duration: 2, scrollTo: '#work', ease: Expo.easeIn });
+		gsap.to(window, { duration: 0.5, scrollTo: '#work', ease: Expo.easeIn });
 	}
 	
 	render () {
