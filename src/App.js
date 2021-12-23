@@ -26,8 +26,8 @@ export default class App extends React.Component {
 		gsap.to(introline, { duration: 2, x: "0%", ease: Power2.easeOut });
 		gsap.to(bigline, { duration: 2, x: "0%", ease: Power2.easeOut }, "+=0.3");
 		
-		const hoverIntroline = gsap.to(introline, { duration: 1, scaleX: 1.03, scaleY: 1.03, paused: true });
-		const hoverBigline = gsap.to(bigline, { duration: 1, scaleX: 1.03, scaleY: 1.03, paused: true });
+		const hoverIntroline = gsap.to(introline, { duration: 1, scaleX: 1.01, scaleY: 1.02, paused: true });
+		const hoverBigline = gsap.to(bigline, { duration: 1, scaleX: 1.01, scaleY: 1.02, paused: true });
 		
 		introline.addEventListener('mouseenter', () => hoverIntroline.play());
 		introline.addEventListener('mouseleave', () => hoverIntroline.reverse());
@@ -36,8 +36,8 @@ export default class App extends React.Component {
 		bigline.addEventListener('mouseleave', () => hoverBigline.reverse());
 		
 		var $svg = $('svg').drawsvg({
-				duration: 2500,
-				stagger: 500
+				duration: 1200,
+				stagger: 200
 			});
 
 		$svg.drawsvg('animate');

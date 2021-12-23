@@ -27,11 +27,8 @@ long_line_behaviour=1
 long_line_column=70
 
 [files]
-current_page=2
-FILE_NAME_0=1820;Javascript;0;EUTF-8;1;1;0;%2Fhome%2Fdexter%2FDevelopment%2FProgramming%2Fweb%2Fportfolio%2Fsrc%2Fjs%2Fjquery.drawsvg.js;0;4
-FILE_NAME_1=280;CSS;0;EUTF-8;1;1;0;%2Fhome%2Fdexter%2FDevelopment%2FProgramming%2Fweb%2Fportfolio%2Fsrc%2Fcss%2Fintro.css;0;4
-FILE_NAME_2=1113;Javascript;0;EUTF-8;1;1;0;%2Fhome%2Fdexter%2FDevelopment%2FProgramming%2Fweb%2Fportfolio%2Fsrc%2FApp.js;0;4
-FILE_NAME_3=27;Javascript;0;EUTF-8;1;1;0;%2Fhome%2Fdexter%2FDevelopment%2FProgramming%2Fweb%2Fportfolio%2Fsrc%2FHome.js;0;4
+current_page=0
+FILE_NAME_0=27;Javascript;0;EUTF-8;1;1;0;%2Fhome%2Fdexter%2FDevelopment%2FProgramming%2Fweb%2Fportfolio%2Fsrc%2FHome.js;0;4
 
 [VTE]
 last_dir=/home/dexter

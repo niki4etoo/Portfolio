@@ -8,7 +8,7 @@ function linkButtonsAnimations () {
 	let btnProjects = document.querySelector('.linkProjects');
 	let btnWork = document.querySelector('.linkWork');
 	
-	let btnAnimationProps = { backgroundColor: 'rgb(95, 158, 160)', color: 'rgb(255, 255, 255)', duration: 0.8, ease: Expo.easeIn };
+	let btnAnimationProps = { backgroundColor: 'rgb(95, 158, 160)', color: 'rgb(255, 255, 255)', duration: 0.4, ease: Expo.easeIn };
 	
 	let btnContactsAnimation = gsap.to(btnContacts, btnAnimationProps).pause();
 	let btnProjectsAnimation = gsap.to(btnProjects, btnAnimationProps).pause();
@@ -42,15 +42,15 @@ export default class About extends React.Component {
 	}
 	
 	handleButtonContacts () {
-		gsap.to(window, { duration: 2, scrollTo: '#contacts', ease: Expo.easeIn });
+		gsap.to(window, { duration: 0.5, scrollTo: '#contacts', ease: Expo.easeIn });
 	}
 	
 	handleButtonProjects () {
-		gsap.to(window, { duration: 2, scrollTo: '#projects', ease: Expo.easeIn });
+		gsap.to(window, { duration: 0.5, scrollTo: '#projects', ease: Expo.easeIn });
 	}
 	
 	handleButtonWork () {
-		gsap.to(window, { duration: 2, scrollTo: '#work', ease: Expo.easeIn });
+		gsap.to(window, { duration: 0.5, scrollTo: '#work', ease: Expo.easeIn });
 	}
 	
 	render () {
