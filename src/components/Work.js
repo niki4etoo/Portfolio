@@ -9,7 +9,7 @@ export default function Work() {
 				Work on CodePen
 			  </h1>
 				<div className="WorkList">
-				  Under construction :)
+				  <a href="https://codepen.io/niki4etoo" title="My Work on Codepen">niki4etoo codepen</a>
 				</div>
 			</div>
 		  </div>
