@@ -9,7 +9,6 @@ import About from './components/About';
 import Contact from './components/Contact';
 import Projects from './components/Projects';
 import Skills from './components/Skills';
-import Work from './components/Work';
 
 export default class Home extends React.Component {
 	
@@ -61,7 +60,6 @@ export default class Home extends React.Component {
 					<About />
 					<Projects />
 					<Skills />
-					<Work />
 					<Contact />
 				</div>
 		 );
