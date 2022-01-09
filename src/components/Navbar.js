@@ -42,7 +42,7 @@ export default class Navbar extends React.Component {
 		this.handleLinkToProjects = this.handleLinkToProjects.bind(this);
 		this.handleLinkToSkills = this.handleLinkToSkills.bind(this);
 		this.handleLinkToContacts = this.handleLinkToContacts.bind(this);
-		this.handleLinkToWork = this.handleLinkToWork.bind(this);
+		//this.handleLinkToWork = this.handleLinkToWork.bind(this); (to do)
 	}
 	
 	componentDidMount () {
@@ -84,8 +84,8 @@ export default class Navbar extends React.Component {
 				<div className="nav skills" onClick={this.handleLinkToSkills}>
 					<i>Skills</i>
 				</div>
-				<div className="nav work" onClick={this.handleLinkToWork}>
-					<i>CodePen</i>
+				<div className="nav work">
+					<i><a href="https://codepen.io/niki4etoo" title="Nikolai Nanev Code Pen">CodePen</a></i>
 				</div>
 				<div className="nav empty"></div>
 				<div className="nav empty"></div>
