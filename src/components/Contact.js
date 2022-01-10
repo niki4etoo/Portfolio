@@ -14,9 +14,7 @@ export default function Contact() {
 	
 	function handleSubmit(e) {
 		e.preventDefault();
-		
-		//var errorMessages = [];
-		
+				
 		//To do
 		console.log(title);
 		console.log("encoded: " + encode(title));
