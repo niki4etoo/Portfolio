@@ -42,7 +42,6 @@ export default class Navbar extends React.Component {
 		this.handleLinkToProjects = this.handleLinkToProjects.bind(this);
 		this.handleLinkToSkills = this.handleLinkToSkills.bind(this);
 		this.handleLinkToContacts = this.handleLinkToContacts.bind(this);
-		//this.handleLinkToWork = this.handleLinkToWork.bind(this); (to do)
 	}
 	
 	componentDidMount () {
