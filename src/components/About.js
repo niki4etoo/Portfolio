@@ -72,9 +72,10 @@ export default class About extends React.Component {
 						</p>
 						<br />
 						<p>
-							Learning Javascript, React, React Native, HTML&CSS and different JS
+							Learning Javascript, React, React Native, HTML5&CSS3 and different JS
 							libraries and frameworks is amazing practice that includes challenges
-							along the way.
+							along the way. One of the best JS frameworks for animations is GSAP
+							platform, which helps to built any kind of animation in the web.
 						</p>
 						<div className="buttons linkContacts" onClick={this.handleButtonContacts}>
 							<i>Let's collaborate</i>
