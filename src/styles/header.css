@@ -1,0 +1,20 @@
+.header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    height: 20vh;
+}
+
+.header h1 {
+    letter-spacing: 3px;
+    transition: 1s ease;
+    cursor: pointer;
+}
+
+.header h1:hover {
+    letter-spacing: 1px;
+    transition: 1s ease;
+    cursor: pointer;
+}
