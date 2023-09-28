@@ -8,14 +8,20 @@
 }
 
 .header h1 {
-    letter-spacing: 3px;
-    transition: 1s ease;
+    font-size: 4em;
+    letter-spacing: 0.50em;
+    transition: 1.5s ease;
     cursor: pointer;
 }
 
+#blue {
+    color: blue;
+}
+
+
 .header h1:hover {
     letter-spacing: 1px;
-    transition: 1s ease;
+    transition: 1.5s ease;
     cursor: pointer;
 }
 
@@ -30,12 +36,13 @@
     height: 20vh;
 }
 
-.question h2 {
-    letter-spacing: 3px;
+.question h1 {
+    font-size: 3em;
+    letter-spacing: 0.25em;
     transition: 1s ease-in;
 }
 
-.question h2:hover {
+.question h1:hover {
     letter-spacing: 1px;
     transition: 1s ease-in;
 }
@@ -51,7 +58,7 @@
 .answers button {
     background: none;
 
-    border: 1px solid cadetblue;
+    border: 1px solid blue;
     border-radius: 5px;
 
     cursor: pointer;
@@ -65,5 +72,19 @@
 }
 
 .answers button:hover {
-    transform: skewX(15deg);
+    transform: scale(0.9);
+}
+
+.answersDescription {
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 2em;
+    margin: 2em;
+
+    font-size: 2em;
+
 }
