@@ -4,13 +4,11 @@ import '../styles/header.css';
 function Header(){
 
     const [simplicityQuestion, setSimplicityQuestion] = useState(false);
-
     const [simplicityAnswers, setSimplicityAnswers] = useState(false);
 
     const [answerDescriptionYes, setAnswerDescriptionYes] = useState(false);
     const [answerDescriptionNo, setAnswerDescriptionNo] = useState(false);
     const [answerDescriptionItDepends, setAnswerDescriptionItDepends] = useState(false);
-
 
     const showQuestion = () => {
         setSimplicityQuestion(prev => !prev);
@@ -64,10 +62,10 @@ function Header(){
         </div>
         { 
             simplicityQuestion &&
-
-            <div className='question'>
-                <h1 onClick={showAnswers}>Is simplicity <span id='blue'>important</span>?</h1>
-            </div>
+                <div className='questions'>
+                    <h1 onClick={showAnswers}>Is simplicity <span id='blue'>important</span>?</h1>
+                </div>
+            
         }
         {
             simplicityAnswers && 
@@ -82,25 +80,25 @@ function Header(){
         {
             answerDescriptionYes &&
 
-                <div id='yes'>
+                <div className='answer-description'>
                     <h1>YES</h1>
-                    <h3>The correct answer is "yeah". Why? Because makes life easier and actually richer.</h3>
+                    <h3>The correct answer is "yeah". Why? Because makes <span id='blue'>life</span> easier and actually richer.</h3>
                 </div>
 
         }
         {
             answerDescriptionNo &&
-                <div id='no'>
+                <div className='answer-description'>
                     <h1>NO</h1>
-                    <h3>This is not the correct answer, but anyway. Maybe complicated is your type, which in some cases is better.</h3>
+                    <h3>This is not the correct answer, but anyway. Maybe complicated is your <span id='blue'>type</span>, which in some cases is better.</h3>
                 </div>
         }
         {
                 answerDescriptionItDepends &&
-                <div id='itDepends'>
+                <div className='answer-description'>
                     <h1>It Depends</h1>
                     <h3>It depends on what? Do you hesitate for something? Are you sure? 
-                        It's okay, you can find answers for the simplicity in some books or kind of books.</h3>
+                        It's okay, you can find answers for the <span id='blue'>simplicity</span> in some books or kind of books.</h3>
                 </div>
         }
         </div>

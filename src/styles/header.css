@@ -25,7 +25,7 @@
     cursor: pointer;
 }
 
-.question {
+.questions {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -34,15 +34,19 @@
     cursor: pointer;
 
     height: 20vh;
+
+    animation: questionKeyframesEnter 1s ease-in;
 }
 
-.question h1 {
+
+
+.questions h1 {
     font-size: 3em;
     letter-spacing: 0.25em;
     transition: 1s ease-in;
 }
 
-.question h1:hover {
+.questions h1:hover {
     letter-spacing: 1px;
     transition: 1s ease-in;
 }
@@ -53,6 +57,8 @@
 
     align-items: center;
     justify-content: space-around;
+
+    animation: answerKeyframesEnter 1s ease-in;
 }
 
 .answers button {
@@ -72,7 +78,7 @@
 }
 
 .answers button:hover {
-    transform: scale(0.9);
+    transform: scale(0.95);
 }
 
 .answersDescription {
@@ -87,4 +93,32 @@
 
     font-size: 2em;
 
+}
+
+.answer-description h1 {
+    color: blue;
+}
+
+@keyframes questionKeyframesEnter {
+    from {
+        opacity: 0;
+        transform: translateX(-5%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes answerKeyframesEnter {
+    from {
+        opacity: 0;
+        transform: translateY(-5%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
