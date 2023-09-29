@@ -83,20 +83,24 @@ function Header(){
             answerDescriptionYes &&
 
                 <div id='yes'>
-                    Answer description for the "YES"
+                    <h1>YES</h1>
+                    <h3>The correct answer is "yeah". Why? Because makes life easier and actually richer.</h3>
                 </div>
 
         }
         {
             answerDescriptionNo &&
-            <div id='no'>
-                    Answer description for the "No"
+                <div id='no'>
+                    <h1>NO</h1>
+                    <h3>This is not the correct answer, but anyway. Maybe complicated is your type, which in some cases is better.</h3>
                 </div>
         }
         {
                 answerDescriptionItDepends &&
                 <div id='itDepends'>
-                    Answer description for the "It Depends"
+                    <h1>It Depends</h1>
+                    <h3>It depends on what? Do you hesitate for something? Are you sure? 
+                        It's okay, you can find answers for the simplicity in some books or kind of books.</h3>
                 </div>
         }
         </div>
