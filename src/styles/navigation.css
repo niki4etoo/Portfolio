@@ -1,0 +1,22 @@
+.nav {
+    display: flex;
+}
+
+.nav-back {
+    margin: 50px 50px;
+    padding: 20px;
+}
+
+.nav-back a, a:visited, a:active, a:any-link {
+    text-decoration: none;
+    cursor: pointer;
+
+    font-size: 1.5em;
+    letter-spacing: 0.15em;
+    color: blue;
+}
+
+.nav-back:hover {
+    transform: scale(1.1);
+    transition: 0.5s ease-in;
+}
