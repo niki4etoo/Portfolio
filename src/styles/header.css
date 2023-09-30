@@ -99,6 +99,10 @@
     color: blue;
 }
 
+.answer-description {
+    animation: answerDescAnimation 2s ease-in;
+}
+
 @keyframes questionKeyframesEnter {
     from {
         opacity: 0;
@@ -120,5 +124,16 @@
     to {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+
+@keyframes answerDescAnimation {
+    from {
+        opacity: 0;
+        transform: translateX(-5%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
     }
 }
