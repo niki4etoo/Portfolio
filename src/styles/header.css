@@ -35,7 +35,7 @@
 
     height: 20vh;
 
-    animation: questionKeyframesEnter 1s ease-in;
+    animation: questionKeyframesEnter 0.5s ease-in;
 }
 
 
@@ -43,12 +43,12 @@
 .questions h1 {
     font-size: 3em;
     letter-spacing: 0.25em;
-    transition: 1s ease-in;
+    transition: 0.5s ease-in;
 }
 
 .questions h1:hover {
     letter-spacing: 1px;
-    transition: 1s ease-in;
+    transition: 0.5s ease-in;
 }
 
 .answers {
@@ -98,6 +98,7 @@
 .answer-description h1 {
     color: blue;
 }
+
 
 .answer-description {
     animation: answerDescAnimation 2s ease-in;

@@ -7,7 +7,7 @@ const Navigation = () => {
     return (
         <>
         <div className="nav">
-            <Link className='nav-back' to='/'>Going back</Link>
+            <Link className='nav-back' to='/'>Back</Link>
         </div>
         
         </>
