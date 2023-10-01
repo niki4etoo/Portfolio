@@ -1,0 +1,41 @@
+.yes-quiz-container {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+}
+
+.yes-quiz-question {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 1.8em;
+
+    width: 80vw;
+    height: 10vh;
+}
+
+.yes-quiz-answers {
+    display: flex;
+
+    flex-direction: row;
+
+    justify-content: space-around;
+    align-items: center;
+
+    font-size: 1.2em;
+
+    width: 80vw;
+    height: 20vh;
+}
+
+.yes-quiz-answer:hover {
+    cursor: pointer;
+    transform: scale(0.95);
+}
