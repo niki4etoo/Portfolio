@@ -2,24 +2,20 @@ import React from "react";
 
 import Navigation from "./Navigation";
 
+import MultiLevelTreeNode from "../Decisions/Tree";
+
+import questions from '../Decisions/questions.json';
+
 import '../styles/quiz.css';
 
 const YesAnswer = () => {
 
-    const handleToBeLived = () => {
-        console.log(`Here we go! Excellent`);
-    }
+    const test = new MultiLevelTreeNode(questions.personal.questions[0], [ "John", "Stefan", "Lily" ]);
 
-    const handleToBeUnderstood = () => {
-        console.log(`Very good! Wisdom Seeker`);
-    }
 
-    const handleIDoNotKnow = () => {
-        console.log(`You should know. Find the answers`);
-    }
-
-    const handleToGetRicher = () => {
-        console.log(`The life is one of the best teachers, and yes, you get richer`);
+    const handle = (question) => {
+        console.log(`Question: ${question}`);
+        console.log(test);
     }
 
     return (
@@ -27,24 +23,24 @@ const YesAnswer = () => {
         <Navigation />
         <div className="yes-quiz-container">
             <div className="yes-quiz-question">
-                What is the purpose of life?
+                Questions
             </div>
 
             <div className="yes-quiz-answers">
-                <div className="yes-quiz-answer" onClick={handleToBeLived}>
-                    To be lived
+                <div className="yes-quiz-answer" onClick={() => handle(questions.personal.questions[1])}>
+                    {questions.personal.questions[1]}
                 </div>
 
-                <div className="yes-quiz-answer" onClick={handleToBeUnderstood}>
-                    To be underdstood
+                <div className="yes-quiz-answer" onClick={() => handle(questions.technical.questions[2])}>
+                    {questions.technical.questions[2]}
                 </div>
 
-                <div className="yes-quiz-answer" onClick={handleIDoNotKnow}>
-                    I don't know
+                <div className="yes-quiz-answer" onClick={() => handle(questions.movies.questions[0])}>
+                    {questions.movies.questions[0]}
                 </div>
 
-                <div className="yes-quiz-answer" onClick={handleToGetRicher}>
-                    To get richer
+                <div className="yes-quiz-answer" onClick={() => handle(questions.movies.questions[1])}>
+                    {questions.movies.questions[1]}
                 </div>
             </div>
             
