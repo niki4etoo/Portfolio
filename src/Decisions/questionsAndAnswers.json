@@ -1,0 +1,32 @@
+{
+    "yes": {
+        "questions": [
+            {
+                "question": "How old are you?",
+                "answers": [ "0-16", "17-25", "26-50", "50-infinity" ]
+            },
+            {
+                "question": "Why simplicity?",
+                "answers": [ "Makes it easier", "Simplicity is simplicity", "Why not", "Something else ..."]
+            },
+            {
+                "question": "Where are you from?",
+                "answers": [ "Planet Earth", "Another universe", "You don't know", "Something else ..."]
+            },
+            {
+                "question": "Why our Earth?",
+                "answers": [ "The best place to live", "I have to learn", "To make better decisions", "something else ..."]
+            },
+            {
+                "question": "How can I help you?",
+                "answers": [ "You can't", "I can make it on my own", "there are better solutions", "do you think, is that worth it?" ]
+            }
+        ]
+    },
+    "no": {
+        "questions": [ "What is the scale of the complexity?", "Is there a difference between complex and complicated?", "Why not simplicity?", "Are you okay?"]
+    },
+    "depends": {
+        "questions": [ "Could you give me an example?", "Why dependency?", "Do you hesitate for something?" ]
+    }
+}

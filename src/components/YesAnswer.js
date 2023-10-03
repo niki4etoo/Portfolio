@@ -1,50 +1,66 @@
-import React from "react";
+import React, { useState, useRef } from "react";
 
 import Navigation from "./Navigation";
 
-import MultiLevelTreeNode from "../Decisions/Tree";
-
-import questions from '../Decisions/questions.json';
+import qa from '../Decisions/questionsAndAnswers.json';
 
 import '../styles/quiz.css';
 
+const  userAnswers = [];
+
 const YesAnswer = () => {
 
-    const test = new MultiLevelTreeNode(questions.personal.questions[0], [ "John", "Stefan", "Lily" ]);
+    const questionRef = useRef(null);
 
+    const [index, setIndex] = useState(0);
 
-    const handle = (question) => {
-        console.log(`Question: ${question}`);
-        console.log(test);
+    const [questionsToAnswer, setQuestionsToAnswer] = useState(true);
+    const [questionsAnswered, setQuestionsAnswered] = useState(false);
+
+    const handle = (answer) => {
+        userAnswers.push(answer);
+
+        if(index === qa.yes.questions.length-1){
+            setQuestionsAnswered(prev => !prev);
+            setQuestionsToAnswer(prev => !prev);
+            console.log(userAnswers);
+        } else {
+            setIndex(index => index+1);
+        }
     }
 
     return (
         <>
         <Navigation />
-        <div className="yes-quiz-container">
-            <div className="yes-quiz-question">
-                Questions
-            </div>
+            { questionsAnswered && 
+                <div className="answered">You answered all the questions. Congratulations! You win a gum with a few coins!</div>
+            }
+            {
+                questionsToAnswer &&
+                    <div className="yes-quiz-container">
+                        <div ref={questionRef} className="yes-quiz-question">
+                            {qa.yes.questions[index].question}
+                        </div>
 
-            <div className="yes-quiz-answers">
-                <div className="yes-quiz-answer" onClick={() => handle(questions.personal.questions[1])}>
-                    {questions.personal.questions[1]}
-                </div>
+                        <div className="yes-quiz-answers">
+                            <div className="yes-quiz-answer" onClick={() => handle(qa.yes.questions[index].answers[0])}>
+                                {qa.yes.questions[index].answers[0]}
+                            </div>
 
-                <div className="yes-quiz-answer" onClick={() => handle(questions.technical.questions[2])}>
-                    {questions.technical.questions[2]}
-                </div>
+                            <div className="yes-quiz-answer" onClick={() => handle(qa.yes.questions[index].answers[1])}>
+                                {qa.yes.questions[index].answers[1]}
+                            </div>
 
-                <div className="yes-quiz-answer" onClick={() => handle(questions.movies.questions[0])}>
-                    {questions.movies.questions[0]}
-                </div>
+                            <div className="yes-quiz-answer" onClick={() => handle(qa.yes.questions[index].answers[2])}>
+                                {qa.yes.questions[index].answers[2]}
+                            </div>
 
-                <div className="yes-quiz-answer" onClick={() => handle(questions.movies.questions[1])}>
-                    {questions.movies.questions[1]}
-                </div>
-            </div>
-            
-        </div>
+                            <div className="yes-quiz-answer" onClick={() => handle(qa.yes.questions[index].answers[3])}>
+                                {qa.yes.questions[index].answers[3]}
+                            </div>
+                        </div>
+                    </div>
+            }
         </>
     );
 }
