@@ -1,4 +1,5 @@
 import React, { useState, useRef } from "react";
+import gsap from 'gsap';
 
 import Navigation from "./Navigation";
 
@@ -8,9 +9,13 @@ import '../styles/quiz.css';
 
 const  userAnswers = [];
 
+// To Do ( remove duplicated code )
+
 const YesAnswer = () => {
 
     const questionRef = useRef(null);
+
+    const answersRef = useRef([]);
 
     const [index, setIndex] = useState(0);
 
@@ -24,8 +29,55 @@ const YesAnswer = () => {
             setQuestionsAnswered(prev => !prev);
             setQuestionsToAnswer(prev => !prev);
             console.log(userAnswers);
+
+
         } else {
-            setIndex(index => index+1);
+            const timeline = gsap.timeline();
+            console.log(answersRef);
+            timeline.to(questionRef.current, {
+                y: -300,
+                ease: "Power4.easeOut",
+                duration: 0.5,
+            }).to(answersRef.current[0], {
+                opacity: 0,
+                duration: 0.25,
+                ease: "Power4.easeOut"
+            }).to(answersRef.current[1], {
+                opacity: 0,
+                duration: 0.25,
+                ease: "Power4.easeOut"
+            }).to(answersRef.current[2], {
+                opacity: 0,
+                duration: 0.25,
+                ease: "Power4.easeOut"
+            }).to(answersRef.current[3], {
+                opacity: 0,
+                duration: 0.25,
+                ease: "Power4.easeOut",
+                onComplete: () => {
+                    setIndex(index => index + 1);
+                }
+            }).to(questionRef.current, { // Next question
+                y: 0,
+                ease: "Power4.easeIn"
+            }).to(answersRef.current[3], { // revert the opacity for each answer back to 1
+                opacity: 1,
+                duration: 0.25,
+                ease: "Power4.easeOut",
+            })
+            .to(answersRef.current[2], {
+                opacity: 1,
+                duration: 0.25,
+                ease: "Power4.easeOut",
+            }).to(answersRef.current[1], {
+                opacity: 1,
+                duration: 0.25,
+                ease: "Power4.easeOut",
+            }).to(answersRef.current[0], {
+                opacity: 1,
+                duration: 0.25,
+                ease: "Power4.easeOut",
+            });
         }
     }
 
@@ -37,25 +89,27 @@ const YesAnswer = () => {
             }
             {
                 questionsToAnswer &&
-                    <div className="yes-quiz-container">
-                        <div ref={questionRef} className="yes-quiz-question">
+                
+                    <div className="quiz-container">
+                        <div ref={questionRef} className="quiz-question">
                             {qa.yes.questions[index].question}
                         </div>
 
-                        <div className="yes-quiz-answers">
-                            <div className="yes-quiz-answer" onClick={() => handle(qa.yes.questions[index].answers[0])}>
+                        <div className="quiz-answers">
+
+                            <div ref={(elem) => answersRef.current.push(elem)} className="quiz-answer" onClick={() => handle(qa.yes.questions[index].answers[0])}>
                                 {qa.yes.questions[index].answers[0]}
                             </div>
 
-                            <div className="yes-quiz-answer" onClick={() => handle(qa.yes.questions[index].answers[1])}>
+                            <div ref={(elem) => answersRef.current.push(elem)} className="quiz-answer" onClick={() => handle(qa.yes.questions[index].answers[1])}>
                                 {qa.yes.questions[index].answers[1]}
                             </div>
 
-                            <div className="yes-quiz-answer" onClick={() => handle(qa.yes.questions[index].answers[2])}>
+                            <div ref={(elem) => answersRef.current.push(elem)} className="quiz-answer" onClick={() => handle(qa.yes.questions[index].answers[2])}>
                                 {qa.yes.questions[index].answers[2]}
                             </div>
 
-                            <div className="yes-quiz-answer" onClick={() => handle(qa.yes.questions[index].answers[3])}>
+                            <div ref={(elem) => answersRef.current.push(elem)} className="quiz-answer" onClick={() => handle(qa.yes.questions[index].answers[3])}>
                                 {qa.yes.questions[index].answers[3]}
                             </div>
                         </div>
