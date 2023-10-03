@@ -1,0 +1,14 @@
+{
+    "yes": {
+        "title": "Yes",
+        "description": "Simplicity is the most important thing in our life. It is easier to work, learn and earn."
+    },
+    "no": {
+        "title": "No",
+        "description": "Complex and complicated is the opposite of the simplicity. They are also as important as simplicity, because understading each of them, we can deepen the understanding about the simplicity."
+    },
+    "itDepends": {
+        "title": "It Depends",
+        "description": "Yes, there are different factors that make the simplicity to depend. One of the key factors is perceiving."
+    }
+}

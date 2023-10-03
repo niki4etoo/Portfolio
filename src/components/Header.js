@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import { gsap } from 'gsap';
 import '../styles/header.css';
 
+import  answers  from '../Decisions/simplicityAnswers.json';
+
 
 const Header = () => {
 
@@ -78,8 +80,8 @@ const Header = () => {
             {
                 answerDescriptionYes &&
                     <div className='answer-description'>
-                        <h1>YES</h1>
-                        <h3>The correct answer is "yeah". Why? Because makes <span id='blue'>life</span> easier and actually richer.</h3>
+                        <h1>{answers.yes.title}</h1>
+                        <h3>{answers.yes.description}</h3>
                         <Link to='/yes'>Learn More</Link>
                     </div>
 
@@ -87,17 +89,16 @@ const Header = () => {
             {
                 answerDescriptionNo &&
                     <div className='answer-description'>
-                        <h1>NO</h1>
-                        <h3>This is not the correct answer, but anyway. Maybe complicated is your <span id='blue'>type</span>, which in some cases is better.</h3>
+                        <h1>{answers.no.title}</h1>
+                        <h3>{answers.no.description}</h3>
                         <Link to='/no'>Learn More</Link>
                     </div>
             }
             {
                 answerDescriptionItDepends &&
                     <div className='answer-description'>
-                        <h1>It Depends</h1>
-                        <h3>It depends on what? Do you hesitate for something? Are you sure? 
-                            It's okay, you can find answers for the <span id='blue'>simplicity</span> in some books or kind of books.</h3>
+                        <h1>{answers.itDepends.title}</h1>
+                        <h3>{answers.itDepends.description}</h3>
                             <Link to='/itDepends'>Learn More</Link>
                     </div>
             }
