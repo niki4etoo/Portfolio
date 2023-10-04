@@ -1,10 +1,9 @@
 import React, { useState, useRef } from "react";
-import gsap from 'gsap';
 
 import Navigation from "./Navigation";
 
 import qa from '../Decisions/questionsAndAnswers.json';
-
+import QuestionAnimations from "./QuestionAnimations";
 import '../styles/quiz.css';
 
 const  userAnswers = [];
@@ -32,52 +31,7 @@ const NoAnswer = () => {
 
 
         } else {
-            const timeline = gsap.timeline();
-            console.log(answersRef);
-            timeline.to(questionRef.current, {
-                y: -300,
-                ease: "Power4.easeOut",
-                duration: 0.5,
-            }).to(answersRef.current[0], {
-                opacity: 0,
-                duration: 0.25,
-                ease: "Power4.easeOut"
-            }).to(answersRef.current[1], {
-                opacity: 0,
-                duration: 0.25,
-                ease: "Power4.easeOut"
-            }).to(answersRef.current[2], {
-                opacity: 0,
-                duration: 0.25,
-                ease: "Power4.easeOut"
-            }).to(answersRef.current[3], {
-                opacity: 0,
-                duration: 0.25,
-                ease: "Power4.easeOut",
-                onComplete: () => {
-                    setIndex(index => index + 1);
-                }
-            }).to(questionRef.current, { // Next question
-                y: 0,
-                ease: "Power4.easeIn"
-            }).to(answersRef.current[3], { // revert the opacity for each answer back to 1
-                opacity: 1,
-                duration: 0.25,
-                ease: "Power4.easeOut",
-            })
-            .to(answersRef.current[2], {
-                opacity: 1,
-                duration: 0.25,
-                ease: "Power4.easeOut",
-            }).to(answersRef.current[1], {
-                opacity: 1,
-                duration: 0.25,
-                ease: "Power4.easeOut",
-            }).to(answersRef.current[0], {
-                opacity: 1,
-                duration: 0.25,
-                ease: "Power4.easeOut",
-            });
+            QuestionAnimations(questionRef, answersRef, setIndex);
         }
     }
 
