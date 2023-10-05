@@ -1,3 +1,11 @@
+.container {
+    display: flex;
+    flex-direction: column;
+
+    justify-content: space-around;
+    align-items: center;
+}
+
 .quiz-container {
     display: flex;
 
@@ -49,6 +57,8 @@
 .answered {
     display: flex;
 
+    flex-direction: column;
+
     justify-content: center;
     align-items: center;
 
@@ -58,6 +68,30 @@
     font-size: 2em;
 
     animation: answeredAnim 2s ease-in;
+}
+
+.message-success {
+    color: green;
+}
+
+
+.user-answer-title {
+    display: flex;
+
+    margin: auto 2vh;
+}
+
+.user-answer {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    margin: auto 1vh;
+}
+
+#blue {
+    color: blue;
 }
 
 @keyframes answeredAnim {

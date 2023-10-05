@@ -58,6 +58,9 @@
     align-items: center;
     justify-content: space-around;
 
+    height: 30vh;
+    width: 100vw;
+
     animation: answerKeyframesEnter 1s ease-in;
 }
 

@@ -2,6 +2,7 @@ import React, { useState, useRef } from "react";
 
 import Navigation from "./Navigation";
 import QuestionAnimations from "./QuestionAnimations";
+import AnsweredQuestions from './AnsweredQuestions';
 
 import qa from '../Decisions/questionsAndAnswers.json';
 
@@ -40,7 +41,10 @@ const YesAnswer = () => {
         <>
         <Navigation />
             { questionsAnswered && 
-                <div className="answered">You answered all the questions. Congratulations! You win a gum with a few coins!</div>
+                <div className="answered">
+                    <span className="message-success">You answered all the questions. Congratulations! You win a gum with a few coins!</span>
+                    <AnsweredQuestions questions={userAnswers} />
+                </div>
             }
             {
                 questionsToAnswer &&

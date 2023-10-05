@@ -4,6 +4,8 @@ import Navigation from "./Navigation";
 
 import qa from '../Decisions/questionsAndAnswers.json';
 import QuestionAnimations from "./QuestionAnimations";
+import AnsweredQuestions from './AnsweredQuestions';
+
 import '../styles/quiz.css';
 
 const  userAnswers = [];
@@ -39,7 +41,10 @@ const NoAnswer = () => {
         <>
         <Navigation />
             { questionsAnswered && 
-                <div className="answered">You answered all the questions. Congratulations! You win a gum with a few coins!</div>
+                <div className="answered">
+                    <span className="message-success">You answered all the questions. Congratulations! You win a gum with a few coins!</span>
+                    <AnsweredQuestions questions={userAnswers} />
+                </div>
             }
             {
                 questionsToAnswer &&
