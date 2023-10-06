@@ -10,8 +10,6 @@ import '../styles/quiz.css';
 
 const  userAnswers = [];
 
-// To Do ( remove duplicated code )
-
 const YesAnswer = () => {
 
     const questionRef = useRef(null);
@@ -29,9 +27,6 @@ const YesAnswer = () => {
         if(index === qa.yes.questions.length-1){
             setQuestionsAnswered(prev => !prev);
             setQuestionsToAnswer(prev => !prev);
-            console.log(userAnswers);
-
-
         } else {
             QuestionAnimations(questionRef, answersRef, setIndex);
         }
