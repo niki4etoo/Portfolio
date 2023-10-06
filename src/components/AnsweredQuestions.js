@@ -7,9 +7,9 @@ const AnsweredQuestions = (userAnswers) => {
         <>
             <div className="user-answer-title">Your answers</div>
             {
-                userAnswers.questions.map((q, k) => {
+                userAnswers.questions.map((a, k) => {
                     return (
-                        <div className="user-answer" key={k}>{k+1}.&nbsp;<span id="blue">{q}</span></div>
+                        <div className="user-answer" key={k}>{k+1}.&nbsp;<span id="blue">{a}</span></div>
                     )
                 })
             }
