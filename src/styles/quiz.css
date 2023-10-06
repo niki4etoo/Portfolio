@@ -13,6 +13,9 @@
 
     align-items: center;
     justify-content: center;
+
+    animation: quizAnimation 2s ease-in;
+
 }
 
 .quiz-question {
@@ -67,7 +70,7 @@
 
     font-size: 2em;
 
-    animation: answeredAnim 2s ease-in;
+    animation: answeredAnim 1s ease-in;
 }
 
 .message-success {
@@ -92,6 +95,17 @@
 
 #blue {
     color: blue;
+}
+
+@keyframes quizAnimation {
+    from {
+        opacity: 0;
+        transform: translate(-5% -5%);
+    }
+    to {
+        opacity: 1;
+        transform: translate(0 0);
+    }
 }
 
 @keyframes answeredAnim {

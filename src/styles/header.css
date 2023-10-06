@@ -5,6 +5,8 @@
     align-items: center;
 
     height: 80vh;
+
+    animation: portfolioIntroAnim 1s ease-in;
 }
 
 .header h1 {
@@ -105,6 +107,18 @@
 
 .answer-description {
     animation: answerDescAnimation 2s ease-in;
+}
+
+@keyframes portfolioIntroAnim {
+    from {
+        opacity: 0;
+        transform: rotate(90deg);
+    }
+
+    to {
+        opacity: 1;
+        transform: rotate(0);
+    }
 }
 
 @keyframes questionKeyframesEnter {
