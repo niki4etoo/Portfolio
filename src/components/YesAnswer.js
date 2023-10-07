@@ -38,7 +38,7 @@ const YesAnswer = () => {
             { questionsAnswered && 
                 <div className="answered">
                     <span className="message-success">You answered all the questions. Congratulations! You win a gum with a few coins!</span>
-                    <AnsweredQuestions questions={userAnswers} />
+                    <AnsweredQuestions questions={userAnswers} page="/yes" />
                 </div>
             }
             {
