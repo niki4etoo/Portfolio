@@ -17,7 +17,7 @@
 }
 
 #blue {
-    color: blue;
+    color: #DCE3FF;
 }
 
 
@@ -40,8 +40,6 @@
     animation: questionKeyframesEnter 0.5s ease-in;
 }
 
-
-
 .questions h1 {
     font-size: 3em;
     letter-spacing: 0.25em;
@@ -61,16 +59,16 @@
     justify-content: space-around;
 
     height: 30vh;
-    width: 100vw;
+    width: 80vw;
 
     animation: answerKeyframesEnter 1s ease-in;
 }
 
-.answers button {
-    background: none;
+.answer {
+    color: black;
 
-    border: 1px solid blue;
-    border-radius: 5px;
+    border-bottom: 2px solid #DCE3FF;
+    border-radius: 15px 5px;
 
     cursor: pointer;
 
@@ -78,12 +76,18 @@
     margin: 5px;
 
     font-size: 2em;
+    font-weight: 300;
     letter-spacing: 0.2em;
-    transition: 0.5s ease-in;
+    transition: 0.3s ease-in;
 }
 
-.answers button:hover {
-    transform: scale(0.95);
+.answer:hover, .answer:focus {
+    background-color: #fff8dc;
+    color: black;
+    border-bottom: 4px solid #DCE3FF;
+
+    transition: all 0.3s ease-in;
+    transform: scale(1.05);
 }
 
 .answersDescription {
@@ -100,14 +104,41 @@
 
 }
 
-.answer-description h1 {
-    color: blue;
-}
-
-
 .answer-description {
+    background-color: #DCE3FF;
+
+    border-radius: 20% 0%;
+
+    padding: 5%;
+
     animation: answerDescAnimation 2s ease-in;
 }
+
+.answer-description h1 {
+    color: blue;
+    margin: auto 10%;
+
+    font-weight: 500;
+}
+
+.answer-description h3 {
+    letter-spacing: 0.15em;
+    word-spacing: 0.2em;
+    font-weight: 400;
+    margin: 2% 5%;
+}
+
+.answer-description a {
+    margin: 2% 5%;
+    letter-spacing: 0.2em;
+    word-spacing: 0.25em;
+}
+
+.answer-description a:hover, a:focus {
+    color: rgb(161, 161, 255);
+    transition: color 0.3s ease-out;
+}
+
 
 @keyframes portfolioIntroAnim {
     from {
