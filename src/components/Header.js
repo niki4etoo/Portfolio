@@ -71,9 +71,9 @@ const Header = () => {
                 simplicityAnswers && 
 
                 <div className='answers'>
-                    <button onClick={() => showDescription("yes")}>Yes</button>
-                    <button onClick={() => showDescription("no")}>No</button>
-                    <button onClick={() => showDescription("itDepends")}>It depends</button>
+                    <div className='answer' onClick={() => showDescription("yes")}>Yes</div>
+                    <div className='answer' onClick={() => showDescription("no")}>No</div>
+                    <div className='answer' onClick={() => showDescription("itDepends")}>It depends</div>
                 </div>
             }
             <div className='answersDescription'>
