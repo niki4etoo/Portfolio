@@ -39,6 +39,7 @@ const YesAnswer = () => {
 
         result = [];
         qa.yes.questions[index].answers.forEach( (answer) => {
+                //To do(issue with answersRef ( adding elements with null ))
                 result.push(<div key={uuidv4()} ref={(e) => answersRef.current.push(e)} className="quiz-answer" onClick={() => handle(answer)}>
                     {answer}
                 </div>);
