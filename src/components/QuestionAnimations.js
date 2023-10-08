@@ -3,7 +3,7 @@ import gsap from 'gsap';
 const QuestionAnimations = (questionRef, answersRef, setIndex) => {
 
     const timeline = gsap.timeline();
-            
+
     timeline.to(questionRef.current, {
         y: -300,
         ease: "Power4.easeOut",

@@ -1,4 +1,6 @@
 import React, { useState, useRef } from "react";
+import { v4 as uuidv4 } from 'uuid';
+
 
 import Navigation from "./Navigation";
 import QuestionAnimations from "./QuestionAnimations";
@@ -32,6 +34,19 @@ const YesAnswer = () => {
         }
     }
 
+    let result = [];
+    const Answers = () => {
+
+        result = [];
+        qa.yes.questions[index].answers.forEach( (answer) => {
+                result.push(<div key={uuidv4()} ref={(e) => answersRef.current.push(e)} className="quiz-answer" onClick={() => handle(answer)}>
+                    {answer}
+                </div>);
+        });
+
+        return result;
+    }
+
     return (
         <>
         <Navigation />
@@ -50,22 +65,7 @@ const YesAnswer = () => {
                         </div>
 
                         <div className="quiz-answers">
-
-                            <div ref={(elem) => answersRef.current.push(elem)} className="quiz-answer" onClick={() => handle(qa.yes.questions[index].answers[0])}>
-                                {qa.yes.questions[index].answers[0]}
-                            </div>
-
-                            <div ref={(elem) => answersRef.current.push(elem)} className="quiz-answer" onClick={() => handle(qa.yes.questions[index].answers[1])}>
-                                {qa.yes.questions[index].answers[1]}
-                            </div>
-
-                            <div ref={(elem) => answersRef.current.push(elem)} className="quiz-answer" onClick={() => handle(qa.yes.questions[index].answers[2])}>
-                                {qa.yes.questions[index].answers[2]}
-                            </div>
-
-                            <div ref={(elem) => answersRef.current.push(elem)} className="quiz-answer" onClick={() => handle(qa.yes.questions[index].answers[3])}>
-                                {qa.yes.questions[index].answers[3]}
-                            </div>
+                            <Answers />
                         </div>
                     </div>
             }
