@@ -11,11 +11,13 @@ const QuestionAnimations = (questionRef, answersRef, setIndex) => {
     }).to([ answersRef.current[0], answersRef.current[1], answersRef.current[2] ], {
         opacity: 0,
         stagger: 0.25,
-        ease: "Power4.easeOut"
+        ease: "Power4.easeOut",
+        pointerEvents: "none",
     }).to(answersRef.current[3], {
         opacity: 0,
         stagger: 0.25,
         ease: "Power4.easeOut",
+        pointerEvents: "none",
         onComplete: () => {
             setIndex(index => index + 1);
         }
@@ -26,6 +28,7 @@ const QuestionAnimations = (questionRef, answersRef, setIndex) => {
         opacity: 1,
         stagger: 0.25,
         ease: "Power4.easeOut",
+        pointerEvents: "auto",
     });
 
 }

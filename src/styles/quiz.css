@@ -1,3 +1,7 @@
+#blue {
+    color: blue;
+}
+
 .container {
     display: flex;
     flex-direction: column;
@@ -107,6 +111,10 @@
     border-bottom-right-radius: 20px;
 }
 
+.answered .user-answer-times {
+    text-decoration: overline;
+}
+
 .answered .user-answer {
     display: flex;
 
@@ -116,9 +124,6 @@
     margin: auto 1vh;
 }
 
-#blue {
-    color: blue;
-}
 
 .answered .answer-list {
     margin: 30px;
