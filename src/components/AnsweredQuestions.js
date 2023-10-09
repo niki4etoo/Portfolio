@@ -6,14 +6,16 @@ import times from '../Decisions/answeredTimes.json';
 import '../styles/quiz.css';
 
 
-const AnsweredQuestions = (userAnswers, page) => {
+const AnsweredQuestions = (props) => {
+    console.log(props.questions.length);
+    console.log(props.questionsCount);
     return (
         <div className="answer-list">
             <div className="user-answer-title">Your answers</div>
-            <div className="user-answer-times">{times.list[0]}</div> {/* To Do: iterate over each string in the list */}
+            <div className="user-answer-times">{times.list[(props.questions.length / props.questionsCount) - 1]}</div>
             <ol className="roman">
                 {
-                    userAnswers.questions.map((a, k) => {
+                    props.questions.map((a, k) => {
                         return (
                             <li key={k}>&nbsp;{a}</li>
                         )
@@ -21,9 +23,9 @@ const AnsweredQuestions = (userAnswers, page) => {
                 }
             </ol>
             <div className="back-again">
-                <Link to={page}>Again?</Link>
+                <Link to={props.page}>Again?</Link>
             </div>
-            
+
         </div>
     );
 }

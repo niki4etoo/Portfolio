@@ -38,7 +38,7 @@ const ItDependsAnswer = () => {
             { questionsAnswered && 
                 <div className="answered">
                     <span className="message-success">You answered all the questions. Congratulations! You win a gum with a few coins!</span>
-                    <AnsweredQuestions questions={userAnswers} page="/itDepends" />
+                    <AnsweredQuestions questions={userAnswers} questionsCount={qa.depends.questions.length} page="/itDepends" />
                 </div> 
             }
             {

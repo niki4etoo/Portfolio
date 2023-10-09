@@ -38,7 +38,7 @@ const NoAnswer = () => {
             { questionsAnswered && 
                 <div className="answered">
                     <div className="message-success">You answered all the questions. Congratulations! You win a gum with a few coins!</div>
-                    <AnsweredQuestions questions={userAnswers} page="/no" />
+                    <AnsweredQuestions questions={userAnswers} questionsCount={qa.no.questions.length} page="/no" />
                 </div>
             }
             {
