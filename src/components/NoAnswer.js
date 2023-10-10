@@ -34,7 +34,7 @@ const NoAnswer = () => {
 
     return (
         <>
-        <Navigation />
+        <Navigation index={index} />
             { questionsAnswered && 
                 <div className="answered">
                     <div className="message-success">You answered all the questions. Congratulations! You win a gum with a few coins!</div>
