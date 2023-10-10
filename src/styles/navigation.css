@@ -1,9 +1,15 @@
 .nav {
     display: flex;
+
+    justify-content: flex-start;
+    align-items: center;
+
+    min-height: 10vh;
 }
 
-.nav-back {
-    margin: 5vh;
+.nav .nav-back {
+    display: flex;
+    margin: auto 5vh;
 }
 
 .nav-back a, a:visited, a:hover, a:any-link {
