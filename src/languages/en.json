@@ -1,0 +1,105 @@
+{
+    "header": {
+        "titleFirstPart": "Port",
+        "titleSecondPart": "folio",
+        "mainQuestionBegin": "Is",
+        "mainQuestionAccentWord": "simplicity",
+        "mainQuestionEnd": "important",
+        "mainAnswersYes": "Yes",
+        "mainAnswersNo": "No",
+        "mainAnswersItDepends": "It Depends"
+    },
+    "answers": {
+        "yes": {
+            "title": "Yes",
+            "description": "Simplicity is the most important thing in our life. It is easier to work, learn and earn."
+        },
+        "no": {
+            "title": "No",
+            "description": "Complex and complicated is the opposite of the simplicity. They are also as important as simplicity, because understading each of them, we can deepen the understanding about the simplicity."
+        },
+        "itDepends": {
+            "title": "It Depends",
+            "description": "Yes, there are different factors that make the simplicity to depend. One of the key factors is perceiving."
+        },
+        "learnMore": "Learn More"
+    },
+    "quiz": {
+        "yes": {
+            "questions": [
+                {
+                    "question": "How old are you?",
+                    "answers": [ "0 - 16", "17 - 25", "26 - 50", "50 - infinity" ]
+                },
+                {
+                    "question": "Why simplicity?",
+                    "answers": [ "Makes it easier", "Simplicity is simplicity", "Why not", "Something else ..."]
+                },
+                {
+                    "question": "Where are you from?",
+                    "answers": [ "Planet Earth", "Another universe", "You don't know", "Something else ..."]
+                },
+                {
+                    "question": "Why our Earth?",
+                    "answers": [ "The best place to live", "I have to learn", "To make better decisions", "something else ..."]
+                },
+                {
+                    "question": "How can I help you?",
+                    "answers": [ "You can't", "I can make it on my own", "there are better solutions", "do you think, is that worth it?" ]
+                }
+            ]
+        },
+        "no": {
+            "questions": [
+                {
+                    "question": "What is the scale of the complexity?",
+                    "answers": [ "There is no such thing", "Did you mean big O notation?", "See complexity analysis", "Something else ..."]
+                },
+                {
+                    "question": "Is there a difference between complex and complicated?",
+                    "answers":  [ "There is no difference", "Complex is ordered, complicated is not", "complex - system | complicated - woman", " See complexity analysis" ]
+                },
+                {
+                    "question": "Why not simplicity?",
+                    "answers":  [ "Everything is complex", "There is no such thing", "Everything is complicated", "Something else ..." ]
+                },
+                {
+                    "question": "Are you okay?",
+                    "answers":  [ "Yes, I am", "No, I am not", "Why?", "Something else ..." ]
+                }
+            ]
+        },
+        "depends": {
+            "questions": [
+                {
+                    "question": "Could you give me an example?",
+                    "answers": [ "It depends on the world", "It depends on me", "It doesn't matter", "Something else ..." ]
+                },
+                {
+                    "question": "Why dependency?",
+                    "answers": [ "The system that way is more interesting", "There is no dependancy", "WTF?", "Something not else ..."]
+                },
+                {
+                    "question": "Do you hesitate for something?",
+                    "answers": [ "I am firm", "There is no such thing", "I am confident", "May be" ]
+                }
+            ]
+        },
+        "messages": {
+            "success": "You answered all the questions. Congratulations! You win a gum with a few coins!"
+        }
+
+    },
+    "times": {
+        "list": [ "First Time", "Second Time", "Third Time", "I think this is enough", "Are you okay? Fifth time" ]
+    },
+    "stats": {
+        "yourAnswers": "Your answers",
+        "again": "Again?"
+    },
+    "navigation": {
+        "back": "Back",
+        "messageConfirmQuestion": "Are you sure? (This will reset your answers progress.)"
+    }
+
+}

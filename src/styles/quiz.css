@@ -9,6 +9,8 @@
 .quiz-container {
     display: flex;
 
+    width: 100vw;
+
     flex-direction: column;
 
     align-items: center;
@@ -35,7 +37,7 @@
 
 .quiz-answers {
     display: flex;
-
+    
     flex-direction: row;
 
     justify-content: space-around;
@@ -84,10 +86,18 @@
 }
 
 .answered .message-success {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+
     color: white;
     background-color: #003D04;
     border-radius: 5px 35px;
     padding: 2% 3%;
+
+    margin-top: 20%;
 }
 
 
@@ -122,7 +132,7 @@
 
 .answered .answer-list {
     margin: 30px;
-    width: 40vw;
+    min-width: 40vw;
 
     display: flex;
     flex-direction: column;

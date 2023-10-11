@@ -1,14 +1,19 @@
 import React, { useState, useRef } from "react";
 
 import Navigation from "./Navigation";
-
-import qa from '../Decisions/questionsAndAnswers.json';
 import QuestionAnimations from "./QuestionAnimations";
 import AnsweredQuestions from './AnsweredQuestions';
 
-import '../styles/quiz.css';
+import Messages from './Messages';
 
-const  userAnswers = [];
+//Languages
+import bg from '../languages/bg.json';
+import en from '../languages/en.json';
+
+import '../styles/quiz.css';
+import '../styles/togglelanguages.css';
+
+const userAnswers = [];
 
 const NoAnswer = () => {
 
@@ -24,7 +29,7 @@ const NoAnswer = () => {
     const handle = (answer) => {
         userAnswers.push(answer);
 
-        if(index === qa.no.questions.length-1){
+        if (index === en.quiz.no.questions.length - 1) {
             setQuestionsAnswered(prev => !prev);
             setQuestionsToAnswer(prev => !prev);
         } else {
@@ -32,43 +37,93 @@ const NoAnswer = () => {
         }
     }
 
+    //Languages ( BG | EN) //To Do (passing states from parent to children)
+
+    const [currentLanguage, setCurrentLanguage] = useState(false);
+
+    const changeLanguage = (e) => {
+        if (e.target.checked) {
+            setCurrentLanguage(prev => true); //Switched to EN
+        } else {
+            setCurrentLanguage(prev => false); //Switched to BG
+        }
+    }
+
+    const QuizContainer = (props) => {
+        if (props.lang) {
+            return <>
+                <div className="quiz-container">
+                    <div ref={questionRef} className="quiz-question">
+                        {en.quiz.no.questions[index].question}
+                    </div>
+
+                    <div className="quiz-answers">
+
+                        <div ref={(elem) => answersRef.current.push(elem)} className="quiz-answer" onClick={() => handle(en.quiz.no.questions[index].answers[0])}>
+                            {en.quiz.no.questions[index].answers[0]}
+                        </div>
+
+                        <div ref={(elem) => answersRef.current.push(elem)} className="quiz-answer" onClick={() => handle(en.quiz.no.questions[index].answers[1])}>
+                            {en.quiz.no.questions[index].answers[1]}
+                        </div>
+
+                        <div ref={(elem) => answersRef.current.push(elem)} className="quiz-answer" onClick={() => handle(en.quiz.no.questions[index].answers[2])}>
+                            {en.quiz.no.questions[index].answers[2]}
+                        </div>
+
+                        <div ref={(elem) => answersRef.current.push(elem)} className="quiz-answer" onClick={() => handle(en.quiz.no.questions[index].answers[3])}>
+                            {en.quiz.no.questions[index].answers[3]}
+                        </div>
+                    </div>
+                </div>
+            </>;
+        } else {
+            return <>
+                <div className="quiz-container">
+                    <div ref={questionRef} className="quiz-question">
+                        {bg.quiz.no.questions[index].question}
+                    </div>
+
+                    <div className="quiz-answers">
+
+                        <div ref={(elem) => answersRef.current.push(elem)} className="quiz-answer" onClick={() => handle(bg.quiz.no.questions[index].answers[0])}>
+                            {bg.quiz.no.questions[index].answers[0]}
+                        </div>
+
+                        <div ref={(elem) => answersRef.current.push(elem)} className="quiz-answer" onClick={() => handle(bg.quiz.no.questions[index].answers[1])}>
+                            {bg.quiz.no.questions[index].answers[1]}
+                        </div>
+
+                        <div ref={(elem) => answersRef.current.push(elem)} className="quiz-answer" onClick={() => handle(bg.quiz.no.questions[index].answers[2])}>
+                            {bg.quiz.no.questions[index].answers[2]}
+                        </div>
+
+                        <div ref={(elem) => answersRef.current.push(elem)} className="quiz-answer" onClick={() => handle(bg.quiz.no.questions[index].answers[3])}>
+                            {bg.quiz.no.questions[index].answers[3]}
+                        </div>
+                    </div>
+                </div>
+            </>;
+        }
+    }
+
     return (
         <>
-        <Navigation index={index} />
-            { questionsAnswered && 
+            <Navigation lang={currentLanguage} index={index} />
+            {questionsAnswered &&
                 <div className="answered">
-                    <div className="message-success">You answered all the questions. Congratulations! You win a gum with a few coins!</div>
-                    <AnsweredQuestions questions={userAnswers} questionsCount={qa.no.questions.length} page="/no" />
+                    <Messages success={true} lang={currentLanguage} />
+                    <AnsweredQuestions lang={currentLanguage} questions={userAnswers} questionsCount={en.quiz.no.questions.length} page="/no" />
                 </div>
             }
             {
                 questionsToAnswer &&
-                
-                    <div className="quiz-container">
-                        <div ref={questionRef} className="quiz-question">
-                            {qa.no.questions[index].question}
-                        </div>
-
-                        <div className="quiz-answers">
-
-                            <div ref={(elem) => answersRef.current.push(elem)} className="quiz-answer" onClick={() => handle(qa.no.questions[index].answers[0])}>
-                                {qa.no.questions[index].answers[0]}
-                            </div>
-
-                            <div ref={(elem) => answersRef.current.push(elem)} className="quiz-answer" onClick={() => handle(qa.no.questions[index].answers[1])}>
-                                {qa.no.questions[index].answers[1]}
-                            </div>
-
-                            <div ref={(elem) => answersRef.current.push(elem)} className="quiz-answer" onClick={() => handle(qa.no.questions[index].answers[2])}>
-                                {qa.no.questions[index].answers[2]}
-                            </div>
-
-                            <div ref={(elem) => answersRef.current.push(elem)} className="quiz-answer" onClick={() => handle(qa.no.questions[index].answers[3])}>
-                                {qa.no.questions[index].answers[3]}
-                            </div>
-                        </div>
-                    </div>
+                <QuizContainer lang={currentLanguage} />
             }
+            <label className="switch">
+                <input type="checkbox" onChange={(e) => changeLanguage(e)} />
+                <span className="slider round"></span>
+            </label>
         </>
     );
 }
