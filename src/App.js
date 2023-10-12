@@ -6,7 +6,7 @@ import Header from './components/Header';
 
 import YesAnswer from './components/YesAnswer';
 import NoAnswer from './components/NoAnswer';
-import ItDependsAnswer from './components/ItDependsAnswer';
+import DependsAnswer from './components/DependsAnswer';
 
 function App() {
 
@@ -18,7 +18,7 @@ function App() {
 				<Route path='/*' element={<Header />}></Route>
 				<Route path='/yes' element={<YesAnswer />}></Route>
 				<Route path='/no' element={<NoAnswer />}></Route>
-        <Route path='/itDepends' element={<ItDependsAnswer />}></Route>
+        <Route path='/depends' element={<DependsAnswer />}></Route>
 			</Routes>
     </>
   );

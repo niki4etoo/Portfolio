@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 import Navigation from "./Navigation";
-import QuizContainer from './QuizContainer';
+import QuizContainer, { userAnswers } from "./QuizContainer";
 import AnsweredQuestions from './AnsweredQuestions';
 
 import Messages from './Messages';
@@ -12,9 +12,7 @@ import en from '../languages/en.json';
 import '../styles/quiz.css';
 import '../styles/togglelanguages.css';
 
-const userAnswers = [];
-
-const NoAnswer = () => {
+const DependsAnswer = () => {
 
     const [index, setIndex] = useState(0);
 
@@ -39,7 +37,7 @@ const NoAnswer = () => {
             {questionsAnswered &&
                 <div className="answered">
                     <Messages success={true} lang={currentLanguage} />
-                    <AnsweredQuestions lang={currentLanguage} questions={userAnswers} questionsCount={en.quiz.no.questions.length} page="/no" />
+                    <AnsweredQuestions lang={currentLanguage} questions={userAnswers} questionsCount={en.quiz.depends.questions.length} page="/depends" />
                 </div>
             }
             {
@@ -48,7 +46,7 @@ const NoAnswer = () => {
                     setQuestionsToAnswer={setQuestionsToAnswer} questionsToAnswer={questionsToAnswer}
                     setQuestionsAnswered={setQuestionsAnswered} questionsAnswered={questionsAnswered}
                     setIndex={setIndex} index={index}
-                    type="no" lang={currentLanguage} />
+                    type="depends" lang={currentLanguage} />
             }
             <label className="switch">
                 <input type="checkbox" onChange={(e) => changeLanguage(e)} />
@@ -58,4 +56,4 @@ const NoAnswer = () => {
     );
 }
 
-export default NoAnswer;
+export default DependsAnswer;
