@@ -27,7 +27,7 @@ const AnsweredQuestions = (props) => {
                         }
                     </ol>
                     <div className="back-again">
-                        <Link to={props.page}>{en.stats.again}</Link>
+                        <Link to={props.page} state={{ lang: props.lang }}>{en.stats.again}</Link>
                     </div>
                 </div>
             </>
@@ -48,7 +48,7 @@ const AnsweredQuestions = (props) => {
                         }
                     </ol>
                     <div className="back-again">
-                        <Link to={props.page}>{bg.stats.again}</Link>
+                        <Link to={props.page} state={{ lang: props.lang }}>{bg.stats.again}</Link>
                     </div>
                 </div>
             </>

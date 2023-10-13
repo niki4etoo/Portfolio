@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useLocation } from "react-router-dom";
 
 import Navigation from "../Navigation/Navigation";
 import QuizContainer, { userAnswers } from "./QuizContainer";
@@ -11,7 +12,8 @@ import en from '../../languages/en.json';
 
 import '../../styles/quiz.css';
 import '../../styles/togglelanguages.css';
-import { useLocation } from "react-router-dom";
+
+
 
 const DependsAnswer = () => {
 
@@ -36,20 +38,25 @@ const DependsAnswer = () => {
 
     return (
         <>
-            <Navigation confirm={true} lang={currentLanguage} index={index} />
             {questionsAnswered &&
-                <div className="answered">
-                    <Messages success={true} lang={currentLanguage} />
-                    <AnsweredQuestions lang={currentLanguage} questions={userAnswers} questionsCount={en.quiz.depends.questions.length} page="/depends" />
-                </div>
+                <>
+                    <Navigation userAnswers={userAnswers} confirm={false} lang={currentLanguage} index={index} />
+                    <div className="answered">
+                        <Messages success={true} lang={currentLanguage} />
+                        <AnsweredQuestions lang={currentLanguage} questions={userAnswers} questionsCount={en.quiz.depends.questions.length} page="/depends" />
+                    </div>
+                </>
             }
             {
                 questionsToAnswer &&
-                <QuizContainer 
-                    setQuestionsToAnswer={setQuestionsToAnswer} questionsToAnswer={questionsToAnswer}
-                    setQuestionsAnswered={setQuestionsAnswered} questionsAnswered={questionsAnswered}
-                    setIndex={setIndex} index={index}
-                    type="depends" lang={currentLanguage} />
+                <>
+                    <Navigation userAnswers={userAnswers} confirm={true} lang={currentLanguage} index={index} />
+                    <QuizContainer
+                        setQuestionsToAnswer={setQuestionsToAnswer} questionsToAnswer={questionsToAnswer}
+                        setQuestionsAnswered={setQuestionsAnswered} questionsAnswered={questionsAnswered}
+                        setIndex={setIndex} index={index}
+                        type="depends" lang={currentLanguage} />
+                </>
             }
             <label className="switch">
                 <input type="checkbox" onChange={(e) => changeLanguage(e)} checked={currentLanguage} />

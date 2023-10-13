@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 import Navigation from "../Navigation/Navigation";
-import QuizContainer from "./QuizContainer";
+import QuizContainer, { userAnswers } from "./QuizContainer";
 import AnsweredQuestions from './AnsweredQuestions';
 
 import Messages from './Messages';
@@ -12,8 +12,6 @@ import en from '../../languages/en.json';
 import '../../styles/quiz.css';
 import '../../styles/togglelanguages.css';
 import { useLocation } from "react-router-dom";
-
-const userAnswers = [];
 
 const YesAnswer = () => {
 
@@ -38,20 +36,26 @@ const YesAnswer = () => {
 
     return (
         <>
-            <Navigation confirm={true} lang={currentLanguage} index={index} />
+
             {questionsAnswered &&
-                <div className="answered">
-                    <Messages success={true} lang={currentLanguage} />
-                    <AnsweredQuestions lang={currentLanguage} questions={userAnswers} questionsCount={en.quiz.yes.questions.length} page="/yes" />
-                </div>
+                <>
+                    <Navigation confirm={false} lang={currentLanguage} index={index} />
+                    <div className="answered">
+                        <Messages success={true} lang={currentLanguage} />
+                        <AnsweredQuestions lang={currentLanguage} questions={userAnswers} questionsCount={en.quiz.yes.questions.length} page="/yes" />
+                    </div>
+                </>
             }
             {
                 questionsToAnswer &&
-                <QuizContainer 
-                    setQuestionsToAnswer={setQuestionsToAnswer} questionsToAnswer={questionsToAnswer}
-                    setQuestionsAnswered={setQuestionsAnswered} questionsAnswered={questionsAnswered}
-                    setIndex={setIndex} index={index}
-                    type="yes" lang={currentLanguage} />
+                <>
+                    <Navigation confirm={true} userAnswers={userAnswers} lang={currentLanguage} index={index} />
+                    <QuizContainer
+                        setQuestionsToAnswer={setQuestionsToAnswer} questionsToAnswer={questionsToAnswer}
+                        setQuestionsAnswered={setQuestionsAnswered} questionsAnswered={questionsAnswered}
+                        setIndex={setIndex} index={index}
+                        type="yes" lang={currentLanguage} />
+                </>
             }
             <label className="switch">
                 <input type="checkbox" onChange={(e) => changeLanguage(e)} checked={currentLanguage} />

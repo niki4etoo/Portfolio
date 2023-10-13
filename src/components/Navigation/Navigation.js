@@ -27,9 +27,10 @@ const Navigation = (props) => {
                 message = bg.navigation.messageConfirmQuestion;
             }
 
-
             if (!window.confirm(message)) {
                 e.preventDefault();
+            } else {
+                props.userAnswers = []; // reset user answers
             }
         }
     }
