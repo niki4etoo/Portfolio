@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useLocation } from "react-router-dom";
 
 import Navigation from "./Navigation/Navigation";
 import Menu from './Menu';
@@ -6,7 +7,12 @@ import Menu from './Menu';
 //Languages
 import bg from '../languages/bg.json';
 import en from '../languages/en.json';
-import { useLocation } from "react-router-dom";
+
+// styles
+import '../styles/about.css';
+
+// images
+import profileQuestion from '../images/profile.png';
 
 const About = () => {
 
@@ -30,7 +36,17 @@ const About = () => {
     return (
         <>
             <Navigation lang={currentLanguage} />
-            <div className="About"><h1>{l.about.title}</h1></div>
+            <div className="container-about">
+                <div className="about"><h1>{l.about.title}</h1></div>
+                <section>
+                    <figure>
+                        <img src={profileQuestion} width={200} height={200} alt="Profile"/>
+                    </figure>
+                </section>
+                <section>
+                    <p>{l.about.intro}</p>
+                </section>
+            </div>
             <Menu lang={currentLanguage} />
             <label className="switch">
                 <input type="checkbox" onChange={(e) => changeLanguage(e)} checked={currentLanguage} />

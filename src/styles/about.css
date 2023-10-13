@@ -1,0 +1,45 @@
+.container-about {
+    width: 100vw;
+    min-height: 80vh;
+}
+
+.about {
+    display: flex;
+
+    justify-content: center;
+    align-items: flex-start;
+
+    font-size: 1.5rem;
+    letter-spacing: 0.2rem;
+}
+
+section {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    margin: 5vh auto;
+
+}
+
+img {
+    border: 1px solid blue;
+    border-radius: 50%;
+    transition: all 0.5s ease-in-out;
+}
+
+img:hover, img:focus-visible {
+    border: 1px solid skyblue;
+    transform: scale(1.1);
+    transition: all 0.5s ease-in-out;
+
+    cursor: pointer;
+}
+
+section p {
+    font-size: 1.2rem;
+
+    letter-spacing: 0.05rem;
+    word-spacing: 0.2rem;
+}

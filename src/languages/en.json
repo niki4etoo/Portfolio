@@ -98,7 +98,8 @@
         "again": "Again?"
     },
     "about": {
-        "title": "About Me"
+        "title": "About Me",
+        "intro": "My name is Nikolai. I was born on Earth. I love to code."
     },
     "contacts": {
         "title": "Contacts"

@@ -11,7 +11,7 @@
 
 .header h1 {
     font-size: 4em;
-    letter-spacing: 0.50em;
+    letter-spacing: 0.5em;
     transition: 1.5s ease;
     cursor: pointer;
 }
@@ -122,8 +122,8 @@
 }
 
 .answer-description h3 {
-    letter-spacing: 0.15em;
-    word-spacing: 0.2em;
+    letter-spacing: 0.05em;
+    word-spacing: 0.15em;
     font-weight: 400;
     margin: 2% 5%;
 }
