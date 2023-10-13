@@ -1,21 +1,25 @@
 import React, { useState, useRef } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { gsap } from 'gsap';
-import '../styles/header.css';
+import '../styles/intro.css';
 import '../styles/togglelanguages.css';
+
+import Menu from './Menu';
 
 //Languages
 import bg from '../languages/bg.json';
 import en from '../languages/en.json';
 
 
-const Header = () => {
+const Intro = () => {
 
     const portfolioRef = useRef(null);
 
+    let { state } = useLocation(); // using language set by user
+
     //Languages ( BG | EN)
 
-    const [currentLanguage, setCurrentLanguage] = useState(false);
+    const [currentLanguage, setCurrentLanguage] = useState(state?.lang);
 
     const changeLanguage = (e) => {
         if (e.target.checked) {
@@ -72,21 +76,21 @@ const Header = () => {
                 result = <div className='answer-description'>
                     <h1>{l.answers.yes.title}</h1>
                     <h3>{l.answers.yes.description}</h3>
-                    <Link to='/yes'>{l.answers.learnMore}</Link>
+                    <Link to='/yes' state={{ lang: props.lang }}>{l.answers.learnMore}</Link>
                 </div>;
                 break;
             case "no":
                 result = <div className='answer-description'>
                     <h1>{l.answers.no.title}</h1>
                     <h3>{l.answers.no.description}</h3>
-                    <Link to='/no'>{l.answers.learnMore}</Link>
+                    <Link to='/no' state={{ lang: props.lang }}>{l.answers.learnMore}</Link>
                 </div>;
                 break;
             case "depends":
                 result = <div className='answer-description'>
                     <h1>{l.answers.itDepends.title}</h1>
                     <h3>{l.answers.itDepends.description}</h3>
-                    <Link to='/depends'>{l.answers.learnMore}</Link>
+                    <Link to='/depends' state={{ lang: props.lang }}>{l.answers.learnMore}</Link>
                 </div>;
                 break;
             default:
@@ -174,14 +178,14 @@ const Header = () => {
                     <AnswerDescriptions type="depends" lang={currentLanguage} />
                 }
             </div>
+            <Menu lang={currentLanguage} />
             <label className="switch">
-                <input type="checkbox" onChange={(e) => changeLanguage(e)} />
+                <input type="checkbox" onChange={(e) => changeLanguage(e)} checked={currentLanguage} />
                 <span className="slider round"></span>
             </label>
-
         </div>
 
     );
 }
 
-export default Header;
+export default Intro;

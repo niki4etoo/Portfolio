@@ -1,8 +1,8 @@
 import React from "react";
 
 //Languages
-import bg from '../languages/bg.json';
-import en from '../languages/en.json';
+import bg from '../../languages/bg.json';
+import en from '../../languages/en.json';
 
 const Messages = (props) => {
     if(props.success){

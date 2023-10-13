@@ -95,8 +95,20 @@
         "yourAnswers": "Вашите отговори",
         "again": "Отново?"
     },
+    "about": {
+        "title": "За Мен"
+    },
+    "contacts": {
+        "title": "Контакти"
+    },
     "navigation": {
         "back": "Назад",
-        "messageConfirmQuestion": "Сигурни ли сте? (Това ще анулира вашите отговори)"
+        "messageConfirmQuestion": "Сигурни ли сте? (Това ще анулира вашите отговори)",
+        "contacts": "Контакти"
+    },
+    "menu": {
+        "about": "За Мен",
+        "intro": "Въведение",
+        "contacts": "Контакти"
     }
 }

@@ -97,9 +97,20 @@
         "yourAnswers": "Your answers",
         "again": "Again?"
     },
+    "about": {
+        "title": "About Me"
+    },
+    "contacts": {
+        "title": "Contacts"
+    },
     "navigation": {
         "back": "Back",
-        "messageConfirmQuestion": "Are you sure? (This will reset your answers progress.)"
+        "messageConfirmQuestion": "Are you sure? (This will reset your answers progress.)",
+        "contacts": "Contacts"
+    },
+    "menu": {
+        "about": "About",
+        "intro": "Intro",
+        "contacts": "Contacts"
     }
-
 }

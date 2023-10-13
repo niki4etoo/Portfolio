@@ -1,0 +1,17 @@
+.menu {
+    list-style-type: none;
+
+    display: flex;
+
+    justify-content: space-evenly;
+    align-items: center;
+
+
+    width: 30vw;
+    height: 5vh;
+
+    position: fixed;
+    bottom: 1vh;
+    left: 1vw;
+
+}

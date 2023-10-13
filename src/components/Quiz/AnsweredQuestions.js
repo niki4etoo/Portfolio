@@ -2,11 +2,11 @@ import React from "react";
 import { Link } from 'react-router-dom';
 
 //Languages
-import bg from '../languages/bg.json';
-import en from '../languages/en.json';
+import bg from '../../languages/bg.json';
+import en from '../../languages/en.json';
 
-import '../styles/quiz.css';
-import '../styles/togglelanguages.css';
+import '../../styles/quiz.css';
+import '../../styles/togglelanguages.css';
 
 
 const AnsweredQuestions = (props) => {

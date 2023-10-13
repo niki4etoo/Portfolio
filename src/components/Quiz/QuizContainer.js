@@ -1,10 +1,10 @@
 import React, { useRef } from "react";
 
-import QuestionAnimations from "./QuestionAnimations";
+import QuestionAnimations from "./Animations/QuestionAnimations";
 
 //Languages
-import bg from '../languages/bg.json';
-import en from '../languages/en.json';
+import bg from '../../languages/bg.json';
+import en from '../../languages/en.json';
 
 export const userAnswers = [];
 
