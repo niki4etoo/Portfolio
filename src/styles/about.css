@@ -37,9 +37,40 @@ img:hover, img:focus-visible {
     cursor: pointer;
 }
 
-section p {
+.intro p {
     font-size: 1.2rem;
 
     letter-spacing: 0.05rem;
     word-spacing: 0.2rem;
+}
+
+.tech-stack {
+    display: flex;
+
+    flex-flow: column nowrap;
+
+    justify-content: center;
+    align-items: flex-start;
+
+    margin: 5vh 5vh;
+
+    min-height: 60vh;
+}
+
+.tech-stack h1 {
+    font-size: 2rem;
+    letter-spacing: 0.2rem;
+}
+
+.tech-stack h2 {
+    font-size: 1.5rem;
+    letter-spacing: 0.15rem;
+    margin: 1vh 3vw;
+}
+
+.tech-stack ul {
+    margin: 1vh 5vw;
+    list-style-type: upper-roman;
+    font-size: 1.2rem;
+    letter-spacing: 0.1rem;
 }

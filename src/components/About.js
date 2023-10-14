@@ -38,13 +38,28 @@ const About = () => {
             <Navigation lang={currentLanguage} />
             <div className="container-about">
                 <div className="about"><h1>{l.about.title}</h1></div>
-                <section>
+                <section className="profile">
                     <figure>
                         <img src={profileQuestion} width={200} height={200} alt="Profile"/>
                     </figure>
                 </section>
-                <section>
+                <section className="intro">
                     <p>{l.about.intro}</p>
+                </section>
+                <section className="tech-stack">
+                    <h1>{l.about.techStack}</h1>
+                    <h2>{l.about.tech.used}</h2>
+                    <ul>
+                        <li>{l.about.tech.js}</li>
+                        <li>{l.about.tech.html_css}</li>
+                        <li>{l.about.tech.react}</li>
+                    </ul>
+                    <h2>{l.about.tech.learning}</h2>
+                    <ul>
+                        <li>{l.about.tech.gsap}</li>
+                        <li>{l.about.tech.reactSpring}</li>
+                        <li>{l.about.tech.node}</li>
+                    </ul>
                 </section>
             </div>
             <Menu lang={currentLanguage} />
