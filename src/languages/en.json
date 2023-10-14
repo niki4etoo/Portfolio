@@ -179,7 +179,17 @@
     },
     "contacts": {
         "title": "Contacts",
-        "send": "Send"
+        "form": {
+            "buttons": {
+                "send": "Send",
+                "reset": "Reset"
+            },
+            "placeholders": {
+                "name": "Your Name",
+                "mail": "Your Email Address",
+                "message": "Type your Message Here ..."
+            }
+        }
     },
     "navigation": {
         "back": "Back",
