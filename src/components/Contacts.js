@@ -11,9 +11,9 @@ import Menu from "./Menu";
 //Styles
 import '../styles/contacts.css';
 
-const Contacts = () => {
-    //Languages ( BG | EN)
+const Contacts = (props) => {
 
+    //Languages ( BG | EN)
     const { state } = useLocation();
 
     const [currentLanguage, setCurrentLanguage] = useState(state?.lang);
@@ -29,30 +29,49 @@ const Contacts = () => {
     let l = {};
     (currentLanguage) ? l = en : l = bg;
 
+    const [ form, setForm ] = useState({
+        name: "",
+        mail: "",
+        message: "",
+    });
+
+    const handleChange = (e) => {
+        const val = e.target.value;
+        setForm({...form,
+            [e.target.name]: val});
+    }
+
+    const handleSubmit = () => {
+        console.log("Name: ", form.name);
+        console.log("Mail: ", form.mail);
+        console.log("Message: ", form.message); // to do (send to server)
+
+    }
+
     return (
         <>
             <Navigation lang={currentLanguage} />
             <div className="contacts-container">
                 <div className="contacts"><h1>{l.contacts.title}</h1></div>
                 <div className="contacts-form">
-                    <form id="contact">
+                    <form id="contact" onSubmit={handleSubmit}>
                         <div className="contacts-input">
                             <fieldset className="contacts-item">
-                                <input placeholder={l.contacts.form.placeholders.name} type="text" tabIndex="1" />
+                                <input placeholder={l.contacts.form.placeholders.name} id="name" name="name" value={form.name} type="text" tabIndex="1" onChange={handleChange} />
                             </fieldset>
                             <fieldset className="contacts-item">
-                                <input placeholder={l.contacts.form.placeholders.mail} type="email" tabIndex="2" />
+                                <input placeholder={l.contacts.form.placeholders.mail} name="mail" value={form.mail} type="email" tabIndex="2" onChange={handleChange} />
                             </fieldset>
                         </div>
                         <fieldset className="contacts-item">
-                            <textarea placeholder={l.contacts.form.placeholders.message} tabIndex="5"></textarea>
+                            <textarea placeholder={l.contacts.form.placeholders.message} name="message" value={form.message} tabIndex="3" onChange={handleChange}></textarea>
                         </fieldset>
                         <div className="contacts-buttons">
                             <fieldset className="contacts-item">
                                 <button name="reset" type="reset" id="contact-reset">{l.contacts.form.buttons.reset}</button>
                             </fieldset>
                             <fieldset className="contacts-item">
-                                <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">{l.contacts.form.buttons.send}</button>
+                                <button type="submit" id="contact-submit" onClick={handleSubmit}>{l.contacts.form.buttons.send}</button>
                             </fieldset>
                         </div>
                     </form>
