@@ -164,7 +164,7 @@
     },
     "about": {
         "title": "About Me",
-        "intro": "My name is Nikolai. I was born on Earth. I love to code.",
+        "intro": "My name is Nikolai. I was born on Earth. I love to write code.",
         "techStack": "Technology Stack",
         "tech": {
             "used": "Using now",
