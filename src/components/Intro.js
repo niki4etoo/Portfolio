@@ -19,7 +19,7 @@ const Intro = () => {
 
     //Languages ( BG | EN)
 
-    const [currentLanguage, setCurrentLanguage] = useState(state?.lang);
+    const [currentLanguage, setCurrentLanguage] = useState(state?.lang || false);
 
     const changeLanguage = (e) => {
         if (e.target.checked) {

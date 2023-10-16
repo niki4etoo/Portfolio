@@ -20,7 +20,7 @@ const About = () => {
 
     //Languages ( BG | EN)
 
-    const [currentLanguage, setCurrentLanguage] = useState(state?.lang);
+    const [currentLanguage, setCurrentLanguage] = useState(state?.lang || false);
 
     const changeLanguage = (e) => {
         if (e.target.checked) {
@@ -40,7 +40,7 @@ const About = () => {
                 <div className="about"><h1>{l.about.title}</h1></div>
                 <section className="profile">
                     <figure>
-                        <img src={profileQuestion} width={200} height={200} alt="Profile"/>
+                        <a href="https://github.com/niki4etoo/"><img src={profileQuestion} width={200} height={200} alt="Profile"/></a>
                     </figure>
                 </section>
                 <section className="intro">

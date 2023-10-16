@@ -26,7 +26,7 @@ const DependsAnswer = () => {
 
     //Languages ( BG | EN)
 
-    const [currentLanguage, setCurrentLanguage] = useState(state?.lang); // setting language by last user selection
+    const [currentLanguage, setCurrentLanguage] = useState(state?.lang || false); // setting language by last user selection
 
     const changeLanguage = (e) => {
         if (e.target.checked) {

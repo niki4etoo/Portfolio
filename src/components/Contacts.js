@@ -16,7 +16,7 @@ const Contacts = (props) => {
     //Languages ( BG | EN)
     const { state } = useLocation();
 
-    const [currentLanguage, setCurrentLanguage] = useState(state?.lang);
+    const [currentLanguage, setCurrentLanguage] = useState(state?.lang || false);
 
     const changeLanguage = (e) => {
         if (e.target.checked) {
