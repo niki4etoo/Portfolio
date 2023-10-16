@@ -1,0 +1,22 @@
+{
+    "questions": {
+        "category": {
+            "title": "Категория",
+            "technical": "Технически",
+            "personal": "Лични",
+            "work": "Работа",
+            "entertainment": "Развлечение"
+        },
+        "difficulty": "Трудност",
+        "options": "Опции",
+        "select": {
+            "easy": "Лесно",
+            "medium": "Средно",
+            "hard": "Трудно"
+        },
+        "buttons": {
+            "status": "статус",
+            "start": "започни"
+        }
+    }
+}

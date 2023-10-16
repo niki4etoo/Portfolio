@@ -1,3 +1,10 @@
+:root {
+    /* BORDERS */
+    --BORDER-RADIUS: 30px;
+    --BORDER: 1px solid blue;
+    /*  */
+}
+
 .container__questions {
     display: grid;
 
@@ -7,6 +14,8 @@
     gap: 2vh;
 
     padding: 3vh;
+
+    font-size: 1.5rem;
 
 }
 
@@ -23,7 +32,7 @@
 
 .cell__questions.header__questions {
 
-    font-size: 1.5rem;
+    font-size: 2.25rem;
     font-weight: bold;
     letter-spacing: 0.15rem;
 
@@ -31,18 +40,44 @@
     color: whitesmoke;
 }
 
+
 .cell__questions.header__questions:first-child {
-    border-top-left-radius: 30px;
+    border-top-left-radius: var(--BORDER-RADIUS);
 }
 
 .cell__questions.header__questions:nth-child(3) {
-    border-top-right-radius: 30px;
+    border-top-right-radius: var(--BORDER-RADIUS);
 }
 
 .cell__questions:last-child {
-    border-bottom-right-radius: 30px;
+    border-bottom-right-radius: var(--BORDER-RADIUS);
 }
 
 .cell__questions:nth-last-child(3) {
-    border-bottom-left-radius: 30px;
+    border-bottom-left-radius: var(--BORDER-RADIUS);
+}
+
+/** || FORMS */
+
+.difficulty {
+    padding: 10px;
+    background-color: aliceblue;
+
+    font-size: 1.2rem;
+
+    border: var(--BORDER);
+
+    width: 50%;
+}
+
+.buttons {
+    margin: auto 5%;
+
+    font-size: 1.2rem;
+
+    cursor: pointer;
+
+    padding: 10px;
+    border: var(--BORDER);
+    background-color: aliceblue;
 }

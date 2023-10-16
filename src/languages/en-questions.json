@@ -1,0 +1,22 @@
+{
+    "questions": {
+        "category": {
+            "title": "Category",
+            "technical": "Technical",
+            "personal": "Personal",
+            "work": "Work",
+            "entertainment": "Entertainment"
+        },
+        "difficulty": "Difficulty",
+        "options": "Options",
+        "select": {
+            "easy": "Easy",
+            "medium": "Medium",
+            "hard": "Hard"
+        },
+        "buttons": {
+            "status": "status",
+            "start": "start"
+        }
+    }
+}
