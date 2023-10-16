@@ -19,6 +19,7 @@ const Menu = (props) => {
                 <li><Link to='/About' state={{ lang: props.lang }}>{l.menu.about}</Link></li>
                 <li><Link to='/' state={{ lang: props.lang }}>{l.menu.intro}</Link></li>
                 <li><Link to='/Contacts' state={{ lang: props.lang }}>{l.menu.contacts}</Link></li>
+                <li><Link to='/Questions' state={{ lang: props.lang }}>{l.menu.questions}</Link></li>
             </ul>
         </>
     );

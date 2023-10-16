@@ -199,6 +199,7 @@
     "menu": {
         "about": "About",
         "intro": "Intro",
-        "contacts": "Contacts"
+        "contacts": "Contacts",
+        "questions": "Questions"
     }
 }

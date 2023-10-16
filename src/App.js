@@ -7,6 +7,7 @@ import Intro from './components/Intro';
 // About & Contacts
 import About from './components/About';
 import Contacts from './components/Contacts';
+import Questions from './components/Questions';
 
 // Quiz 
 import YesAnswer from './components/Quiz/YesAnswer';
@@ -25,6 +26,7 @@ function App() {
 				<Route path='/*' element={<Intro />}></Route>
         <Route path='/about' element={<About />}></Route>
         <Route path='/contacts' element={<Contacts />}></Route>
+        <Route path='/questions' element={<Questions />}></Route>
 
 				<Route path='/yes' element={<YesAnswer />}></Route>
 				<Route path='/no' element={<NoAnswer />}></Route>
