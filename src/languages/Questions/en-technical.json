@@ -1,0 +1,30 @@
+{
+    "category": "Category",
+    "title": "Technical Questions",
+    "difficulty": "Difficulty",
+    "difficultyOptions": {
+        "easy": "Easy",
+        "medium": "Medium",
+        "hard": "Hard"
+    },
+    "questions": {
+        "easy": [
+            { "question": "", "answers": [ "", "", "" ]},
+            { "question": "", "answers": [ "", "", "" ]},
+            { "question": "", "answers": [ "", "", "" ]},
+            { "question": "", "answers": [ "", "", "" ]}
+        ],
+        "medium": [
+            { "question": "", "answers": [ "", "", "" ]},
+            { "question": "", "answers": [ "", "", "" ]},
+            { "question": "", "answers": [ "", "", "" ]},
+            { "question": "", "answers": [ "", "", "" ]}
+        ],
+        "hard": [
+            { "question": "", "answers": [ "", "", "" ]},
+            { "question": "", "answers": [ "", "", "" ]},
+            { "question": "", "answers": [ "", "", "" ]},
+            { "question": "", "answers": [ "", "", "" ]}
+        ]
+    }
+}
