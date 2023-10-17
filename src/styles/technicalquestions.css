@@ -1,0 +1,5 @@
+.technical__questions.container {
+    display: flex;
+
+    margin: auto 5vw;
+}

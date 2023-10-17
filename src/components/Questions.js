@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 //Languages
 
@@ -22,22 +22,41 @@ const Questions = (props) => {
     const changeLanguage = (e) => {
         if (e.target.checked) {
             setCurrentLanguage(prev => true); //Switched to EN
-            console.log("1. Current language: ", currentLanguage);
         } else {
             setCurrentLanguage(prev => false); //Switched to BG
-            console.log("1. Current language: ", currentLanguage);
         }
     }
 
     let l = {};
     (currentLanguage) ? l = en : l = bg;
+
+
+    const [difficulty, setDifficulty] = useState([
+        { category: "technical", option: "Easy" },
+        { category: "personal", option: "Easy" },
+        { category: "work", option: "Easy" },
+        { category: "entertainment", option: "Easy" },
+    ]
+    ); // Default is easy
+
     const Difficulty = (props) => {
         let l = {};
         (props.lang) ? l = en : l = bg;
 
+        const handleSelectedOption = (e) => {
+            difficulty.map((val) => {
+                if(val.category === props.category){
+                    val.option = e.target.options[e.target.options.selectedIndex].value; // update the option of the specified category
+                }
+                return val.option;
+            });
+
+            setDifficulty(difficulty);
+        }
+
         return (
             <>
-                <select name="difficulty" className="difficulty">
+                <select name="difficulty" className="difficulty" onChange={handleSelectedOption}>
                     <option value="Easy">{l.questions.select.easy}</option>
                     <option value="Medium">{l.questions.select.medium}</option>
                     <option value="Hard">{l.questions.select.hard}</option>
@@ -45,19 +64,39 @@ const Questions = (props) => {
             </>
         );
     }
-    
+
+    const navigate = useNavigate();
+
     const Buttons = (props) => {
         let l = {};
         (props.lang) ? l = en : l = bg;
-    
+
+        const handleStatus = () => {
+            //to do
+        }
+
+        const handleStart = () => {
+            console.log("Start with: ", difficulty);
+
+            let choice = difficulty.find( val => {
+                if(val.category === props.category){ //compare selection input category with button category
+                    return val.option;
+                }
+                return null;
+            });
+
+            console.log(choice);
+            navigate(`/questions/${props.category}/`, { state: { difficulty: choice, lang: currentLanguage } });
+        }
+
         return (
             <>
-                <button className="buttons" type="button">{l.questions.buttons.status}</button>
-                <button className="buttons" type="button">{l.questions.buttons.start}</button>
+                <button className="buttons" type="button" onClick={handleStatus}>{l.questions.buttons.status}</button>
+                <button className="buttons" type="button" onClick={handleStart}>{l.questions.buttons.start}</button>
             </>
         );
     }
-    
+
 
     return (
         <>
@@ -70,23 +109,23 @@ const Questions = (props) => {
 
                     {/* Technical questions about the stack */}
                     <div className="cell__questions">{l.questions.category.technical}</div>
-                    <div className="cell__questions"><Difficulty lang={currentLanguage} /></div>
-                    <div className="cell__questions"><Buttons lang={currentLanguage} /></div>
+                    <div className="cell__questions"><Difficulty category={"technical"} lang={currentLanguage} /></div>
+                    <div className="cell__questions"><Buttons category={"technical"} lang={currentLanguage} /></div>
 
                     {/* Personal questions about self-aware and purpose driven */}
                     <div className="cell__questions">{l.questions.category.personal}</div>
-                    <div className="cell__questions"><Difficulty lang={currentLanguage} /></div>
-                    <div className="cell__questions"><Buttons lang={currentLanguage} /></div>
+                    <div className="cell__questions"><Difficulty category={"personal"} lang={currentLanguage} /></div>
+                    <div className="cell__questions"><Buttons category={"personal"} lang={currentLanguage} /></div>
 
                     {/* Work questions about purpose, time, money */}
                     <div className="cell__questions">{l.questions.category.work}</div>
-                    <div className="cell__questions"><Difficulty lang={currentLanguage} /></div>
-                    <div className="cell__questions"><Buttons lang={currentLanguage} /></div>
+                    <div className="cell__questions"><Difficulty category={"work"} lang={currentLanguage} /></div>
+                    <div className="cell__questions"><Buttons category={"work"} lang={currentLanguage} /></div>
 
                     {/* Entertainment questions about fun, chill-out and better understanding */}
                     <div className="cell__questions">{l.questions.category.entertainment}</div>
-                    <div className="cell__questions"><Difficulty lang={currentLanguage} /></div>
-                    <div className="cell__questions"><Buttons lang={currentLanguage} /></div>
+                    <div className="cell__questions"><Difficulty category={"entertainment"} lang={currentLanguage} /></div>
+                    <div className="cell__questions"><Buttons category={"entertainment"} lang={currentLanguage} /></div>
                 </div>
             </div>
             <Menu lang={currentLanguage} />
