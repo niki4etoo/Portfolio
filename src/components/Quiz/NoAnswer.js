@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useLocation } from "react-router-dom";
 
 import Navigation from "../Navigation/Navigation";
 import QuizContainer, { userAnswers } from './QuizContainer';
@@ -9,15 +10,15 @@ import Messages from './Messages';
 //Languages
 import en from '../../languages/en.json';
 
+//Styles
 import '../../styles/quiz.css';
 import '../../styles/togglelanguages.css';
-import { useLocation } from "react-router-dom";
 
 const NoAnswer = () => {
 
     const { state } = useLocation(); // getting user lang selection
 
-    const [index, setIndex] = useState(0);
+    const [index, setIndex] = useState(0); // index of the questions
 
     const [questionsToAnswer, setQuestionsToAnswer] = useState(true);
     const [questionsAnswered, setQuestionsAnswered] = useState(false);
