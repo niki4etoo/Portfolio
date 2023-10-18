@@ -1,5 +1,6 @@
 {
     "category": "Category",
+    "type": "technical",
     "title": "Technical Questions",
     "difficulty": "Difficulty",
     "difficultyOptions": {
@@ -9,10 +10,10 @@
     },
     "questions": {
         "easy": [
-            { "question": "", "answers": [ "", "", "" ]},
-            { "question": "", "answers": [ "", "", "" ]},
-            { "question": "", "answers": [ "", "", "" ]},
-            { "question": "", "answers": [ "", "", "" ]}
+            { "question": "What is HTML?", "answers": [ "Hyper Text Markup Language", "Scripting Language", "Strange acronym" ]},
+            { "question": "What is CSS?", "answers": [ "Programming Language", "Cascading Style Sheet", "Cascading Step of the Sheep" ]},
+            { "question": "What is Javascript?", "answers": [ "Decoding signal", "Programming Language", "Coffee machine" ]},
+            { "question": "What is React?", "answers": [ "Front-end Framework", "Reacting system for bonuses", "Reactive engine" ]}
         ],
         "medium": [
             { "question": "", "answers": [ "", "", "" ]},

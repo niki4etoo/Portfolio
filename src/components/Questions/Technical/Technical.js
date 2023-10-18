@@ -3,6 +3,8 @@ import { useLocation } from "react-router-dom";
 
 import Navigation from "../../Navigation/Navigation";
 
+import Questions from '../Questions';
+
 //Languages
 import bg from '../../../languages/Questions/bg-technical.json';
 import en from '../../../languages/Questions/en-technical.json';
@@ -28,12 +30,14 @@ const Technical = (props) => {
 
     const location = useLocation(); //using location hook with state for difficulty options
 
+    let l = {};
+    (currentLanguage) ? l = en : l = bg;
+
+    
 
     const Title = (props) => {
-
-        let l = {};
         (props.lang) ? l = en : l = bg;
-
+        
         let option = "";
         switch (location.state.difficulty.option) {
             case "Easy":
@@ -62,6 +66,8 @@ const Technical = (props) => {
         <>
             <Navigation confirm={false} lang={currentLanguage} />
             <Title lang={currentLanguage} />
+
+            <Questions category={l.type} difficulty={location.state.difficulty.option} en={en} bg={bg} />
             <label className="switch">
                 <input type="checkbox" onChange={(e) => changeLanguage(e)} checked={currentLanguage} />
                 <span className="slider round"></span>

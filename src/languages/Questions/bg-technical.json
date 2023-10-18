@@ -1,5 +1,6 @@
 {
     "category": "Категория",
+    "type": "technical",
     "title": "Технически въпроси",
     "difficulty": "Трудност",
     "difficultyOptions": {
@@ -9,10 +10,10 @@
     },
     "questions": {
         "easy": [
-            { "question": "", "answers": [ "", "", "" ]},
-            { "question": "", "answers": [ "", "", "" ]},
-            { "question": "", "answers": [ "", "", "" ]},
-            { "question": "", "answers": [ "", "", "" ]}
+            { "question": "Какво е HTML?", "answers": [ "Hyper Text Markup Language", "Скриптов език", "Странна абревиатура" ]},
+            { "question": "Какво е CSS?", "answers": [ "Език за програмиране", "Cascading Style Sheet", "Cascading Step of the Sheep" ]},
+            { "question": "Какво е Javascript?", "answers": [ "Декодиращ сигнал", "Език за програмиране", "Кафе машина" ]},
+            { "question": "Какво е React?", "answers": [ "Front-end Framework", "Реагираща система за бонуси", "Реактивен двигател" ]}
         ],
         "medium": [
             { "question": "", "answers": [ "", "", "" ]},
