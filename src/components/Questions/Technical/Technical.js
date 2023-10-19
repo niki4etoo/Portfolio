@@ -61,13 +61,12 @@ const Technical = (props) => {
 
     }
 
-
     return (
         <>
-            <Navigation confirm={false} lang={currentLanguage} />
+            <Navigation navigate="/questions" confirm={false} lang={currentLanguage} />
             <Title lang={currentLanguage} />
 
-            <Questions category={l.type} difficulty={location.state.difficulty.option} en={en} bg={bg} />
+            <Questions category={l.type} difficulty={location.state.difficulty.option} en={en} bg={bg} lang={currentLanguage} />
             <label className="switch">
                 <input type="checkbox" onChange={(e) => changeLanguage(e)} checked={currentLanguage} />
                 <span className="slider round"></span>

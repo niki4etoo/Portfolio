@@ -5,7 +5,7 @@
 
     justify-content: center;
     align-items: center;
-    
+
     margin: 3vh 5vw;
 }
 
@@ -44,4 +44,23 @@
     display: flex;
 
     margin: 1vh 1vw;
+
+    font-weight: 300;
+    letter-spacing: 0.05em;
+
+    border-bottom: 2px solid #DCE3FF;
+    padding: 10px 10px;
+    border-radius: 15px 5px;
+}
+
+.answer__questions:hover,
+.answer__questions:focus {
+    cursor: pointer;
+
+    background-color: #fff8dc;
+    color: black;
+    border-bottom: 4px solid #DCE3FF;
+
+    transition: all 0.3s ease-in;
+    transform: scale(1.05);
 }

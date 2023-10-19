@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { useLocation } from 'react-router-dom';
+import React from "react";
+
 
 //Styles
 import '../../styles/questions.css';
@@ -8,15 +8,12 @@ const Questions = (props) => {
 
     //Languages ( BG | EN)
 
-    const { state } = useLocation(); // getting user lang selection
-
-    const currentLanguage = useState(state?.lang || false); // setting language by last user selection
-
     let l = {};
 
-    (currentLanguage) ? l = props.en : l = props.bg;
+    (props.lang) ? l = props.en : l = props.bg;
 
     let questions = [];
+    
     switch (props.difficulty) {
         case "Easy":
             questions = l.questions.easy;
@@ -30,7 +27,9 @@ const Questions = (props) => {
         default:
     }
 
-    console.log(l);
+    const handleAnswers = (e) => {
+        console.log(e);
+    }
 
     return (
         <>
@@ -39,9 +38,9 @@ const Questions = (props) => {
                     <h2>{questions[0].question}</h2>
                 </div>
                 <div className="answers__questions">
-                    <div className="answer__questions">{questions[0].answers[0]}</div>
-                    <div className="answer__questions">{questions[0].answers[1]}</div>
-                    <div className="answer__questions">{questions[0].answers[2]}</div>
+                    <div className="answer__questions" onClick={(e) => handleAnswers(e)}>{questions[0].answers[0]}</div>
+                    <div className="answer__questions" onClick={(e) => handleAnswers(e)}>{questions[0].answers[1]}</div>
+                    <div className="answer__questions" onClick={(e) => handleAnswers(e)}>{questions[0].answers[2]}</div>
                 </div>
             </div>
         </>
