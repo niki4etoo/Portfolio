@@ -12,8 +12,7 @@ import '../../styles/togglelanguages.css';
 
 const Navigation = (props) => {
 
-    let navigate = props.navigate || "back"; // Default is back route
-
+    let path = props.navigate || '/'; // Default route is home ( Intro )
 
     const handleBack = (e, index, lang) => {
 
@@ -35,49 +34,16 @@ const Navigation = (props) => {
         }
     }
 
-    switch (navigate) {
-        case "back":
-            {
-                if (props.lang) {
-                    return (
-                        <>
-                            <div className='nav'>
-                                <Link className='nav-back' onClick={(e) => handleBack(e, props.index, props.lang)} to='/' state={{ lang: props.lang }}>{en.navigation.back}</Link>
-                            </div>
-                        </>
-                    );
-                } else {
-                    return (
-                        <>
-                            <div className='nav'>
-                                <Link className='nav-back' onClick={(e) => handleBack(e, props.index)} to='/' state={{ lang: props.lang }}>{bg.navigation.back}</Link>
-                            </div>
-                        </>
-                    );
-                }
-            }
-        case "contacts":
-            {
-                if (props.lang) {
-                    return (
-                        <>
-                            <div className='nav'>
-                                <Link className='nav-back' onClick={(e) => handleBack(e, props.index, props.lang)} to='/contacts' state={{ lang: props.lang }}>{en.navigation.contacts}</Link>
-                            </div>
-                        </>
-                    );
-                } else {
-                    return (
-                        <>
-                            <div className='nav'>
-                                <Link className='nav-back' onClick={(e) => handleBack(e, props.index)} to='/contacts' state={{ lang: props.lang }}>{bg.navigation.contacts}</Link>
-                            </div>
-                        </>
-                    );
-                }
-            }
-        default:
-    }
+    let l = {};
+    (props.lang) ? l = en : l = bg;
+
+    return (
+        <>
+            <div className='nav'>
+                <Link className='nav-back' onClick={(e) => handleBack(e, props.index, props.lang)} to={path} state={{ lang: props.lang }}>{l.navigation.back}</Link>
+            </div>
+        </>
+    );
 
 }
 
