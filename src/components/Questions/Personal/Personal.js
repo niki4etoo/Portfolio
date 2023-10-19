@@ -8,7 +8,7 @@ import bg from '../../../languages/Questions/bg-personal.json';
 import en from '../../../languages/Questions/en-personal.json';
 
 //Styles
-import '../../../styles/personalquestions.css';
+import '../../../styles/questions.css';
 
 const Personal = (props) => {
     //Languages ( BG | EN)

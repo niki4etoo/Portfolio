@@ -8,7 +8,7 @@ import bg from '../../../languages/Questions/bg-entertainment.json';
 import en from '../../../languages/Questions/en-entertainment.json';
 
 //Styles
-import '../../../styles/entertainmentquestions.css';
+import '../../../styles/questions.css';
 const Entertainment = (props) => {
     //Languages ( BG | EN)
 

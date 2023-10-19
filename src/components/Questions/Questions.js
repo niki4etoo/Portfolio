@@ -30,7 +30,7 @@ const Questions = (props) => {
         default:
     }
 
-    console.log(questions);
+    console.log(l);
 
     return (
         <>

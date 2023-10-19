@@ -10,7 +10,7 @@ import bg from '../../../languages/Questions/bg-technical.json';
 import en from '../../../languages/Questions/en-technical.json';
 
 //Styles
-import '../../../styles/technicalquestions.css';
+import '../../../styles/questions.css';
 
 const Technical = (props) => {
 

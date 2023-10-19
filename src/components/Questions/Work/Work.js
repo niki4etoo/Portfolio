@@ -8,7 +8,7 @@ import bg from '../../../languages/Questions/bg-work.json';
 import en from '../../../languages/Questions/en-work.json';
 
 //Styles
-import '../../../styles/workquestions.css';
+import '../../../styles/questions.css';
 
 const Work = (props) => {
  //Languages ( BG | EN)
@@ -48,7 +48,7 @@ const Work = (props) => {
      }
 
      return (
-         <div className="work__questions container">
+         <div className="container">
              <h2>{l.category}{" -> "}{l.title}</h2>
              <h3>{l.difficulty}: {option}</h3>
          </div>

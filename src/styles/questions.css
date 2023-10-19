@@ -1,9 +1,47 @@
+.container {
+    display: flex;
+
+    flex-flow: column nowrap;
+
+    justify-content: center;
+    align-items: center;
+    
+    margin: 3vh 5vw;
+}
+
 .container__questions {
     display: flex;
+
+    flex-flow: column nowrap;
 
     justify-content: center;
     align-items: center;
 
-    flex-flow: column nowrap;
+    min-height: 30vh;
+
+    margin: 3vh 5vw;
 }
 
+.question__questions {
+    font-size: 1.5rem;
+
+    word-spacing: 0.3rem;
+    letter-spacing: 0.15rem;
+}
+
+.answers__questions {
+    display: flex;
+
+    flex-flow: row nowrap;
+
+    justify-content: center;
+    align-items: center;
+
+    height: 10vh;
+}
+
+.answer__questions {
+    display: flex;
+
+    margin: 1vh 1vw;
+}

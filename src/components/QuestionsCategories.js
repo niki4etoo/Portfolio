@@ -102,30 +102,30 @@ const QuestionsCategories = (props) => {
         <>
             <Navigation lang={currentLanguage} />
             <div className="border">
-                <div className="container__questions">
-                    <div className="cell__questions header__questions">{l.questions.category.title}</div>
-                    <div className="cell__questions header__questions">{l.questions.difficulty}</div>
-                    <div className="cell__questions header__questions">{l.questions.options}</div>
+                <div className="container__questions-category">
+                    <div className="cell__questions-category header__questions">{l.questions.category.title}</div>
+                    <div className="cell__questions-category header__questions">{l.questions.difficulty}</div>
+                    <div className="cell__questions-category header__questions">{l.questions.options}</div>
 
                     {/* Technical questions about the stack */}
-                    <div className="cell__questions">{l.questions.category.technical}</div>
-                    <div className="cell__questions"><Difficulty category={"technical"} lang={currentLanguage} /></div>
-                    <div className="cell__questions"><Buttons category={"technical"} lang={currentLanguage} /></div>
+                    <div className="cell__questions-category">{l.questions.category.technical}</div>
+                    <div className="cell__questions-category"><Difficulty category={"technical"} lang={currentLanguage} /></div>
+                    <div className="cell__questions-category"><Buttons category={"technical"} lang={currentLanguage} /></div>
 
                     {/* Personal questions about self-aware and purpose driven */}
-                    <div className="cell__questions">{l.questions.category.personal}</div>
-                    <div className="cell__questions"><Difficulty category={"personal"} lang={currentLanguage} /></div>
-                    <div className="cell__questions"><Buttons category={"personal"} lang={currentLanguage} /></div>
+                    <div className="cell__questions-category">{l.questions.category.personal}</div>
+                    <div className="cell__questions-category"><Difficulty category={"personal"} lang={currentLanguage} /></div>
+                    <div className="cell__questions-category"><Buttons category={"personal"} lang={currentLanguage} /></div>
 
                     {/* Work questions about purpose, time, money */}
-                    <div className="cell__questions">{l.questions.category.work}</div>
-                    <div className="cell__questions"><Difficulty category={"work"} lang={currentLanguage} /></div>
-                    <div className="cell__questions"><Buttons category={"work"} lang={currentLanguage} /></div>
+                    <div className="cell__questions-category">{l.questions.category.work}</div>
+                    <div className="cell__questions-category"><Difficulty category={"work"} lang={currentLanguage} /></div>
+                    <div className="cell__questions-category"><Buttons category={"work"} lang={currentLanguage} /></div>
 
                     {/* Entertainment questions about fun, chill-out and better understanding */}
-                    <div className="cell__questions">{l.questions.category.entertainment}</div>
-                    <div className="cell__questions"><Difficulty category={"entertainment"} lang={currentLanguage} /></div>
-                    <div className="cell__questions"><Buttons category={"entertainment"} lang={currentLanguage} /></div>
+                    <div className="cell__questions-category">{l.questions.category.entertainment}</div>
+                    <div className="cell__questions-category"><Difficulty category={"entertainment"} lang={currentLanguage} /></div>
+                    <div className="cell__questions-category"><Buttons category={"entertainment"} lang={currentLanguage} /></div>
                 </div>
             </div>
             <Menu lang={currentLanguage} />
