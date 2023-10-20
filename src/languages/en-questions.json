@@ -1,7 +1,7 @@
 {
     "questions": {
-        "category": {
-            "title": "Category",
+        "category": "Category",
+        "categories": {
             "technical": "Technical",
             "personal": "Personal",
             "work": "Work",

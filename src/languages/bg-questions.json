@@ -1,7 +1,7 @@
 {
     "questions": {
-        "category": {
-            "title": "Категория",
+        "category": "Категория",
+        "categories": {
             "technical": "Технически",
             "personal": "Лични",
             "work": "Работа",
