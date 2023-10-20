@@ -2,7 +2,6 @@
     /* BORDERS */
     --BORDER-RADIUS: 30px;
     --BORDER: 1px solid blue;
-    /*  */
 }
 
 .container__questions-category {
@@ -19,7 +18,7 @@
 
 }
 
-.cell__questions-category {
+div.cell__questions-category {
     display: flex;
 
     justify-content: center;
@@ -38,23 +37,6 @@
 
     background-color: #000;
     color: whitesmoke;
-}
-
-
-.cell__questions-category.header__questions:first-child {
-    border-top-left-radius: var(--BORDER-RADIUS);
-}
-
-.cell__questions-category.header__questions:nth-child(3) {
-    border-top-right-radius: var(--BORDER-RADIUS);
-}
-
-.cell__questions-category:last-child {
-    border-bottom-right-radius: var(--BORDER-RADIUS);
-}
-
-.cell__questions-category:nth-last-child(3) {
-    border-bottom-left-radius: var(--BORDER-RADIUS);
 }
 
 /** || FORMS */
