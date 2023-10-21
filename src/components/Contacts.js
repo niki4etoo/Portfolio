@@ -53,7 +53,7 @@ const Contacts = (props) => {
           headers: { "Content-Type": "application/x-www-form-urlencoded" },
           body: new URLSearchParams(formData).toString(),
         })
-          .then(() => navigate("/thank-you/"))
+          .then(() => alert("/thank-you/"))
           .catch((error) => alert(error));
       };
       
@@ -83,7 +83,7 @@ const Contacts = (props) => {
             <div className="contacts-container">
                 <div className="contacts"><h1>{l.contacts.title}</h1></div>
                 <div className="contacts-form">
-                    <form id="contact" method="post" onSubmit={handleSubmit} name="contact" netlify>
+                    <form id="contact" method="post" onSubmit={handleSubmit} name="contact" data-netlify="true">
                         <div className="contacts-input">
                             <fieldset className="contacts-item">
                                 <input placeholder={l.contacts.form.placeholders.name} maxLength={15} id="name" name="name" value={form.name} type="text" tabIndex="1" onChange={handleChange} required />
