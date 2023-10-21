@@ -42,11 +42,11 @@ const Contacts = (props) => {
             [e.target.name]: val});
     }
 
-    const handleSubmit = (event) => {
-        event.preventDefault();
+    const handleSubmit = (e) => {
+        e.preventDefault();
       
-        const myForm = event.target;
-        const formData = new FormData(myForm);
+        const contactForm = document.querySelector("#contactForm");
+        const formData = new FormData(contactForm);
       
         fetch("/", {
           method: "POST",
@@ -83,7 +83,7 @@ const Contacts = (props) => {
             <div className="contacts-container">
                 <div className="contacts"><h1>{l.contacts.title}</h1></div>
                 <div className="contacts-form">
-                    <form id="contact" method="post" onSubmit={handleSubmit} name="contact" data-netlify="true">
+                    <form id="contactForm" method="post" onSubmit={handleSubmit} name="contact" data-netlify="true">
                         <div className="contacts-input">
                             <fieldset className="contacts-item">
                                 <input placeholder={l.contacts.form.placeholders.name} maxLength={15} id="name" name="name" value={form.name} type="text" tabIndex="1" onChange={handleChange} required />
