@@ -16,9 +16,7 @@ const Navigation = (props) => {
 
     const handleBack = (e, index, lang) => {
 
-        console.log(index); //to do 
-
-        if (props.confirm) {
+        if (props?.confirm) {
             let message = "";
             if (lang) {
                 message = en.navigation.messageConfirmQuestion;
@@ -40,7 +38,7 @@ const Navigation = (props) => {
     return (
         <>
             <div className='nav'>
-                <Link className='nav-back' onClick={(e) => handleBack(e, props.index, props.lang)} to={path} state={{ lang: props.lang }}>{l.navigation.back}</Link>
+                <Link className='nav-back' onClick={(e) => handleBack(e, props?.index, props.lang)} to={path} state={{ lang: props.lang }}>{l.navigation.back}</Link>
             </div>
         </>
     );

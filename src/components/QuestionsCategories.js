@@ -99,7 +99,7 @@ const QuestionsCategories = (props) => {
         );
     }
 
-    // Convert categories into an array with unique id
+    // Convert categories into an array with unique ids
     const entries = Object.entries(l.questions.categories); 
     const categories = [];
     entries.map((value) => {

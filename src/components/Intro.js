@@ -184,7 +184,6 @@ const Intro = () => {
                 <span className="slider round"></span>
             </label>
         </div>
-
     );
 }
 
