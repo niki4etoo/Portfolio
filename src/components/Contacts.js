@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
+import axios from "axios";
 
 //Languages
 import bg from '../languages/bg.json';
@@ -43,10 +44,19 @@ const Contacts = (props) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log("Name: ", form.name);
-        console.log("Mail: ", form.mail);
-        console.log("Message: ", form.message); // to do (send to server)
+        let port = 8081;
 
+		axios.post(`http://localhost:${port}/contactInput`, form, { headers: {
+			"Content-type": "application/json; charset=UTF-8",
+			"Access-Control-Allow-Origin": "*",
+		}}).then((response) => {
+			JSON.stringify(response.data);
+			console.log(response.status, response.data);
+
+			if(response.status === 200){
+				console.log("Successfully sended message!");
+			}
+		});
     }
 
     return (
