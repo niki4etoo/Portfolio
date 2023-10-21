@@ -56,26 +56,6 @@ const Contacts = (props) => {
           .then(() => alert("/thank-you/"))
           .catch((error) => alert(error));
       };
-      
-
-    // const handleSubmit = (e) => {
-    //     e.preventDefault();
-    //     let port = 8081;
-
-        
-
-	// 	axios.post(`http://localhost:${port}/contactInput`, form, { headers: {
-	// 		"Content-type": "application/json; charset=UTF-8",
-	// 		"Access-Control-Allow-Origin": "*",
-	// 	}}).then((response) => {
-	// 		JSON.stringify(response.data);
-	// 		console.log(response.status, response.data);
-
-	// 		if(response.status === 200){
-	// 			console.log("Successfully sended message!");
-	// 		}
-	// 	});
-    // }
 
     return (
         <>
