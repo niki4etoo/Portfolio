@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
-import axios from "axios";
+//import axios from "axios";
 
 //Languages
 import bg from '../languages/bg.json';
@@ -42,22 +42,40 @@ const Contacts = (props) => {
             [e.target.name]: val});
     }
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        let port = 8081;
+    const handleSubmit = (event) => {
+        event.preventDefault();
+      
+        const myForm = event.target;
+        const formData = new FormData(myForm);
+      
+        fetch("/", {
+          method: "POST",
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+          body: new URLSearchParams(formData).toString(),
+        })
+          .then(() => navigate("/thank-you/"))
+          .catch((error) => alert(error));
+      };
+      
 
-		axios.post(`http://localhost:${port}/contactInput`, form, { headers: {
-			"Content-type": "application/json; charset=UTF-8",
-			"Access-Control-Allow-Origin": "*",
-		}}).then((response) => {
-			JSON.stringify(response.data);
-			console.log(response.status, response.data);
+    // const handleSubmit = (e) => {
+    //     e.preventDefault();
+    //     let port = 8081;
 
-			if(response.status === 200){
-				console.log("Successfully sended message!");
-			}
-		});
-    }
+        
+
+	// 	axios.post(`http://localhost:${port}/contactInput`, form, { headers: {
+	// 		"Content-type": "application/json; charset=UTF-8",
+	// 		"Access-Control-Allow-Origin": "*",
+	// 	}}).then((response) => {
+	// 		JSON.stringify(response.data);
+	// 		console.log(response.status, response.data);
+
+	// 		if(response.status === 200){
+	// 			console.log("Successfully sended message!");
+	// 		}
+	// 	});
+    // }
 
     return (
         <>
@@ -65,7 +83,7 @@ const Contacts = (props) => {
             <div className="contacts-container">
                 <div className="contacts"><h1>{l.contacts.title}</h1></div>
                 <div className="contacts-form">
-                    <form id="contact" method="post" onSubmit={handleSubmit}>
+                    <form id="contact" method="post" onSubmit={handleSubmit} name="contact" netlify>
                         <div className="contacts-input">
                             <fieldset className="contacts-item">
                                 <input placeholder={l.contacts.form.placeholders.name} maxLength={15} id="name" name="name" value={form.name} type="text" tabIndex="1" onChange={handleChange} required />
