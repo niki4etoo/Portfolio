@@ -38,7 +38,8 @@ const Questions = (props) => {
 
     const [next, setNext] = useState(0);
     const [ isThereMoreQuestions, setIsThereMoreQuestions ] = useState(true);
-
+    const [ isDone, setDone ] = useState(false);
+    
     const handleAnswers = (e) => {
         console.log(e);
 
@@ -49,6 +50,7 @@ const Questions = (props) => {
         if (questions[next + 1] === undefined) {
             console.log("Done!");
             setIsThereMoreQuestions(false);
+            setDone(true);
         }
     }
 
@@ -70,6 +72,14 @@ const Questions = (props) => {
                         </div>
                     </>
 
+                }
+                {
+                    isDone &&
+                    <>
+                        <div className="successMessageQuestions">
+                            <h3>Done!</h3>
+                        </div>
+                    </>
                 }
                 <QuestionsNavigation />
             </div>

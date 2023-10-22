@@ -16,16 +16,16 @@
             { "question": "Какво е React?", "answers": [ "Front-end библиотека", "Реагираща система за бонуси", "Реактивен двигател" ]}
         ],
         "medium": [
-            { "question": "", "answers": [ "", "", "" ]},
-            { "question": "", "answers": [ "", "", "" ]},
-            { "question": "", "answers": [ "", "", "" ]},
-            { "question": "", "answers": [ "", "", "" ]}
+            { "question": "Кое от посочените е функция в JS(JavaScript)?", "answers": [ "const a = () => {}", "def main():", "void main()" ]},
+            { "question": "Кое от посочените е свойство в CSS?", "answers": [ "background-map", "schedule", "gap" ]},
+            { "question": "Къде има грешка?", "answers": [ "const a = 1; a = 3;", "let b = a;", "let c = b;" ]},
+            { "question": "Кой от посочените е валиден таг в HTML?", "answers": [ "h7", "figures", "section" ]}
         ],
         "hard": [
-            { "question": "", "answers": [ "", "", "" ]},
-            { "question": "", "answers": [ "", "", "" ]},
-            { "question": "", "answers": [ "", "", "" ]},
-            { "question": "", "answers": [ "", "", "" ]}
+            { "question": "Кое от посочените е валидно CSS свойство?", "answers": [ "text-connectivity", "text-transform", "align-and-itemize" ]},
+            { "question": "Къде има грешка(CSS)?", "answers": [ "li:hover", "a:onHover", "a:focus" ]},
+            { "question": "Кое от изброените е вярно (React)?", "answers": [ "const [ a, setA ] = useState(0);", "const c = useState(true);", "let b = useState(useReducer(callback, []));" ]},
+            { "question": "Кое от посочените е вярно (JavaScript)?", "answers": [ "Свойствата на обектите, декларирани с const, могат да бъдат променяни", "let и const е едно и също", "Функциите не връщат резултат" ]}
         ]
     }
 }
