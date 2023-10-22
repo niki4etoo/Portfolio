@@ -1,8 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 
 
 //Styles
 import '../../styles/questions.css';
+
+const QuestionsNavigation = () => {
+
+    return (
+        <>
+
+        </>
+    );
+}
 
 const Questions = (props) => {
 
@@ -13,11 +22,11 @@ const Questions = (props) => {
     (props.lang) ? l = props.en : l = props.bg;
 
     let questions = [];
-    
+
     switch (props.difficulty) {
         case "Easy":
             questions = l.questions.easy;
-                break;
+            break;
         case "Medium":
             questions = l.questions.medium;
             break;
@@ -27,21 +36,42 @@ const Questions = (props) => {
         default:
     }
 
+    const [next, setNext] = useState(0);
+    const [ isThereMoreQuestions, setIsThereMoreQuestions ] = useState(true);
+
     const handleAnswers = (e) => {
         console.log(e);
+
+        if (questions[next + 1] !== undefined) {
+            setNext(next => next + 1);
+        }
+
+        if (questions[next + 1] === undefined) {
+            console.log("Done!");
+            setIsThereMoreQuestions(false);
+        }
     }
 
     return (
         <>
             <div className="container__questions">
-                <div className="question__questions">
-                    <h2>{questions[0].question}</h2>
-                </div>
-                <div className="answers__questions">
-                    <div className="answer__questions" onClick={(e) => handleAnswers(e)}>{questions[0].answers[0]}</div>
-                    <div className="answer__questions" onClick={(e) => handleAnswers(e)}>{questions[0].answers[1]}</div>
-                    <div className="answer__questions" onClick={(e) => handleAnswers(e)}>{questions[0].answers[2]}</div>
-                </div>
+                {
+                    isThereMoreQuestions &&
+                    <>
+                        <div className="question__questions">
+                            <h2>{questions[next].question}</h2>
+                        </div>
+                        <div className="answers__questions">
+                            {
+                                questions[next].answers.map(answer => (
+                                    <div key={answer} className="answer__questions" onClick={(e) => handleAnswers(e)}>{answer}</div>
+                                ))
+                            }
+                        </div>
+                    </>
+
+                }
+                <QuestionsNavigation />
             </div>
         </>
     );
