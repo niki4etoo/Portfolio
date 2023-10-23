@@ -6,7 +6,7 @@
         "mainQuestionAccentWord": "яснотата",
         "mainAnswersYes": "Да",
         "mainAnswersNo": "Не",
-        "mainAnswersItDepends": "Зависи"
+        "mainAnswersDepends": "Зависи"
     },
     "answers": {
         "yes": {
@@ -17,7 +17,7 @@
             "title": "Не",
             "description": "Сложното и смесеното са в противоположност на яснотата. Разбирането на сложното и смесеното, яснотата се задълбочава."
         },
-        "itDepends": {
+        "depends": {
             "title": "Зависи",
             "description": "Да, има различни фактори, които правят яснотата да зависи. Един от факторите е възприятието."
         },

@@ -59,7 +59,7 @@ const Intro = () => {
                 result = l.header.mainAnswersNo;
                 break;
             case "depends":
-                result = l.header.mainAnswersItDepends;
+                result = l.header.mainAnswersDepends;
                 break;
             default:
         }
@@ -88,8 +88,8 @@ const Intro = () => {
                 break;
             case "depends":
                 result = <div className='answer-description'>
-                    <h1>{l.answers.itDepends.title}</h1>
-                    <h3>{l.answers.itDepends.description}</h3>
+                    <h1>{l.answers.depends.title}</h1>
+                    <h3>{l.answers.depends.description}</h3>
                     <Link to='/depends' state={{ lang: props.lang }}>{l.answers.learnMore}</Link>
                 </div>;
                 break;
@@ -98,12 +98,13 @@ const Intro = () => {
         return result;
     }
 
-    const [simplicityQuestion, setSimplicityQuestion] = useState(false);
-    const [simplicityAnswers, setSimplicityAnswers] = useState(false);
+    const [simplicity, setSimplicity] = useState({ question: false, answers: false });
 
-    const [answerDescriptionYes, setAnswerDescriptionYes] = useState(false);
-    const [answerDescriptionNo, setAnswerDescriptionNo] = useState(false);
-    const [answerDescriptionItDepends, setAnswerDescriptionItDepends] = useState(false);
+    const [answerDescription, setAnswerDescription] = useState({
+        yes: false,
+        no: false,
+        depends: false
+    });
 
 
     const showQuestion = () => {
@@ -118,29 +119,42 @@ const Intro = () => {
             height: "10vh",
             stagger: 1.5,
             onComplete: () => {
-                setSimplicityQuestion(prev => !prev);
-                setSimplicityAnswers(false);
+                setSimplicity((state) => {
+                    return { answers: false, question: !state.question }
+                });
             }
         });
 
     }
 
     const showAnswers = () => {
-        setSimplicityAnswers(prev => !prev);
+        setSimplicity((state) => {
+            return { ...state, answers: !state.answers }
+        });
     }
 
-    // Description for each answer (on/off)
+    // Description for each answer
 
     const showDescription = (answer) => {
-        if (answer === "yes") {
-            setAnswerDescriptionYes(true);
-        } else if (answer === "no") {
-            setAnswerDescriptionNo(true);
-        } else if (answer === "depends") {
-            setAnswerDescriptionItDepends(true);
+        switch (answer) {
+            case "yes":
+                setAnswerDescription((state) => {
+                    return { ...state, yes: true }
+                });
+                break;
+            case "no":
+                setAnswerDescription((state) => {
+                    return { ...state, no: true }
+                });
+                break;
+            case "depends":
+                setAnswerDescription((state) => {
+                    return { ...state, depends: true }
+                });
+                break;
+            default:
         }
-        setSimplicityAnswers(false);
-        setSimplicityQuestion(false);
+        setSimplicity({ question: false, answers: false });
     }
 
 
@@ -150,13 +164,13 @@ const Intro = () => {
                 <h1 ref={portfolioRef} onClick={() => showQuestion()}><HeaderTitle lang={currentLanguage} /></h1>
             </div>
             {
-                simplicityQuestion &&
+                simplicity.question &&
                 <div className='questions'>
                     <h1 onClick={showAnswers}><MainQuestion lang={currentLanguage} /></h1>
                 </div>
             }
             {
-                simplicityAnswers &&
+                simplicity.answers &&
 
                 <div className='answers'>
                     <div className='answer' onClick={() => showDescription("yes")}><Answers type="yes" lang={currentLanguage} /></div>
@@ -166,15 +180,15 @@ const Intro = () => {
             }
             <div className='answersDescription'>
                 {
-                    answerDescriptionYes &&
+                    answerDescription.yes &&
                     <AnswerDescriptions type="yes" lang={currentLanguage} />
                 }
                 {
-                    answerDescriptionNo &&
+                    answerDescription.no &&
                     <AnswerDescriptions type="no" lang={currentLanguage} />
                 }
                 {
-                    answerDescriptionItDepends &&
+                    answerDescription.depends &&
                     <AnswerDescriptions type="depends" lang={currentLanguage} />
                 }
             </div>
