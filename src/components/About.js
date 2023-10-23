@@ -50,17 +50,18 @@ const About = () => {
                     <h1>{l.about.techStack}</h1>
                     <h2>{l.about.tech.used}</h2>
                     <ul>
-                        <li>{l.about.tech.js}</li>
-                        <li>{l.about.tech.html_css}</li>
-                        <li>{l.about.tech.react}</li>
+                        <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">{l.about.tech.js}</a></li>
+                        <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML">{l.about.tech.html}</a> & <a href="https://developer.mozilla.org/en-US/docs/Web/CSS">{l.about.tech.css}</a></li>
+                        <li><a href="https://react.dev/">{l.about.tech.react}</a></li>
                     </ul>
                     <h2>{l.about.tech.learning}</h2>
                     <ul>
-                        <li>{l.about.tech.gsap}</li>
-                        <li>{l.about.tech.reactSpring}</li>
-                        <li>{l.about.tech.node}</li>
+                        <li><a href="https://gsap.com/">{l.about.tech.gsap}</a></li>
+                        <li><a href="https://www.react-spring.dev/">{l.about.tech.reactSpring}</a></li>
+                        <li><a href="https://nodejs.org/en">{l.about.tech.node}</a></li>
                     </ul>
                 </section>
+
             </div>
             <Menu lang={currentLanguage} />
             <label className="switch">

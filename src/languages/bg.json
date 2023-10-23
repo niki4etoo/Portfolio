@@ -168,7 +168,8 @@
         "tech": {
             "used": "Ползване в момента",
             "js": "Javascript",
-            "html_css": "HTML5 & CSS3",
+            "html": "HTML5",
+            "css": "CSS3",
             "react": "React",
             "learning": "Изучавани в момента",
             "gsap": "GSAP",

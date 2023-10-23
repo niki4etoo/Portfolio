@@ -169,7 +169,8 @@
         "tech": {
             "used": "Using now",
             "js": "Javascript",
-            "html_css": "HTML5 & CSS3",
+            "html": "HTML5",
+            "css": "CSS3",
             "react": "React",
             "learning": "Learning now",
             "gsap": "GSAP",

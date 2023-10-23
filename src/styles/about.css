@@ -74,3 +74,8 @@ img:hover, img:focus-visible {
     font-size: 1.2rem;
     letter-spacing: 0.1rem;
 }
+
+.tech-stack ul li a {
+    font-size: 1.2rem;
+    letter-spacing: 0.2rem;
+}
