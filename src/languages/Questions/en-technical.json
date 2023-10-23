@@ -16,16 +16,16 @@
             { "question": "What is React?", "answers": [ "Front-end library", "Reacting system for bonuses", "Reactive engine" ]}
         ],
         "medium": [
-            { "question": "", "answers": [ "", "", "" ]},
-            { "question": "", "answers": [ "", "", "" ]},
-            { "question": "", "answers": [ "", "", "" ]},
-            { "question": "", "answers": [ "", "", "" ]}
+            { "question": "Which of the following is JavaScript function?", "answers": [ "const a = () => {}", "def main():", "void main()" ]},
+            { "question": "Which one is a CSS property?", "answers": [ "background-map", "schedule", "gap" ]},
+            { "question": "Where is the mistake (Javascript)?", "answers": [ "const a = 1; a = 3;", "let b = a;", "let c = b;" ]},
+            { "question": "Which of the following is a valid HTML tag?", "answers": [ "h7", "figures", "section" ]}
         ],
         "hard": [
-            { "question": "", "answers": [ "", "", "" ]},
-            { "question": "", "answers": [ "", "", "" ]},
-            { "question": "", "answers": [ "", "", "" ]},
-            { "question": "", "answers": [ "", "", "" ]}
+            { "question": "Which one is a valid CSS property?", "answers": [ "text-connectivity", "text-transform", "align-and-itemize" ]},
+            { "question": "Where is the mistake (CSS)?", "answers": [ "li:hover", "a:onHover", "a:focus" ]},
+            { "question": "Which of the following is correct (React)?", "answers": [ "const [ a, setA ] = useState(0);", "const c = useState(true);", "let b = useState(useReducer(callback, []));" ]},
+            { "question": "Which of the following is correct (JavaScript)?", "answers": [ "Properties of the objects, declared with const, can be altered", "let and const are the same", "Functions does not return a result" ]}
         ]
     }
 }
