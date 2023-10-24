@@ -98,13 +98,11 @@ const Intro = () => {
         return result;
     }
 
-    const [simplicity, setSimplicity] = useState({ question: false, answers: false });
-
-    const [answerDescription, setAnswerDescription] = useState({
+    const [ intro, setIntro ] = useState({ 
+        question: false, answers: false,
         yes: false,
         no: false,
-        depends: false
-    });
+        depends: false });
 
 
     const showQuestion = () => {
@@ -119,8 +117,8 @@ const Intro = () => {
             height: "10vh",
             stagger: 1.5,
             onComplete: () => {
-                setSimplicity((state) => {
-                    return { answers: false, question: !state.question }
+                setIntro((state) => {
+                    return { ...state, answers: false, question: !state.question }
                 });
             }
         });
@@ -128,7 +126,7 @@ const Intro = () => {
     }
 
     const showAnswers = () => {
-        setSimplicity((state) => {
+        setIntro((state) => {
             return { ...state, answers: !state.answers }
         });
     }
@@ -138,23 +136,23 @@ const Intro = () => {
     const showDescription = (answer) => {
         switch (answer) {
             case "yes":
-                setAnswerDescription((state) => {
+                setIntro((state) => {
                     return { ...state, yes: true }
                 });
                 break;
             case "no":
-                setAnswerDescription((state) => {
+                setIntro((state) => {
                     return { ...state, no: true }
                 });
                 break;
             case "depends":
-                setAnswerDescription((state) => {
+                setIntro((state) => {
                     return { ...state, depends: true }
                 });
                 break;
             default:
         }
-        setSimplicity({ question: false, answers: false });
+        setIntro((state) => { return { ...state, question: false, answers: false }});
     }
 
 
@@ -164,13 +162,13 @@ const Intro = () => {
                 <h1 ref={portfolioRef} onClick={() => showQuestion()}><HeaderTitle lang={currentLanguage} /></h1>
             </div>
             {
-                simplicity.question &&
+                intro.question &&
                 <div className='questions'>
                     <h1 onClick={showAnswers}><MainQuestion lang={currentLanguage} /></h1>
                 </div>
             }
             {
-                simplicity.answers &&
+                intro.answers &&
 
                 <div className='answers'>
                     <div className='answer' onClick={() => showDescription("yes")}><Answers type="yes" lang={currentLanguage} /></div>
@@ -180,15 +178,15 @@ const Intro = () => {
             }
             <div className='answersDescription'>
                 {
-                    answerDescription.yes &&
+                    intro.yes &&
                     <AnswerDescriptions type="yes" lang={currentLanguage} />
                 }
                 {
-                    answerDescription.no &&
+                    intro.no &&
                     <AnswerDescriptions type="no" lang={currentLanguage} />
                 }
                 {
-                    answerDescription.depends &&
+                    intro.depends &&
                     <AnswerDescriptions type="depends" lang={currentLanguage} />
                 }
             </div>
