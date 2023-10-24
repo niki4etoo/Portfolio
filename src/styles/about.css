@@ -50,11 +50,21 @@ img:hover, img:focus-visible {
     flex-flow: column nowrap;
 
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
 
-    margin: 5vh 5vh;
+    margin: 2vh 2vh;
 
     min-height: 60vh;
+}
+
+.tech-stack-row {
+    display: flex;
+    flex-direction: row;
+}
+
+.tech-stack-column {
+    display: flex;
+    flex-direction: column;
 }
 
 .tech-stack h1 {
