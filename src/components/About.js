@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
 
+import LanguageSwitch from "./LanguageSwitch";
 import Navigation from "./Navigation/Navigation";
 import Menu from './Menu';
 
@@ -21,14 +22,6 @@ const About = () => {
     //Languages ( BG | EN)
 
     const [currentLanguage, setCurrentLanguage] = useState(state?.lang || false);
-
-    const changeLanguage = (e) => {
-        if (e.target.checked) {
-            setCurrentLanguage(prev => true); //Switched to EN
-        } else {
-            setCurrentLanguage(prev => false); //Switched to BG
-        }
-    }
 
     let l = {};
     (currentLanguage) ? l = en : l = bg;
@@ -70,10 +63,7 @@ const About = () => {
 
             </div>
             <Menu lang={currentLanguage} />
-            <label className="switch">
-                <input type="checkbox" onChange={(e) => changeLanguage(e)} checked={currentLanguage} />
-                <span className="slider round"></span>
-            </label>
+            <LanguageSwitch lang={currentLanguage} setter={setCurrentLanguage} />
         </>
     );
 }

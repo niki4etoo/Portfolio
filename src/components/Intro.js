@@ -1,15 +1,17 @@
 import React, { useState, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { gsap } from 'gsap';
-import '../styles/intro.css';
-import '../styles/togglelanguages.css';
 
+import LanguageSwitch from './LanguageSwitch';
 import Menu from './Menu';
 
 //Languages
 import bg from '../languages/bg.json';
 import en from '../languages/en.json';
 
+//Styling
+import '../styles/intro.css';
+import '../styles/togglelanguages.css';
 
 const Intro = () => {
 
@@ -20,14 +22,6 @@ const Intro = () => {
     //Languages ( BG | EN)
 
     const [currentLanguage, setCurrentLanguage] = useState(state?.lang || false);
-
-    const changeLanguage = (e) => {
-        if (e.target.checked) {
-            setCurrentLanguage(prev => true); //Switched to EN
-        } else {
-            setCurrentLanguage(prev => false); //Switched to BG
-        }
-    }
 
     const HeaderTitle = (props) => {
         if (props.lang) {
@@ -191,10 +185,7 @@ const Intro = () => {
                 }
             </div>
             <Menu lang={currentLanguage} />
-            <label className="switch">
-                <input type="checkbox" onChange={(e) => changeLanguage(e)} checked={currentLanguage} />
-                <span className="slider round"></span>
-            </label>
+            <LanguageSwitch lang={currentLanguage} setter={setCurrentLanguage} />
         </div>
     );
 }

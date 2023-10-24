@@ -8,6 +8,7 @@ import { v4 as uuidv4 } from 'uuid';
 import bg from '../languages/bg-questions.json';
 import en from '../languages/en-questions.json';
 
+import LanguageSwitch from "./LanguageSwitch";
 import Navigation from "./Navigation/Navigation";
 import Menu from "./Menu";
 
@@ -21,17 +22,8 @@ const QuestionsCategories = (props) => {
 
     const [currentLanguage, setCurrentLanguage] = useState(state?.lang || false);
 
-    const changeLanguage = (e) => {
-        if (e.target.checked) {
-            setCurrentLanguage(prev => true); //Switched to EN
-        } else {
-            setCurrentLanguage(prev => false); //Switched to BG
-        }
-    }
-
     let l = {};
     (currentLanguage) ? l = en : l = bg;
-
 
     const [difficulty, setDifficulty] = useState([
         { category: "technical", option: "Easy" },
@@ -123,10 +115,7 @@ const QuestionsCategories = (props) => {
                 </div>
             </div>
             <Menu lang={currentLanguage} />
-            <label className="switch">
-                <input type="checkbox" onChange={(e) => changeLanguage(e)} checked={currentLanguage} />
-                <span className="slider round"></span>
-            </label>
+            <LanguageSwitch lang={currentLanguage} setter={setCurrentLanguage} />
         </>
     );
 

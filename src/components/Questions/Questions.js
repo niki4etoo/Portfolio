@@ -71,7 +71,6 @@ const Questions = (props) => {
                             }
                         </div>
                     </>
-
                 }
                 {
                     isDone &&

@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
 
+import LanguageSwitch from "../LanguageSwitch";
 import Navigation from "../Navigation/Navigation";
 import QuizContainer, { userAnswers } from './QuizContainer';
 import AnsweredQuestions from './AnsweredQuestions';
-
 import Messages from './Messages';
 
 //Languages
@@ -26,14 +26,6 @@ const NoAnswer = () => {
     //Languages ( BG | EN)
 
     const [currentLanguage, setCurrentLanguage] = useState(state?.lang || false); // setting language by last user selection
-
-    const changeLanguage = (e) => {
-        if (e.target.checked) {
-            setCurrentLanguage(prev => true); //Switched to EN
-        } else {
-            setCurrentLanguage(prev => false); //Switched to BG
-        }
-    }
 
     return (
         <>
@@ -57,10 +49,7 @@ const NoAnswer = () => {
                         type="no" lang={currentLanguage} />
                 </>
             }
-            <label className="switch">
-                <input type="checkbox" onChange={(e) => changeLanguage(e)} checked={currentLanguage} />
-                <span className="slider round"></span>
-            </label>
+            <LanguageSwitch lang={currentLanguage} setter={setCurrentLanguage} />
         </>
     );
 }
