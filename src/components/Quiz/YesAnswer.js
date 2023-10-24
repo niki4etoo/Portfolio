@@ -20,8 +20,7 @@ const YesAnswer = () => {
 
     const [index, setIndex] = useState(0);
 
-    const [questionsToAnswer, setQuestionsToAnswer] = useState(true);
-    const [questionsAnswered, setQuestionsAnswered] = useState(false);
+    const [ question, setQuestion ] = useState({ toAnswer: true, answered: false });
 
     //Languages ( BG | EN)
 
@@ -30,7 +29,7 @@ const YesAnswer = () => {
     return (
         <>
 
-            {questionsAnswered &&
+            {question.answered &&
                 <>
                     <Navigation confirm={false} lang={currentLanguage} index={index} />
                     <div className="answered">
@@ -40,12 +39,11 @@ const YesAnswer = () => {
                 </>
             }
             {
-                questionsToAnswer &&
+                question.toAnswer &&
                 <>
                     <Navigation confirm={true} userAnswers={userAnswers} lang={currentLanguage} index={index} />
                     <QuizContainer
-                        setQuestionsToAnswer={setQuestionsToAnswer} questionsToAnswer={questionsToAnswer}
-                        setQuestionsAnswered={setQuestionsAnswered} questionsAnswered={questionsAnswered}
+                        setter={setQuestion}
                         setIndex={setIndex} index={index}
                         type="yes" lang={currentLanguage} />
                 </>

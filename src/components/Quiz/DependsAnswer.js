@@ -20,8 +20,7 @@ const DependsAnswer = () => {
 
     const [index, setIndex] = useState(0);
 
-    const [questionsToAnswer, setQuestionsToAnswer] = useState(true);
-    const [questionsAnswered, setQuestionsAnswered] = useState(false);
+    const [ question, setQuestion ] = useState({ toAnswer: true, answered: false });
 
     //Languages ( BG | EN)
 
@@ -29,7 +28,7 @@ const DependsAnswer = () => {
 
     return (
         <>
-            {questionsAnswered &&
+            {question.answered &&
                 <>
                     <Navigation userAnswers={userAnswers} confirm={false} lang={currentLanguage} index={index} />
                     <div className="answered">
@@ -38,13 +37,11 @@ const DependsAnswer = () => {
                     </div>
                 </>
             }
-            {
-                questionsToAnswer &&
+            {question.toAnswer &&
                 <>
                     <Navigation userAnswers={userAnswers} confirm={true} lang={currentLanguage} index={index} />
                     <QuizContainer
-                        setQuestionsToAnswer={setQuestionsToAnswer} questionsToAnswer={questionsToAnswer}
-                        setQuestionsAnswered={setQuestionsAnswered} questionsAnswered={questionsAnswered}
+                        setter={setQuestion}
                         setIndex={setIndex} index={index}
                         type="depends" lang={currentLanguage} />
                 </>

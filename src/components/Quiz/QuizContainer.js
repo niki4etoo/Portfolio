@@ -34,8 +34,7 @@ const QuizContainer = (props) => {
 
 
         if (props.index === length - 1) {
-            props.setQuestionsAnswered(prev => !prev);
-            props.setQuestionsToAnswer(prev => !prev);
+            props.setter((state) => { return { toAnswer: !state.toAnswer, answered: !state.answered } }); // Questions are answered (true), there are no more questions to answer (false)
         } else {
             QuestionAnimations(questionRef, answersRef, props.setIndex);
         }
