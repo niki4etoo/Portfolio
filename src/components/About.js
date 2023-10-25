@@ -1,5 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useLayoutEffect } from "react";
 import { useLocation } from "react-router-dom";
+
+import gsap from 'gsap';
 
 import LanguageSwitch from "./LanguageSwitch";
 import Navigation from "./Navigation/Navigation";
@@ -14,6 +16,7 @@ import '../styles/about.css';
 
 // images
 import profileQuestion from '../images/profile.png';
+import profilePhoto from '../images/profile_photo.png';
 
 const About = () => {
 
@@ -26,14 +29,47 @@ const About = () => {
     let l = {};
     (currentLanguage) ? l = en : l = bg;
 
+    const imgRef = useRef();
+    const figureRef = useRef();
+    const main = useRef();
+
+    useLayoutEffect(() => {
+        let ctx = gsap.context((self) => {
+            self.add("hover", (e) => {
+                gsap.to(figureRef.current, { 
+                    opacity: 0, duration: 0.5,
+                    onComplete: () => {
+                        gsap.set(imgRef.current, { attr: { src: profilePhoto }});
+                        gsap.to(figureRef.current, { opacity: 1, duration: 0.5, borderColor: "blue" });
+                    }
+                 });
+            });
+
+            self.add("leave", (e) => {
+                gsap.to(figureRef.current, {
+                    opacity: 0, duration: 0.5,
+                    onComplete: () => {
+                        gsap.set(imgRef.current, { attr: { src: profileQuestion }});
+                        gsap.to(figureRef.current, { opacity: 1, duration: 0.5 });
+                    }
+                })
+            });
+        }, main);
+
+        imgRef.current.addEventListener("mouseenter", (e) => ctx.hover(e));
+        imgRef.current.addEventListener("mouseleave", (e) => ctx.leave(e));
+
+        return () => ctx.revert();
+    }, []);
+
     return (
-        <>
+        <div ref={main}>
             <Navigation lang={currentLanguage} />
             <div className="container-about">
                 <div className="about"><h1>{l.about.title}</h1></div>
                 <section className="profile">
-                    <figure>
-                        <a href="https://github.com/niki4etoo/"><img src={profileQuestion} width={200} height={200} alt="Profile" /></a>
+                    <figure ref={figureRef}>
+                        <a href="https://github.com/niki4etoo/"><img ref={imgRef} src={profileQuestion} width={200} height={200} alt="Profile" /></a>
                     </figure>
                 </section>
                 <section className="intro">
@@ -64,7 +100,7 @@ const About = () => {
             </div>
             <Menu lang={currentLanguage} />
             <LanguageSwitch lang={currentLanguage} setter={setCurrentLanguage} />
-        </>
+        </div>
     );
 }
 

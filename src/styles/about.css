@@ -26,15 +26,6 @@ section {
 img {
     border: 1px solid blue;
     border-radius: 50%;
-    transition: all 0.5s ease-in-out;
-}
-
-img:hover, img:focus-visible {
-    border: 1px solid skyblue;
-    transform: scale(1.1);
-    transition: all 0.5s ease-in-out;
-
-    cursor: pointer;
 }
 
 .intro p {
@@ -54,7 +45,7 @@ img:hover, img:focus-visible {
 
     margin: 2vh 2vh;
 
-    min-height: 60vh;
+    min-height: 30vh;
 }
 
 .tech-stack-row {
