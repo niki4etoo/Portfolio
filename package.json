@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "@babel/plugin-transform-private-property-in-object": "^7.22.11",
     "@getbrevo/brevo": "^1.0.1",
     "@react-spring/web": "^9.7.3",
     "@testing-library/jest-dom": "^5.17.0",
