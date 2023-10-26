@@ -1,8 +1,13 @@
 import React, { useState } from "react";
-
+import { Link } from "react-router-dom";
 
 //Styles
 import '../../styles/questions.css';
+
+//Languages
+import bg from '../../languages/bg-questions.json';
+import en from '../../languages/en-questions.json';
+
 
 const QuestionsNavigation = () => {
 
@@ -17,9 +22,11 @@ const Questions = (props) => {
 
     //Languages ( BG | EN)
 
-    let l = {};
+    let l = {}; // Object for language from the selected category ( examples bg-work, en-technical etc.)
+    let ll = {}; // Object for language from the bg-questions/en-questions
 
     (props.lang) ? l = props.en : l = props.bg;
+    (props.lang) ? ll = en : ll = bg;
 
     let questions = [];
 
@@ -37,9 +44,9 @@ const Questions = (props) => {
     }
 
     const [next, setNext] = useState(0);
-    const [ isThereMoreQuestions, setIsThereMoreQuestions ] = useState(true);
-    const [ isDone, setDone ] = useState(false);
-    
+    const [isThereMoreQuestions, setIsThereMoreQuestions] = useState(true);
+    const [isDone, setDone] = useState(false);
+
     const handleAnswers = (e) => {
         console.log(e);
 
@@ -70,13 +77,24 @@ const Questions = (props) => {
                                 ))
                             }
                         </div>
+                        <QuestionsNavigation next={next} />
                     </>
                 }
                 {
                     isDone &&
                     <>
-                        <div className="successMessageQuestions">
-                            <h3>Done!</h3>
+                        <div className="success__message__questions">
+                            <h3>{ll.questions.success.message}</h3>
+                            <div className="navigation">
+                                <div className="navigation item">
+                                    <Link to='/questions'>{ll.questions.navigation.back}</Link>
+                                </div>
+                                <div className="navigation item">
+                                    <Link to='/'>{ll.questions.navigation.home}</Link>
+                                </div>
+
+                            </div>
+
                         </div>
                     </>
                 }

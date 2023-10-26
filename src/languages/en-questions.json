@@ -17,6 +17,13 @@
         "buttons": {
             "status": "status",
             "start": "start"
+        },
+        "success": {
+            "message": "Done!"
+        },
+        "navigation": {
+            "back": "Back to the category questions",
+            "home": "Intro"
         }
     }
 }

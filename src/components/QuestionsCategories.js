@@ -95,7 +95,7 @@ const QuestionsCategories = (props) => {
     const entries = Object.entries(l.questions.categories); 
     const categories = [];
     entries.map((value) => {
-        return categories.push([ value[0], value[1], uuidv4()]);
+        return categories.push([ value[0], value[1], uuidv4()]); // value[0] -> label; value[0] -> content/translation
     })
 
     return (

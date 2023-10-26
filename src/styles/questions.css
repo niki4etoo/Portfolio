@@ -65,6 +65,30 @@
     transform: scale(1.05);
 }
 
-.successMessageQuestions {
+.success__message__questions {
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
     color: green;
+}
+
+.success__message__questions h3 {
+    padding: 20px;
+}
+
+.navigation {
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+}
+
+.navigation.item {
+    padding: 20px 10px;
 }
