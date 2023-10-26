@@ -20,7 +20,7 @@ const YesAnswer = () => {
 
     const [index, setIndex] = useState(0);
 
-    const [ question, setQuestion ] = useState({ toAnswer: true, answered: false });
+    const [question, setQuestion] = useState({ toAnswer: true, answered: false });
 
     //Languages ( BG | EN)
 
