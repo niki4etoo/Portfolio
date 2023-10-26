@@ -9,10 +9,10 @@
     },
     "questions": {
         "easy": [
-            { "question": "", "answers": [ "", "", "" ]},
-            { "question": "", "answers": [ "", "", "" ]},
-            { "question": "", "answers": [ "", "", "" ]},
-            { "question": "", "answers": [ "", "", "" ]}
+            { "question": "What is your age?", "answers": [ "0-18", "19-25", "26-50", "Undefined" ]},
+            { "question": "What do you do?", "answers": [ "Programming", "Drugs", "Weapons", "Something else" ]},
+            { "question": "Do you have free time?", "answers": [ "You don't care", "There is no such thing", "Yes, I have plenty" ]},
+            { "question": "How do you like to spend your vacation?", "answers": [ "No way", "Sleeping with understanding", "Reading with understanding" ]}
         ],
         "medium": [
             { "question": "", "answers": [ "", "", "" ]},
