@@ -4,54 +4,6 @@
     --BORDER: 1px solid blue;
 }
 
-.container__questions-category {
-    display: grid;
-
-    grid-template-rows: 50% 50%;
-    grid-template-columns: auto auto auto;
-
-    gap: 2vh;
-
-    padding: 3vh;
-
-    font-size: 1.5rem;
-
-}
-
-div.cell__questions-category {
-    display: flex;
-
-    justify-content: center;
-    align-items: center;
-
-    padding: 20px;
-
-    border: 1px solid black;
-}
-
-.cell__questions-category.header__questions {
-
-    font-size: 2.25rem;
-    font-weight: bold;
-    letter-spacing: 0.15rem;
-
-    background-color: #000;
-    color: whitesmoke;
-}
-
-/** || FORMS */
-
-.difficulty {
-    padding: 10px;
-    background-color: aliceblue;
-
-    font-size: 1.2rem;
-
-    border: var(--BORDER);
-
-    width: 50%;
-}
-
 .buttons {
     margin: auto 5%;
 
@@ -62,4 +14,37 @@ div.cell__questions-category {
     padding: 10px;
     border: var(--BORDER);
     background-color: aliceblue;
+}
+
+.container__selection {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    margin: 5vh auto;
+
+    flex-direction: column;
+
+}
+
+.categories__selection {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    width: 40vw;
+
+    flex-direction: column;
+
+}
+
+.buttons__selection {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    margin: 5vh auto;
 }

@@ -35,7 +35,7 @@ const Entertainment = (props) => {
         (props.lang) ? l = en : l = bg;
 
         let option = "";
-        switch (location.state.difficulty.option) {
+        switch (location.state.difficulty.value) {
             case "Easy":
                 option = l.difficultyOptions.easy;
                 break;
@@ -62,7 +62,7 @@ const Entertainment = (props) => {
         <>
             <Navigation navigate="/questions" confirm={false} lang={currentLanguage} />
             <Title lang={currentLanguage} />
-            <Questions category={l.type} difficulty={location.state.difficulty.option} en={en} bg={bg} lang={currentLanguage} />
+            <Questions category={l.type} difficulty={location.state.difficulty.value} en={en} bg={bg} lang={currentLanguage} />
             <label className="switch">
                 <input type="checkbox" onChange={(e) => changeLanguage(e)} checked={currentLanguage} />
                 <span className="slider round"></span>

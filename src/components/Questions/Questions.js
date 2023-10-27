@@ -29,7 +29,7 @@ const Questions = (props) => {
     (props.lang) ? ll = en : ll = bg;
 
     let questions = [];
-
+    
     switch (props.difficulty) {
         case "Easy":
             questions = l.questions.easy;

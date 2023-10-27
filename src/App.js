@@ -20,7 +20,6 @@ import Work from './components/Questions/Work/Work';
 import Entertainment from './components/Questions/Entertainment/Entertainment';
 import Personal from './components/Questions/Personal/Personal';
 
-
 function App() {
 
   const location = useLocation();
