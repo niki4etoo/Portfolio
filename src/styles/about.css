@@ -9,8 +9,24 @@
     justify-content: center;
     align-items: flex-start;
 
-    font-size: 1.5rem;
-    letter-spacing: 0.2rem;
+    font-size: 1.1rem;
+    letter-spacing: 0.3rem;
+    
+}
+
+.about a {
+    color: #000;
+    transition: all 0.5s ease-in;
+}
+
+
+
+.about a:hover, .about a:focus {
+    cursor: crosshair;
+
+    color: darkblue;
+    letter-spacing: 0.15rem;
+    transition: all 0.5s ease-in;
 }
 
 section {
@@ -31,8 +47,8 @@ img {
 .intro p {
     font-size: 1.2rem;
 
-    letter-spacing: 0.05rem;
-    word-spacing: 0.2rem;
+    letter-spacing: 0.15rem;
+    word-spacing: 0.35rem;
 }
 
 .tech-stack {

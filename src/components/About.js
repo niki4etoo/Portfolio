@@ -66,7 +66,7 @@ const About = () => {
         <div ref={main}>
             <Navigation lang={currentLanguage} />
             <div className="container-about">
-                <div className="about"><h1>{l.about.title}</h1></div>
+                <div className="about"><h1><a href="https://github.com/niki4etoo/">{l.about.title}</a></h1></div>
                 <section className="profile">
                     <figure ref={figureRef}>
                         <a href="https://github.com/niki4etoo/"><img ref={imgRef} src={profileQuestion} width={200} height={200} alt="Profile" /></a>
