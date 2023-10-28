@@ -1,32 +1,46 @@
-.container-about {
+:root {
+
+    /** Spacing **/
+    --LETTER-SPACING-ABOUT: 0.12rem;
+
+    /** Borders **/
+    --BORDER-BLUE: 1px solid blue;
+
+    /** Transitions **/
+    --TRANSITION-SHORT: all 0.5s ease-in;
+}
+
+.container__about {
     width: 100vw;
     min-height: 80vh;
 }
 
-.about {
+.title__about {
     display: flex;
 
     justify-content: center;
     align-items: flex-start;
-
-    font-size: 1.1rem;
-    letter-spacing: 0.3rem;
-    
 }
 
-.about a {
+.title__about a {
     color: #000;
-    transition: all 0.5s ease-in;
+    transition: var(--TRANSITION-SHORT);
 }
 
-
-
-.about a:hover, .about a:focus {
+.title__about a:hover,
+.title__about a:focus {
     cursor: crosshair;
 
     color: darkblue;
-    letter-spacing: 0.15rem;
-    transition: all 0.5s ease-in;
+    letter-spacing: var(--LETTER-SPACING-ABOUT);
+    transition: var(--TRANSITION-SHORT);
+}
+
+.intro__about p {
+    font-size: 1.2rem;
+
+    letter-spacing: var(--LETTER-SPACING-ABOUT);
+    word-spacing: 0.35rem;
 }
 
 section {
@@ -40,39 +54,33 @@ section {
     flex-direction: column;
 }
 
-section.subintro {
+section.subintro__about {
     width: 60vw;
 }
 
-section.subintro p {
-    font-size: 1.2rem;
-    padding: 5vh;
-
-    align-items: flex-start;
-    letter-spacing: 0.1rem;
-    word-spacing: 0.3rem;
-    word-wrap: break-word;
-    text-indent: 2vh;
-}
-
-section.subintro h3 {
+section.subintro__about h3 {
     font-size: 1.8rem;
     margin: 2vh;
 }
 
+section.subintro__about p {
+    font-size: 1.2rem;
+    padding: 5vh;
+
+    align-items: flex-start;
+    letter-spacing: var(--LETTER-SPACING-ABOUT);
+    word-spacing: 0.25rem;
+    word-wrap: break-word;
+    text-indent: 3vh;
+}
+
+
 img {
-    border: 1px solid blue;
+    border: var(--BORDER-BLUE);
     border-radius: 50%;
 }
 
-.intro p {
-    font-size: 1.2rem;
-
-    letter-spacing: 0.15rem;
-    word-spacing: 0.35rem;
-}
-
-.tech-stack {
+.tech-stack__about {
     display: flex;
 
     flex-flow: column nowrap;
@@ -86,37 +94,38 @@ img {
 
 }
 
-.tech-stack-row {
+.tech-stack-row__about {
     display: flex;
     flex-direction: row;
 }
 
-.tech-stack-column {
+.tech-stack-column__about {
     display: flex;
     flex-direction: column;
 }
 
-.tech-stack h1 {
+.tech-stack__about h1 {
     font-size: 2rem;
-    letter-spacing: 0.2rem;
+    letter-spacing: var(--LETTER-SPACING-ABOUT);
+    margin: auto 2vw;
 }
 
-.tech-stack h2 {
+.tech-stack__about h2 {
     font-size: 1.5rem;
-    letter-spacing: 0.15rem;
+    letter-spacing: var(--LETTER-SPACING-ABOUT);
     margin: 1vh 3vw;
 }
 
-.tech-stack ul {
+.tech-stack__about ul {
     margin: 1vh 5vw;
     list-style-type: upper-roman;
     font-size: 1.2rem;
-    letter-spacing: 0.1rem;
+    letter-spacing: var(--LETTER-SPACING-ABOUT);
 
     margin-bottom: 15vh;
 }
 
-.tech-stack ul li a {
+.tech-stack__about ul li a {
     font-size: 1.2rem;
-    letter-spacing: 0.2rem;
+    letter-spacing: var(--LETTER-SPACING-ABOUT);
 }

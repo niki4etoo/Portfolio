@@ -65,24 +65,24 @@ const About = () => {
     return (
         <div ref={main}>
             <Navigation lang={currentLanguage} />
-            <div className="container-about">
-                <div className="about"><h1><a href="https://github.com/niki4etoo/">{l.about.title}</a></h1></div>
-                <section className="profile">
+            <div className="container__about">
+                <div className="title__about"><h1><a href="https://github.com/niki4etoo/">{l.about.title}</a></h1></div>
+                <section className="profile__about">
                     <figure ref={figureRef}>
                         <a href="https://github.com/niki4etoo/"><img ref={imgRef} src={profileQuestion} width={200} height={200} alt="Profile" /></a>
                     </figure>
                 </section>
-                <section className="intro">
+                <section className="intro__about">
                     <p>{l.about.intro}</p>
                 </section>
-                <section className="subintro">
+                <section className="subintro__about">
                     <h3>{l.about.subintro.title}</h3>
                     <p>{l.about.subintro.description}</p>
                 </section>
-                <section className="tech-stack">
+                <section className="tech-stack__about">
                     <h1>{l.about.techStack}</h1>
-                    <div className="tech-stack-row">
-                        <div className="tech-stack-column">
+                    <div className="tech-stack-row__about">
+                        <div className="tech-stack-column__about">
                             <h2>{l.about.tech.used}</h2>
                             <ul>
                                 <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">{l.about.tech.js}</a></li>
@@ -90,7 +90,7 @@ const About = () => {
                                 <li><a href="https://react.dev/">{l.about.tech.react}</a></li>
                             </ul>
                         </div>
-                        <div className="tech-stack-column">
+                        <div className="tech-stack-column__about">
                             <h2>{l.about.tech.learning}</h2>
                             <ul>
                                 <li><a href="https://gsap.com/">{l.about.tech.gsap}</a></li>
