@@ -22,7 +22,7 @@ const Contacts = (props) => {
     let l = {};
     (currentLanguage) ? l = en : l = bg;
 
-    const [ form, setForm ] = useState({
+    const [form, setForm] = useState({
         name: "",
         mail: "",
         message: "",
@@ -30,24 +30,27 @@ const Contacts = (props) => {
 
     const handleChange = (e) => {
         const val = e.target.value;
-        setForm({...form,
-            [e.target.name]: val});
+        setForm({
+            ...form,
+            [e.target.name]: val
+        });
     }
 
     const handleSubmit = (e) => {
         e.preventDefault();
-      
+
         const contactForm = document.querySelector("#contactForm");
         const formData = new FormData(contactForm);
-      
+        
         fetch("/", {
-          method: "POST",
-          headers: { "Content-Type": "application/x-www-form-urlencoded" },
-          body: new URLSearchParams(formData).toString(),
+            method: "POST",
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            body: new URLSearchParams(formData).toString(),
         })
-          .then(() => alert("/thank-you/"))
-          .catch((error) => alert(error));
-      };
+            .then(() => alert("/thank-you/"))
+            .catch((error) => alert(error));
+
+    };
 
     return (
         <>
@@ -69,14 +72,16 @@ const Contacts = (props) => {
                         </fieldset>
                         <div className="contacts-buttons">
                             <fieldset className="contacts-item">
-                                <button name="reset" type="reset" id="contact-reset" onClick={(e) => { setForm({
-                                    name: "",
-                                    mail: "",
-                                    message: "",
-                                }); }}>{l.contacts.form.buttons.reset}</button>
+                                <button name="reset" type="reset" id="contact-reset" onClick={(e) => {
+                                    setForm({
+                                        name: "",
+                                        mail: "",
+                                        message: "",
+                                    });
+                                }}>{l.contacts.form.buttons.reset}</button>
                             </fieldset>
                             <fieldset className="contacts-item">
-                                <button type="submit" id="contact-submit" onClick={handleSubmit}>{l.contacts.form.buttons.send}</button>
+                                <button type="submit" id="contact-submit">{l.contacts.form.buttons.send}</button>
                             </fieldset>
                         </div>
                     </form>
