@@ -25,9 +25,9 @@ const Intro = () => {
 
     const HeaderTitle = (props) => {
         if (props.lang) {
-            return <><span id='blue'>{en.header.titleFirstPart}</span>{en.header.titleSecondPart}</>;
+            return <><span id='main-color'>{en.header.titleFirstPart}</span>{en.header.titleSecondPart}</>;
         } else {
-            return <><span id='blue'>{bg.header.titleFirstPart}</span>{bg.header.titleSecondPart}</>;
+            return <><span id='main-color'>{bg.header.titleFirstPart}</span>{bg.header.titleSecondPart}</>;
         }
     }
 
@@ -170,7 +170,7 @@ const Intro = () => {
                     <div className='answer' onClick={() => showDescription("depends")}><Answers type="depends" lang={currentLanguage} /></div>
                 </div>
             }
-            <div className='answersDescription'>
+            <div className='answer-descriptions'>
                 {
                     intro.yes &&
                     <AnswerDescriptions type="yes" lang={currentLanguage} />

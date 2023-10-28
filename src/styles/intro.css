@@ -1,3 +1,18 @@
+:root {
+    /** Transitions **/
+    --TRANSITION-HEADER: 1.5s ease;
+    --TRANSITION-QUESTIONS: 0.5s ease-in;
+    --TRANSITION-LINKS: 0.3s ease;
+
+    /** Colors **/
+    --MAIN-COLOR: blue;
+    --LINK-COLOR: black;
+}
+
+#main-color {
+    color: var(--MAIN-COLOR);
+}
+
 .header {
     display: flex;
     flex-direction: column;
@@ -6,24 +21,21 @@
 
     height: 80vh;
 
-    animation: portfolioIntroAnim 1s ease-in;
+    animation: portfolioIntroAnim var(--TRANSITION-HEADER);
 }
 
 .header h1 {
     font-size: 4em;
     letter-spacing: 0.5em;
-    transition: 1.5s ease;
+    transition: var(--TRANSITION-HEADER);
     cursor: pointer;
 }
 
-#blue {
-    color: blue;
-}
 
 
 .header h1:hover {
     letter-spacing: 1px;
-    transition: 1.5s ease;
+    transition: var(--TRANSITION-HEADER);
     cursor: pointer;
 }
 
@@ -37,18 +49,18 @@
 
     height: 20vh;
 
-    animation: questionKeyframesEnter 0.5s ease-in;
+    animation: questionKeyframesEnter var(--TRANSITION-QUESTIONS);
 }
 
 .questions h1 {
     font-size: 3em;
     letter-spacing: 0.25em;
-    transition: 0.5s ease-in;
+    transition: var(--TRANSITION-QUESTIONS);
 }
 
 .questions h1:hover {
     letter-spacing: 1px;
-    transition: 0.5s ease-in;
+    transition: var(--TRANSITION-QUESTIONS);
 }
 
 .answers {
@@ -61,11 +73,11 @@
     height: 30vh;
     width: 80vw;
 
-    animation: answerKeyframesEnter 1s ease-in;
+    animation: answerKeyframesEnter var(--TRANSITION-LINKS);
 }
 
 .answer {
-    color: black;
+    color: var(--LINK-COLOR);
 
     border-bottom: 2px solid #DCE3FF;
     border-radius: 15px 5px;
@@ -78,19 +90,20 @@
     font-size: 2em;
     font-weight: 300;
     letter-spacing: 0.2em;
-    transition: 0.3s ease-in;
+    transition: var(--TRANSITION-LINKS);
 }
 
-.answer:hover, .answer:focus {
+.answer:hover,
+.answer:focus {
     background-color: #fff8dc;
-    color: black;
+    color: var(--LINK-COLOR);
     border-bottom: 4px solid #DCE3FF;
 
-    transition: all 0.3s ease-in;
+    transition: all var(--TRANSITION-LINKS);
     transform: scale(1.05);
 }
 
-.answersDescription {
+.answer-descriptions {
     display: flex;
     flex-direction: column;
 
@@ -111,11 +124,11 @@
 
     padding: 5%;
 
-    animation: answerDescAnimation 2s ease-in;
+    animation: answerDescAnimation 1s ease-in;
 }
 
 .answer-description h1 {
-    color: blue;
+    color: var(--MAIN-COLOR);
     margin: auto 10%;
 
     font-weight: 500;
@@ -134,9 +147,10 @@
     word-spacing: 0.25em;
 }
 
-.answer-description a:hover, a:focus {
+.answer-description a:hover,
+a:focus {
     color: rgb(161, 161, 255);
-    transition: color 0.3s ease-out;
+    transition: color var(--TRANSITION-LINKS);
 }
 
 
@@ -181,6 +195,7 @@
         opacity: 0;
         transform: translateX(-5%);
     }
+
     to {
         opacity: 1;
         transform: translateX(0);
