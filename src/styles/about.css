@@ -37,6 +37,27 @@ section {
 
     margin: 5vh auto;
 
+    flex-direction: column;
+}
+
+section.subintro {
+    width: 60vw;
+}
+
+section.subintro p {
+    font-size: 1.2rem;
+    padding: 5vh;
+
+    align-items: flex-start;
+    letter-spacing: 0.1rem;
+    word-spacing: 0.3rem;
+    word-wrap: break-word;
+    text-indent: 2vh;
+}
+
+section.subintro h3 {
+    font-size: 1.8rem;
+    margin: 2vh;
 }
 
 img {
@@ -61,7 +82,8 @@ img {
 
     margin: 2vh 2vh;
 
-    min-height: 30vh;
+    min-height: 40vh;
+
 }
 
 .tech-stack-row {
@@ -90,6 +112,8 @@ img {
     list-style-type: upper-roman;
     font-size: 1.2rem;
     letter-spacing: 0.1rem;
+
+    margin-bottom: 15vh;
 }
 
 .tech-stack ul li a {

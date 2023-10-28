@@ -75,6 +75,10 @@ const About = () => {
                 <section className="intro">
                     <p>{l.about.intro}</p>
                 </section>
+                <section className="subintro">
+                    <h3>{l.about.subintro.title}</h3>
+                    <p>{l.about.subintro.description}</p>
+                </section>
                 <section className="tech-stack">
                     <h1>{l.about.techStack}</h1>
                     <div className="tech-stack-row">
