@@ -31,7 +31,7 @@ const DependsAnswer = () => {
             {question.answered &&
                 <>
                     <Navigation userAnswers={userAnswers} confirm={false} lang={currentLanguage} index={index} />
-                    <div className="answered">
+                    <div className="answered__quiz">
                         <Messages success={true} lang={currentLanguage} />
                         <AnsweredQuestions lang={currentLanguage} questions={userAnswers} questionsCount={en.quiz.depends.questions.length} page="/depends" />
                     </div>

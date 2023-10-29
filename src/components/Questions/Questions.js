@@ -85,11 +85,11 @@ const Questions = (props) => {
                     <>
                         <div className="success__message__questions">
                             <h3>{ll.questions.success.message}</h3>
-                            <div className="navigation">
-                                <div className="navigation item">
+                            <div className="navigation__questions">
+                                <div className="navigation__questions item">
                                     <Link to='/questions'>{ll.questions.navigation.back}</Link>
                                 </div>
-                                <div className="navigation item">
+                                <div className="navigation__questions item">
                                     <Link to='/'>{ll.questions.navigation.home}</Link>
                                 </div>
 

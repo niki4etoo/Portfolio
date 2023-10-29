@@ -7,9 +7,9 @@ import en from '../../languages/en.json';
 const Messages = (props) => {
     if(props.success){
         if(props.lang){
-            return (<span className="message-success">{en.quiz.messages.success}</span>);
+            return (<span className="message-success__quiz">{en.quiz.messages.success}</span>);
         } else {
-            return (<span className="message-success">{bg.quiz.messages.success}</span>);
+            return (<span className="message-success__quiz">{bg.quiz.messages.success}</span>);
         }
     }
 }

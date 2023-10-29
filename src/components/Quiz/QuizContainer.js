@@ -93,78 +93,78 @@ const QuizContainer = (props) => {
 
     switch (props.type) {
         case "yes":
-            result = <div className="quiz-container" ref={scope}>
-                <div ref={questionRef} className="quiz-question">
+            result = <div className="quiz-container__quiz" ref={scope}>
+                <div ref={questionRef} className="quiz-question__quiz">
                     {l.quiz.yes.questions[props.index].question}
                 </div>
 
-                <div className="quiz-answers">
+                <div className="quiz-answers__quiz">
 
-                    <div ref={(elem) => answersRef.current.push(elem)} className="quiz-answer" onClick={() => handle(props.type, l.quiz.yes.questions[props.index].answers[0])}>
+                    <div ref={(elem) => answersRef.current.push(elem)} className="quiz-answer__quiz" onClick={() => handle(props.type, l.quiz.yes.questions[props.index].answers[0])}>
                         {l.quiz.yes.questions[props.index].answers[0]}
                     </div>
 
-                    <div ref={(elem) => answersRef.current.push(elem)} className="quiz-answer" onClick={() => handle(props.type, l.quiz.yes.questions[props.index].answers[1])}>
+                    <div ref={(elem) => answersRef.current.push(elem)} className="quiz-answer__quiz" onClick={() => handle(props.type, l.quiz.yes.questions[props.index].answers[1])}>
                         {l.quiz.yes.questions[props.index].answers[1]}
                     </div>
 
-                    <div ref={(elem) => answersRef.current.push(elem)} className="quiz-answer" onClick={() => handle(props.type, l.quiz.yes.questions[props.index].answers[2])}>
+                    <div ref={(elem) => answersRef.current.push(elem)} className="quiz-answer__quiz" onClick={() => handle(props.type, l.quiz.yes.questions[props.index].answers[2])}>
                         {l.quiz.yes.questions[props.index].answers[2]}
                     </div>
 
-                    <div ref={(elem) => answersRef.current.push(elem)} className="quiz-answer" onClick={() => handle(props.type, l.quiz.yes.questions[props.index].answers[3])}>
+                    <div ref={(elem) => answersRef.current.push(elem)} className="quiz-answer__quiz" onClick={() => handle(props.type, l.quiz.yes.questions[props.index].answers[3])}>
                         {l.quiz.yes.questions[props.index].answers[3]}
                     </div>
                 </div>
             </div>;
             break;
         case "no":
-            result = <div className="quiz-container" ref={scope}>
-                <div ref={questionRef} className="quiz-question">
+            result = <div className="quiz-container__quiz" ref={scope}>
+                <div ref={questionRef} className="quiz-question__quiz">
                     {l.quiz.no.questions[props.index].question}
                 </div>
 
-                <div className="quiz-answers">
+                <div className="quiz-answers__quiz">
 
-                    <div ref={(elem) => answersRef.current.push(elem)} className="quiz-answer" onClick={() => handle(props.type, l.quiz.no.questions[props.index].answers[0])}>
+                    <div ref={(elem) => answersRef.current.push(elem)} className="quiz-answer__quiz" onClick={() => handle(props.type, l.quiz.no.questions[props.index].answers[0])}>
                         {l.quiz.no.questions[props.index].answers[0]}
                     </div>
 
-                    <div ref={(elem) => answersRef.current.push(elem)} className="quiz-answer" onClick={() => handle(props.type, l.quiz.no.questions[props.index].answers[1])}>
+                    <div ref={(elem) => answersRef.current.push(elem)} className="quiz-answer__quiz" onClick={() => handle(props.type, l.quiz.no.questions[props.index].answers[1])}>
                         {l.quiz.no.questions[props.index].answers[1]}
                     </div>
 
-                    <div ref={(elem) => answersRef.current.push(elem)} className="quiz-answer" onClick={() => handle(props.type, l.quiz.no.questions[props.index].answers[2])}>
+                    <div ref={(elem) => answersRef.current.push(elem)} className="quiz-answer__quiz" onClick={() => handle(props.type, l.quiz.no.questions[props.index].answers[2])}>
                         {l.quiz.no.questions[props.index].answers[2]}
                     </div>
 
-                    <div ref={(elem) => answersRef.current.push(elem)} className="quiz-answer" onClick={() => handle(props.type, l.quiz.no.questions[props.index].answers[3])}>
+                    <div ref={(elem) => answersRef.current.push(elem)} className="quiz-answer__quiz" onClick={() => handle(props.type, l.quiz.no.questions[props.index].answers[3])}>
                         {l.quiz.no.questions[props.index].answers[3]}
                     </div>
                 </div>
             </div>;
             break;
         case "depends":
-            result = <div className="quiz-container" ref={scope}>
-                <div ref={questionRef} className="quiz-question">
+            result = <div className="quiz-container__quiz" ref={scope}>
+                <div ref={questionRef} className="quiz-question__quiz">
                     {l.quiz.depends.questions[props.index].question}
                 </div>
 
-                <div className="quiz-answers">
+                <div className="quiz-answers__quiz">
 
-                    <div ref={(elem) => answersRef.current.push(elem)} className="quiz-answer" onClick={() => handle(props.type, l.quiz.depends.questions[props.index].answers[0])}>
+                    <div ref={(elem) => answersRef.current.push(elem)} className="quiz-answer__quiz" onClick={() => handle(props.type, l.quiz.depends.questions[props.index].answers[0])}>
                         {l.quiz.depends.questions[props.index].answers[0]}
                     </div>
 
-                    <div ref={(elem) => answersRef.current.push(elem)} className="quiz-answer" onClick={() => handle(props.type, l.quiz.depends.questions[props.index].answers[1])}>
+                    <div ref={(elem) => answersRef.current.push(elem)} className="quiz-answer__quiz" onClick={() => handle(props.type, l.quiz.depends.questions[props.index].answers[1])}>
                         {l.quiz.depends.questions[props.index].answers[1]}
                     </div>
 
-                    <div ref={(elem) => answersRef.current.push(elem)} className="quiz-answer" onClick={() => handle(props.type, l.quiz.depends.questions[props.index].answers[2])}>
+                    <div ref={(elem) => answersRef.current.push(elem)} className="quiz-answer__quiz" onClick={() => handle(props.type, l.quiz.depends.questions[props.index].answers[2])}>
                         {l.quiz.depends.questions[props.index].answers[2]}
                     </div>
 
-                    <div ref={(elem) => answersRef.current.push(elem)} className="quiz-answer" onClick={() => handle(props.type, l.quiz.depends.questions[props.index].answers[3])}>
+                    <div ref={(elem) => answersRef.current.push(elem)} className="quiz-answer__quiz" onClick={() => handle(props.type, l.quiz.depends.questions[props.index].answers[3])}>
                         {l.quiz.depends.questions[props.index].answers[3]}
                     </div>
                 </div>

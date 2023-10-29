@@ -1,4 +1,4 @@
-.container {
+.container__quiz {
     display: flex;
     flex-direction: column;
 
@@ -6,7 +6,7 @@
     align-items: center;
 }
 
-.quiz-container {
+.quiz-container__quiz {
     display: flex;
 
     width: 100vw;
@@ -20,7 +20,7 @@
 
 }
 
-.quiz-question {
+.quiz-question__quiz {
     display: flex;
 
     flex-direction: column;
@@ -35,9 +35,9 @@
     min-height: 15vh;
 }
 
-.quiz-answers {
+.quiz-answers__quiz {
     display: flex;
-    
+
     flex-direction: row;
 
     justify-content: space-around;
@@ -49,7 +49,7 @@
     height: 40vh;
 }
 
-.quiz-answer {
+.quiz-answer__quiz {
     font-weight: 300;
     letter-spacing: 0.05em;
 
@@ -58,7 +58,8 @@
     border-radius: 15px 5px;
 }
 
-.quiz-answer:hover, .quiz-answer:focus {
+.quiz-answer__quiz:hover,
+.quiz-answer__quiz:focus {
     cursor: pointer;
 
     background-color: #fff8dc;
@@ -69,7 +70,7 @@
     transform: scale(1.05);
 }
 
-.answered {
+.answered__quiz {
     display: flex;
 
     flex-direction: column;
@@ -85,7 +86,7 @@
     animation: answeredAnim 1s ease-in;
 }
 
-.answered .message-success {
+.answered__quiz .message-success__quiz {
     display: flex;
 
     justify-content: center;
@@ -101,7 +102,7 @@
 }
 
 
-.answered .user-answer-title {
+.answered__quiz .user-answer-title__quiz {
     font-weight: 300;
     letter-spacing: 0.15em;
     word-spacing: 0.2em;
@@ -117,7 +118,7 @@
     border-bottom-right-radius: 20px;
 }
 
-.answered .user-answer {
+.answered__quiz .user-answer__quiz {
     display: flex;
 
     justify-content: flex-start;
@@ -126,11 +127,7 @@
     margin: auto 1vh;
 }
 
-#blue {
-    color: blue;
-}
-
-.answered .answer-list {
+.answered__quiz .answer-list__quiz {
     margin: 30px;
     min-width: 40vw;
 
@@ -140,13 +137,13 @@
     justify-content: center;
 }
 
-.answered .answer-list ol.roman {
+.answered__quiz .answer-list__quiz ol.roman__quiz {
     list-style-type: upper-roman;
     color: slateblue;
     list-style-position: inside;
 }
 
-.answered .answer-list ol.roman li {
+.answered__quiz .answer-list__quiz ol.roman__quiz li {
     letter-spacing: 0.15em;
     word-spacing: 0.2em;
     text-align: right;
@@ -158,7 +155,7 @@
 
 
 /* navigation */
-.back-again {
+.back-again__quiz {
     display: flex;
 
     justify-content: center;
@@ -178,6 +175,7 @@
         opacity: 0;
         transform: translate(-5% -5%);
     }
+
     to {
         opacity: 1;
         transform: translate(0 0);
@@ -189,6 +187,7 @@
         opacity: 0;
         transform: translateY(-5%);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);

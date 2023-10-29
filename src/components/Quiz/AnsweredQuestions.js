@@ -14,10 +14,10 @@ const AnsweredQuestions = (props) => {
     if (props.lang) {
         return (
             <>
-                <div className="answer-list">
-                    <div className="user-answer-title">{en.stats.yourAnswers}</div>
-                    <div className="user-answer-times">{en.times.list[(props.questions.length / props.questionsCount) - 1]}</div>
-                    <ol className="roman">
+                <div className="answer-list__quiz">
+                    <div className="user-answer-title__quiz">{en.stats.yourAnswers}</div>
+                    <div className="user-answer-times__quiz">{en.times.list[(props.questions.length / props.questionsCount) - 1]}</div>
+                    <ol className="roman__quiz">
                         {
                             props.questions.map((a, k) => {
                                 return (
@@ -26,7 +26,7 @@ const AnsweredQuestions = (props) => {
                             })
                         }
                     </ol>
-                    <div className="back-again">
+                    <div className="back-again__quiz">
                         <Link to={props.page} state={{ lang: props.lang }}>{en.stats.again}</Link>
                     </div>
                 </div>
@@ -35,10 +35,10 @@ const AnsweredQuestions = (props) => {
     } else {
         return (
             <>
-                <div className="answer-list">
-                    <div className="user-answer-title">{bg.stats.yourAnswers}</div>
-                    <div className="user-answer-times">{bg.times.list[(props.questions.length / props.questionsCount) - 1]}</div>
-                    <ol className="roman">
+                <div className="answer-list__quiz">
+                    <div className="user-answer-title__quiz">{bg.stats.yourAnswers}</div>
+                    <div className="user-answer-times__quiz">{bg.times.list[(props.questions.length / props.questionsCount) - 1]}</div>
+                    <ol className="roman__quiz">
                         {
                             props.questions.map((a, k) => {
                                 return (
@@ -47,7 +47,7 @@ const AnsweredQuestions = (props) => {
                             })
                         }
                     </ol>
-                    <div className="back-again">
+                    <div className="back-again__quiz">
                         <Link to={props.page} state={{ lang: props.lang }}>{bg.stats.again}</Link>
                     </div>
                 </div>
