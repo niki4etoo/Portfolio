@@ -9,3 +9,13 @@
   margin: 0;
   box-sizing: border-box;
 }
+
+:root {
+  /** Colors **/
+  --MAIN-COLOR: blue;
+  --PRIMARY-COLOR: black;
+}
+
+#main-color {
+  color: var(--MAIN-COLOR);
+}
