@@ -2,6 +2,8 @@ import React, { useState, useRef, useLayoutEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { gsap } from 'gsap';
 
+import { getRandomRotation } from './Utilities';
+
 import LanguageSwitch from './LanguageSwitch';
 import Menu from './Menu';
 
@@ -130,6 +132,27 @@ const Intro = () => {
         return () => ctx.revert(); // clean up
 
     }, [isHeaderClicked]);
+
+    useLayoutEffect(() => {
+
+        let ctx = gsap.context(() => {
+
+            gsap.fromTo('.header__intro', 
+            {
+                opacity: 0,
+                rotation: getRandomRotation()
+            },
+            {
+                opacity: 1,
+                rotation: 0,
+                duration: 0.5
+            });
+
+        }, main);
+
+        return () => ctx.revert(); // clean up
+
+    }, []);
 
     // Animation on Answer Descriptions
     useLayoutEffect(() => {
