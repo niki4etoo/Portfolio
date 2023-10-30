@@ -1,5 +1,5 @@
 
-.contacts-container {
+.contacts-container__contacts {
 
     text-align: center;
 
@@ -14,13 +14,13 @@
     margin: auto;
 }
 
-.contacts {
+.title__contacts {
     font-size: 1.5rem;
     letter-spacing: 0.2rem;
     font-weight: bold;
 }
 
-.contacts-form {
+.contact-button__contacts {
     margin: 5vh auto;
 
     display: flex;
@@ -32,37 +32,7 @@
     height: 100%;
 }
 
-.contacts-item {
-    margin: 2vh 1vw;
-    border: none;
-}
-
-.contacts-input {
-    display: flex;
-
-    justify-content: center;
-    align-items: center;
-    flex-flow: row;
-}
-
-.contacts-form input {
-    padding: 1vh;
-}
-
-.contacts-form textarea {
-    padding: 1vh;
-    min-height: 100%;
-    width: 100%;
-}
-
-.contacts-buttons {
-    display: flex;
-    flex-flow: row;
-
-    justify-content: flex-end;
-}
-
-.contacts-item button {
+.button-send__contacts {
     padding: 0.5rem 1rem;
     font-size: 1rem;
     letter-spacing: 0.15rem;
@@ -73,5 +43,18 @@
     cursor: pointer;
 }
 
+.social-links__contacts {
+    display: flex;
+    flex-direction: row;
 
+    justify-content: space-around;
+    align-items: center;
 
+    min-width: 20vw;
+    margin: 5vh auto;
+}
+
+.social-links__contacts a:any-link {
+    text-decoration: none;
+    border: none;
+}

@@ -183,6 +183,7 @@
         }
     },
     "contacts": {
+        "label": "Send a message",
         "title": "Contacts",
         "form": {
             "buttons": {
