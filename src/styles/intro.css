@@ -124,8 +124,6 @@
     border-radius: 20% 0%;
 
     padding: 5%;
-
-    animation: answerDescAnimation 1s ease-in;
 }
 
 .answer-description__intro h1 {
@@ -188,17 +186,5 @@ a:focus {
     to {
         opacity: 1;
         transform: translateY(0);
-    }
-}
-
-@keyframes answerDescAnimation {
-    from {
-        opacity: 0;
-        transform: translateX(-5%);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateX(0);
     }
 }

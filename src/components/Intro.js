@@ -20,6 +20,8 @@ const Intro = () => {
 
     const [isHeaderClicked, setIsHeaderClicked] = useState(false);
 
+    const [isDescriptionShowed, setIsDescriptionShowed] = useState(false);
+
     const [intro, setIntro] = useState({
         question: false, answers: false,
         yes: false,
@@ -105,7 +107,7 @@ const Intro = () => {
 
     //Animation on Header
     useLayoutEffect(() => {
-        if(!isHeaderClicked) return;
+        if (!isHeaderClicked) return;
 
         let ctx = gsap.context(() => {
             let mainTimeline = gsap.timeline();
@@ -128,6 +130,31 @@ const Intro = () => {
         return () => ctx.revert(); // clean up
 
     }, [isHeaderClicked]);
+
+    // Animation on Answer Descriptions
+    useLayoutEffect(() => {
+        if (!isDescriptionShowed) return;
+
+        let ctx = gsap.context(() => {
+            let mt = gsap.timeline(); // mt - main timeline
+            mt.fromTo('.answer-description__intro',
+                {
+                    opacity: 0,
+                    x: "-5%"
+                },
+                {
+                    x: 0,
+                    opacity: 1,
+                    ease: "Power4.easeOut",
+                    duration: 1.5
+                });
+
+        }, main);
+
+
+        return () => ctx.revert(); // clean up
+
+    }, [isDescriptionShowed]);
 
     const showAnswers = () => {
         setIntro((state) => {
@@ -163,7 +190,7 @@ const Intro = () => {
     return (
         <div ref={main} className='container__intro'>
             <div className='header__intro'>
-                <h1 ref={portfolioRef} onClick={() => { setIsHeaderClicked(prev => !prev)}}><HeaderTitle lang={currentLanguage} /></h1>
+                <h1 ref={portfolioRef} onClick={() => { setIsHeaderClicked(prev => !prev) }}><HeaderTitle lang={currentLanguage} /></h1>
             </div>
             {
                 intro.question &&
@@ -175,9 +202,18 @@ const Intro = () => {
                 intro.answers &&
 
                 <div className='answers__intro'>
-                    <div className='answer__intro' onClick={() => showDescription("yes")}><Answers type="yes" lang={currentLanguage} /></div>
-                    <div className='answer__intro' onClick={() => showDescription("no")}><Answers type="no" lang={currentLanguage} /></div>
-                    <div className='answer__intro' onClick={() => showDescription("depends")}><Answers type="depends" lang={currentLanguage} /></div>
+                    <div className='answer__intro' onClick={() => {
+                        showDescription("yes");
+                        setIsDescriptionShowed(prev => true);
+                    }}><Answers type="yes" lang={currentLanguage} /></div>
+                    <div className='answer__intro' onClick={() => {
+                        showDescription("no");
+                        setIsDescriptionShowed(prev => true);
+                    }}><Answers type="no" lang={currentLanguage} /></div>
+                    <div className='answer__intro' onClick={() => {
+                        showDescription("depends");
+                        setIsDescriptionShowed(prev => true);
+                    }}><Answers type="depends" lang={currentLanguage} /></div>
                 </div>
             }
             <div className='answer-descriptions__intro'>
