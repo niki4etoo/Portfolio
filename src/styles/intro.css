@@ -22,7 +22,6 @@
 
     height: 80vh;
 
-    animation: introAnimation var(--TRANSITION-HEADER);
 }
 
 .header__intro h1 {
@@ -150,19 +149,6 @@
 a:focus {
     color: rgb(161, 161, 255);
     transition: color var(--TRANSITION-LINKS);
-}
-
-
-@keyframes introAnimation {
-    from {
-        opacity: 0;
-        transform: rotate(90deg);
-    }
-
-    to {
-        opacity: 1;
-        transform: rotate(0);
-    }
 }
 
 @keyframes questionKeyframesEnter {
