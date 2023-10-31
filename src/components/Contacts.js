@@ -21,7 +21,7 @@ const Contacts = (props) => {
     //Languages ( BG | EN)
     const { state } = useLocation();
 
-    const [currentLanguage, setCurrentLanguage] = useState(state?.lang || true);
+    const [currentLanguage, setCurrentLanguage] = useState(state?.lang || false);
 
     let l = {};
     (currentLanguage) ? l = en : l = bg;

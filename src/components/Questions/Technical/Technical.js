@@ -18,7 +18,7 @@ const Technical = (props) => {
 
     const { state } = useLocation(); // getting user lang selection
 
-    const [currentLanguage, setCurrentLanguage] = useState(state?.lang || true); // setting language by last user selection
+    const [currentLanguage, setCurrentLanguage] = useState(state?.lang || false); // setting language by last user selection
 
     const location = useLocation(); //using location hook with state for difficulty options
 
@@ -45,9 +45,9 @@ const Technical = (props) => {
         }
 
         return (
-            <div className="technical__questions container">
-                <h2>{l.category}{" -> "}{l.title}</h2>
-                <h3>{l.difficulty}: {option}</h3>
+            <div className="container__titles__questions">
+                <h2>{l.category}: <span className="italic">{l.title}</span></h2>
+                <h3>{l.difficulty}: <span className="italic">{option}</span></h3>
             </div>
         );
 
@@ -57,7 +57,6 @@ const Technical = (props) => {
         <>
             <Navigation navigate="/questions" confirm={false} lang={currentLanguage} />
             <Title lang={currentLanguage} />
-
             <Questions category={l.type} difficulty={location.state.difficulty.value} en={en} bg={bg} lang={currentLanguage} />
             <LanguageSwitch lang={currentLanguage} setter={setCurrentLanguage} />
         </>

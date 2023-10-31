@@ -48,3 +48,53 @@
 
     margin: 5vh auto;
 }
+
+/** Mobile **/
+@media screen and (max-width: 768px) {
+    
+    .container__selection {
+        display: flex;
+    
+        justify-content: center;
+        align-items: center;
+    
+        margin: 1vh auto;
+    
+        flex-direction: column;
+    
+    }
+
+    .categories__selection {
+        display: flex;
+    
+        justify-content: center;
+        align-items: center;
+    
+        width: 100vw;
+
+        flex-direction: column;
+    
+    }
+
+    .buttons__selection {
+        display: flex;
+    
+        justify-content: center;
+        align-items: center;
+    
+        margin: 3vh auto;
+    }
+
+    .buttons {
+        margin: auto 10%;
+    
+        font-size: 0.8rem;
+    
+        cursor: pointer;
+    
+        padding: 10px;
+        border: var(--BORDER);
+        background-color: aliceblue;
+    }
+
+}

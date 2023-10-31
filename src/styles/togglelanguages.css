@@ -78,3 +78,54 @@ input:checked+.slider:before {
 .slider.round:before {
     border-radius: 50%;
 }
+
+/** Mobile **/
+@media screen and (max-width: 768px) {
+    .languages {
+        position: fixed;
+        bottom: 0;
+        right: 4vw;
+    }
+    
+    .switch {
+        position: fixed;
+        display: inline-block;
+        width: 58px;
+        height: 32px;
+    
+        bottom: 8vh;
+        right: 4vh;
+    }
+
+    .slider:before {
+
+        font-size: 0.5rem;
+    
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    
+        position: absolute;
+        content: "BG";
+        height: 28px;
+        width: 28px;
+        left: 4px;
+        bottom: 2px;
+        background-color: white;
+        -webkit-transition: .4s;
+        transition: .4s;
+    }
+
+    input:checked+.slider:before {
+        -webkit-transform: translateX(22px);
+        -ms-transform: translateX(22px);
+        transform: translateX(22px);
+    
+        content: "EN";
+    }
+    
+    /* Rounded sliders */
+    .slider.round {
+        border-radius: 26px;
+    }
+}

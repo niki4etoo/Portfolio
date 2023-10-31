@@ -14,6 +14,7 @@ const AnsweredQuestions = (props) => {
     if (props.lang) {
         return (
             <>
+
                 <div className="answer-list__quiz">
                     <div className="user-answer-title__quiz">{en.stats.yourAnswers}</div>
                     <div className="user-answer-times__quiz">{en.times.list[(props.questions.length / props.questionsCount) - 1]}</div>
