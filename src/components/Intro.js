@@ -36,7 +36,7 @@ const Intro = () => {
 
     //Languages ( BG | EN)
 
-    const [currentLanguage, setCurrentLanguage] = useState(state?.lang || false);
+    const [currentLanguage, setCurrentLanguage] = useState(state?.lang || true);
 
     const HeaderTitle = (props) => {
         if (props.lang) {

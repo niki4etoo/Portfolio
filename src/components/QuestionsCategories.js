@@ -58,7 +58,7 @@ const QuestionsCategories = (props) => {
     //Languages ( BG | EN)
     let { state } = useLocation();
 
-    const [currentLanguage, setCurrentLanguage] = useState(state?.lang || false);
+    const [currentLanguage, setCurrentLanguage] = useState(state?.lang || true);
 
     let l = {};
     (currentLanguage) ? l = en : l = bg;

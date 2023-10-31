@@ -18,7 +18,7 @@ const Technical = (props) => {
 
     const { state } = useLocation(); // getting user lang selection
 
-    const [currentLanguage, setCurrentLanguage] = useState(state?.lang || false); // setting language by last user selection
+    const [currentLanguage, setCurrentLanguage] = useState(state?.lang || true); // setting language by last user selection
 
     const location = useLocation(); //using location hook with state for difficulty options
 

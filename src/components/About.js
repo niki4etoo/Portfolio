@@ -24,7 +24,7 @@ const About = () => {
 
     //Languages ( BG | EN)
 
-    const [currentLanguage, setCurrentLanguage] = useState(state?.lang || false);
+    const [currentLanguage, setCurrentLanguage] = useState(state?.lang || true);
 
     let l = {};
     (currentLanguage) ? l = en : l = bg;
