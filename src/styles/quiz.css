@@ -199,6 +199,134 @@
     }
 }
 
+/** Tablets, Ipads **/
+
+@media (min-width: 768px) and (max-width: 1024px) {
+
+    .quiz-question__quiz {
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: center;
+        justify-content: center;
+
+        padding-top: 5%;
+
+        font-size: 1.3em;
+        letter-spacing: 0.07em;
+        word-spacing: 0.1em;
+        min-height: 10vh;
+    }
+
+    .quiz-answers__quiz {
+        display: flex;
+
+        flex-direction: row;
+
+        justify-content: space-around;
+        align-items: center;
+
+        font-size: 0.7em;
+        height: 30vh;
+    }
+
+    .quiz-answer__quiz {
+        font-weight: 300;
+        letter-spacing: 0.05em;
+
+        border-bottom: 2px solid #DCE3FF;
+        padding: 10px 10px;
+        border-radius: 15px 5px;
+    }
+
+    .answered__quiz {
+        display: flex;
+
+        flex-direction: column;
+
+        justify-content: center;
+        align-items: center;
+
+        height: 40vh;
+        width: 95vw;
+        font-size: 1em;
+
+        animation: answeredAnim 1s ease-in;
+    }
+
+    .answered__quiz .message-success__quiz {
+        display: flex;
+
+        justify-content: center;
+        align-items: center;
+
+
+        color: white;
+        background-color: #003D04;
+        border-radius: 5px 35px;
+        padding: 2% 10%;
+
+        margin-top: 20%;
+    }
+
+
+    .answered__quiz .user-answer-title__quiz {
+        font-weight: 300;
+        letter-spacing: 0.05em;
+        word-spacing: 0.1em;
+        display: flex;
+        justify-content: center;
+        margin: 2vh;
+
+        padding: 0px 10px 5px 10px;
+
+        border-bottom: 2px solid #DCE3FF;
+        border-right: 3px solid #DCE3FF;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 20px;
+    }
+
+    .answered__quiz .user-answer__quiz {
+        display: flex;
+
+        justify-content: flex-start;
+        align-items: flex-start;
+
+        margin: auto 1vh;
+    }
+
+    .answered__quiz .answer-list__quiz {
+        margin: 30px;
+        min-width: 40vw;
+
+        display: flex;
+        flex-direction: column;
+
+        justify-content: center;
+    }
+
+    .answered__quiz .answer-list__quiz ol.roman__quiz {
+        list-style-type: upper-roman;
+        color: slateblue;
+        list-style-position: inside;
+    }
+
+    .answered__quiz .answer-list__quiz ol.roman__quiz li {
+        letter-spacing: 0.05em;
+        word-spacing: 0.1em;
+        text-align: right;
+    }
+
+}
+
+/* 
+    ##Device = Tablets, Ipads (landscape)
+    ##Screen = B/w 768px to 1024px
+  */
+
+/** Mobile **/
+
 @media screen and (max-width: 768px) {
 
     .quiz-question__quiz {
@@ -208,6 +336,8 @@
 
         align-items: center;
         justify-content: center;
+
+        margin: 6vh auto;
 
         font-size: 0.9em;
         letter-spacing: 0.05em;

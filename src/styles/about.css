@@ -133,15 +133,24 @@ img {
     letter-spacing: var(--LETTER-SPACING-ABOUT);
 }
 
-/** Mobile **/
-@media screen and (max-width: 768px) {
+/** Tablets, Ipads **/
+
+@media (min-width: 768px) and (max-width: 1024px) {
+
     .container__about {
-        min-height: 60vh;
+        min-height: 40vh;
+        display: flex;
+
+        justify-content: center;
+        align-items: center;
+
+        flex-direction: column;
     }
 
     .intro__about p {
         font-size: 0.8rem;
-    
+        text-align: center;
+
         letter-spacing: var(--LETTER-SPACING-ABOUT);
         word-spacing: 0.15rem;
         width: 80vw;
@@ -156,15 +165,87 @@ img {
     section.subintro__about {
         width: 90vw;
     }
-    
+
     section.subintro__about h3 {
         font-size: 1.2rem;
     }
-    
+
     section.subintro__about p {
         font-size: 0.8rem;
         padding: 0;
-    
+
+        letter-spacing: var(--LETTER-SPACING-ABOUT);
+        word-spacing: 0.1rem;
+        word-wrap: break-word;
+        text-indent: 3vh;
+    }
+
+    .tech-stack__about h1 {
+        font-size: 1.8rem;
+        letter-spacing: var(--LETTER-SPACING-ABOUT);
+        margin: auto 1vw;
+    }
+
+    .tech-stack__about h2 {
+        font-size: 0.9rem;
+        letter-spacing: var(--LETTER-SPACING-ABOUT);
+        margin: 1vh 2vw;
+    }
+
+    .tech-stack__about ul {
+        margin: 1vh 9vw;
+        list-style-type: upper-roman;
+        font-size: 0.8rem;
+        letter-spacing: var(--LETTER-SPACING-ABOUT);
+
+        margin-bottom: 15vh;
+    }
+
+    .tech-stack__about ul li a {
+        font-size: 0.8rem;
+        letter-spacing: var(--LETTER-SPACING-ABOUT);
+    }
+
+}
+
+/* 
+    ##Device = Tablets, Ipads (landscape)
+    ##Screen = B/w 768px to 1024px
+  */
+
+
+/** Mobile **/
+@media screen and (max-width: 768px) {
+    .container__about {
+        min-height: 60vh;
+    }
+
+    .intro__about p {
+        font-size: 0.8rem;
+
+        letter-spacing: var(--LETTER-SPACING-ABOUT);
+        word-spacing: 0.15rem;
+        width: 80vw;
+    }
+
+    img {
+        scale: 0.75;
+        border: var(--BORDER-BLUE);
+        border-radius: 50%;
+    }
+
+    section.subintro__about {
+        width: 90vw;
+    }
+
+    section.subintro__about h3 {
+        font-size: 1.2rem;
+    }
+
+    section.subintro__about p {
+        font-size: 0.8rem;
+        padding: 0;
+
         align-items: flex-start;
         letter-spacing: var(--LETTER-SPACING-ABOUT);
         word-spacing: 0.1rem;
@@ -177,22 +258,22 @@ img {
         letter-spacing: var(--LETTER-SPACING-ABOUT);
         margin: auto 1vw;
     }
-    
+
     .tech-stack__about h2 {
         font-size: 0.9rem;
         letter-spacing: var(--LETTER-SPACING-ABOUT);
         margin: 1vh 2vw;
     }
-    
+
     .tech-stack__about ul {
         margin: 1vh 9vw;
         list-style-type: upper-roman;
         font-size: 0.8rem;
         letter-spacing: var(--LETTER-SPACING-ABOUT);
-    
+
         margin-bottom: 15vh;
     }
-    
+
     .tech-stack__about ul li a {
         font-size: 0.8rem;
         letter-spacing: var(--LETTER-SPACING-ABOUT);

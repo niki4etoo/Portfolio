@@ -69,6 +69,68 @@ li:last-child {
 
 }
 
+/** Tablets, Ipads **/
+
+@media (min-width: 768px) and (max-width: 1024px) {
+
+    .menu {
+        list-style-type: none;
+
+        display: flex;
+
+        justify-content: space-evenly;
+        align-items: center;
+
+
+        width: 70vw;
+        height: 7vh;
+
+        position: fixed;
+        bottom: 0;
+        left: 2vw;
+
+        background-color: rgba(255, 255, 255, 0.9);
+        border-top-right-radius: 3vw;
+        border-top-left-radius: 3vw;
+        border: 1px solid rgba(0, 42, 182, 0.7);
+    }
+
+    .menu li a:any-link {
+        color: black;
+        text-shadow: 1px 1px 2px whitesmoke;
+        font-weight: bold;
+        letter-spacing: 0.1rem;
+        transition: all 0.5s ease;
+
+        margin: 0px;
+        display: block;
+        width: 100%;
+        height: 100%;
+
+        font-size: 0.9em;
+
+        text-align: center;
+        padding: 1vh 0px;
+    }
+
+    .menu li {
+        width: 20vw;
+        height: 4vh;
+
+        display: flex;
+
+        justify-content: center;
+        align-items: center;
+
+        padding: 0;
+    }
+}
+
+/* 
+    ##Device = Tablets, Ipads (landscape)
+    ##Screen = B/w 768px to 1024px
+  */
+
 /** Mobile **/
 
 @media screen and (max-width: 768px) {
