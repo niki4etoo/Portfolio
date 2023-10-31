@@ -52,7 +52,7 @@ const Contacts = (props) => {
                 <a href="https://github.com/niki4etoo/"><img src={githubLogo} alt="Github Logo" width="32" height="32" /></a>
                 </div>
                 <div className="contact-button__contacts">
-                    <ButtonContact label={l.contacts.label} mailto="mailto:niki4etooo@gmail.com" />
+                    <ButtonContact label={l.contacts.label} mailto="mailto:niki.nanev.94.work@gmail.com" />
                 </div>
             </div>
             <Menu lang={currentLanguage} />
