@@ -59,26 +59,25 @@ const QuizContainer = (props) => {
 
     }, [startAnimation, setIndex]);
 
-    const handle = (type, answer) => {
+    let lengthQuestions = 0;
+
+    switch (props.type) {
+        case "yes":
+            lengthQuestions = en.quiz.yes.questions.length;
+            break;
+        case "no":
+            lengthQuestions = en.quiz.no.questions.length;
+            break;
+        case "depends":
+            lengthQuestions = en.quiz.depends.questions.length;
+            break;
+        default:
+    }
+
+    const handle = (answer) => {
         userAnswers.push(answer);
 
-        let length = 0;
-
-        switch (type) {
-            case "yes":
-                length = en.quiz.yes.questions.length;
-                break;
-            case "no":
-                length = en.quiz.no.questions.length;
-                break;
-            case "depends":
-                length = en.quiz.depends.questions.length;
-                break;
-            default:
-        }
-
-
-        if (props.index === length - 1) {
+        if (props.index === lengthQuestions - 1) {
             props.setter((state) => { return { toAnswer: !state.toAnswer, answered: !state.answered } }); // Questions are answered (true), there are no more questions to answer (false)
         } else {
             setStartAnimation(prev => (prev = { startAnimation: true }));
@@ -98,19 +97,19 @@ const QuizContainer = (props) => {
 
                 <div className="quiz-answers__quiz">
 
-                    <div ref={(elem) => answersRef.current.push(elem)} className="quiz-answer__quiz" onClick={() => handle(props.type, l.quiz.yes.questions[props.index].answers[0])}>
+                    <div ref={(elem) => answersRef.current.push(elem)} className="quiz-answer__quiz" onClick={() => handle(l.quiz.yes.questions[props.index].answers[0])}>
                         {l.quiz.yes.questions[props.index].answers[0]}
                     </div>
 
-                    <div ref={(elem) => answersRef.current.push(elem)} className="quiz-answer__quiz" onClick={() => handle(props.type, l.quiz.yes.questions[props.index].answers[1])}>
+                    <div ref={(elem) => answersRef.current.push(elem)} className="quiz-answer__quiz" onClick={() => handle(l.quiz.yes.questions[props.index].answers[1])}>
                         {l.quiz.yes.questions[props.index].answers[1]}
                     </div>
 
-                    <div ref={(elem) => answersRef.current.push(elem)} className="quiz-answer__quiz" onClick={() => handle(props.type, l.quiz.yes.questions[props.index].answers[2])}>
+                    <div ref={(elem) => answersRef.current.push(elem)} className="quiz-answer__quiz" onClick={() => handle(l.quiz.yes.questions[props.index].answers[2])}>
                         {l.quiz.yes.questions[props.index].answers[2]}
                     </div>
 
-                    <div ref={(elem) => answersRef.current.push(elem)} className="quiz-answer__quiz" onClick={() => handle(props.type, l.quiz.yes.questions[props.index].answers[3])}>
+                    <div ref={(elem) => answersRef.current.push(elem)} className="quiz-answer__quiz" onClick={() => handle(l.quiz.yes.questions[props.index].answers[3])}>
                         {l.quiz.yes.questions[props.index].answers[3]}
                     </div>
                 </div>
@@ -124,19 +123,19 @@ const QuizContainer = (props) => {
 
                 <div className="quiz-answers__quiz">
 
-                    <div ref={(elem) => answersRef.current.push(elem)} className="quiz-answer__quiz" onClick={() => handle(props.type, l.quiz.no.questions[props.index].answers[0])}>
+                    <div ref={(elem) => answersRef.current.push(elem)} className="quiz-answer__quiz" onClick={() => handle(l.quiz.no.questions[props.index].answers[0])}>
                         {l.quiz.no.questions[props.index].answers[0]}
                     </div>
 
-                    <div ref={(elem) => answersRef.current.push(elem)} className="quiz-answer__quiz" onClick={() => handle(props.type, l.quiz.no.questions[props.index].answers[1])}>
+                    <div ref={(elem) => answersRef.current.push(elem)} className="quiz-answer__quiz" onClick={() => handle(l.quiz.no.questions[props.index].answers[1])}>
                         {l.quiz.no.questions[props.index].answers[1]}
                     </div>
 
-                    <div ref={(elem) => answersRef.current.push(elem)} className="quiz-answer__quiz" onClick={() => handle(props.type, l.quiz.no.questions[props.index].answers[2])}>
+                    <div ref={(elem) => answersRef.current.push(elem)} className="quiz-answer__quiz" onClick={() => handle(l.quiz.no.questions[props.index].answers[2])}>
                         {l.quiz.no.questions[props.index].answers[2]}
                     </div>
 
-                    <div ref={(elem) => answersRef.current.push(elem)} className="quiz-answer__quiz" onClick={() => handle(props.type, l.quiz.no.questions[props.index].answers[3])}>
+                    <div ref={(elem) => answersRef.current.push(elem)} className="quiz-answer__quiz" onClick={() => handle(l.quiz.no.questions[props.index].answers[3])}>
                         {l.quiz.no.questions[props.index].answers[3]}
                     </div>
                 </div>
@@ -150,19 +149,19 @@ const QuizContainer = (props) => {
 
                 <div className="quiz-answers__quiz">
 
-                    <div ref={(elem) => answersRef.current.push(elem)} className="quiz-answer__quiz" onClick={() => handle(props.type, l.quiz.depends.questions[props.index].answers[0])}>
+                    <div ref={(elem) => answersRef.current.push(elem)} className="quiz-answer__quiz" onClick={() => handle(l.quiz.depends.questions[props.index].answers[0])}>
                         {l.quiz.depends.questions[props.index].answers[0]}
                     </div>
 
-                    <div ref={(elem) => answersRef.current.push(elem)} className="quiz-answer__quiz" onClick={() => handle(props.type, l.quiz.depends.questions[props.index].answers[1])}>
+                    <div ref={(elem) => answersRef.current.push(elem)} className="quiz-answer__quiz" onClick={() => handle(l.quiz.depends.questions[props.index].answers[1])}>
                         {l.quiz.depends.questions[props.index].answers[1]}
                     </div>
 
-                    <div ref={(elem) => answersRef.current.push(elem)} className="quiz-answer__quiz" onClick={() => handle(props.type, l.quiz.depends.questions[props.index].answers[2])}>
+                    <div ref={(elem) => answersRef.current.push(elem)} className="quiz-answer__quiz" onClick={() => handle(l.quiz.depends.questions[props.index].answers[2])}>
                         {l.quiz.depends.questions[props.index].answers[2]}
                     </div>
 
-                    <div ref={(elem) => answersRef.current.push(elem)} className="quiz-answer__quiz" onClick={() => handle(props.type, l.quiz.depends.questions[props.index].answers[3])}>
+                    <div ref={(elem) => answersRef.current.push(elem)} className="quiz-answer__quiz" onClick={() => handle(l.quiz.depends.questions[props.index].answers[3])}>
                         {l.quiz.depends.questions[props.index].answers[3]}
                     </div>
                 </div>
