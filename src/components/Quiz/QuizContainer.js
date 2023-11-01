@@ -20,7 +20,6 @@ const QuizContainer = (props) => {
     
     // Animations
     useLayoutEffect(() => {
-        console.log("use layout effect start animation: ", startAnimation);
         if (!startAnimation) return;
 
         let ctx = gsap.context(() => {
@@ -82,7 +81,6 @@ const QuizContainer = (props) => {
         if (props.index === length - 1) {
             props.setter((state) => { return { toAnswer: !state.toAnswer, answered: !state.answered } }); // Questions are answered (true), there are no more questions to answer (false)
         } else {
-            console.log(answersRef);
             setStartAnimation(prev => (prev = { startAnimation: true }));
         }
     }

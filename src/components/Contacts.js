@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 
-import linkedLogo from '../images/logo/linkedin.png';
-import githubLogo from '../images/logo/github.png';
-import twitterLogo from '../images/logo/twitter.png';
+import linkedLogo from '../images/logo/linkedin.svg';
+import githubLogo from '../images/logo/github.svg';
+import twitterLogo from '../images/logo/twitter.svg';
 
 //Languages
 import bg from '../languages/bg.json';
@@ -47,9 +47,9 @@ const Contacts = (props) => {
             <div className="contacts-container__contacts">
                 <div className="title__contacts"><h1>{l.contacts.title}</h1></div>
                 <div className="social-links__contacts">
-                <a href="https://www.linkedin.com/in/nikolay-nanev-75130275/"><img src={linkedLogo} alt="LinkedIn Logo" width="32" height="32" /></a>
-                <a href="https://twitter.com/niki4etooo/"><img src={twitterLogo} alt="Twitter Logo" width="32" height="32" /></a>
-                <a href="https://github.com/niki4etoo/"><img src={githubLogo} alt="Github Logo" width="32" height="32" /></a>
+                <a href="https://www.linkedin.com/in/nikolay-nanev-75130275/"><img src={linkedLogo} alt="LinkedIn Logo" width="64" height="64" /></a>
+                <a href="https://twitter.com/niki4etooo/"><img src={twitterLogo} alt="Twitter Logo" width="64" height="64" /></a>
+                <a href="https://github.com/niki4etoo/"><img src={githubLogo} alt="Github Logo" width="64" height="64" /></a>
                 </div>
                 <div className="contact-button__contacts">
                     <ButtonContact label={l.contacts.label} mailto="mailto:niki.nanev.94.work@gmail.com" />

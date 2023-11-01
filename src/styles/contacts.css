@@ -53,6 +53,11 @@
     margin: 5vh auto;
 }
 
+.social-links__contacts img {
+    border: none;
+    border-radius: 0px;
+}
+
 .social-links__contacts a:any-link {
     text-decoration: none;
     border: none;
