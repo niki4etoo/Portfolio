@@ -18,19 +18,16 @@ const DependsAnswer = () => {
 
     const { state } = useLocation(); // getting user selection of lang
 
-    const [index, setIndex] = useState(0);
-
     const [question, setQuestion] = useState({ toAnswer: true, answered: false });
 
     //Languages ( BG | EN)
-
     const [currentLanguage, setCurrentLanguage] = useState(state?.lang || false); // setting language by last user selection
 
     return (
         <>
             {question.answered &&
                 <>
-                    <Navigation userAnswers={userAnswers} confirm={false} lang={currentLanguage} index={index} />
+                    <Navigation userAnswers={userAnswers} confirm={false} lang={currentLanguage} />
                     <div className="answered-container__quiz">
                         <div className="answered__quiz">
                             <Messages success={true} lang={currentLanguage} />
@@ -41,10 +38,9 @@ const DependsAnswer = () => {
             }
             {question.toAnswer &&
                 <>
-                    <Navigation userAnswers={userAnswers} confirm={true} lang={currentLanguage} index={index} />
+                    <Navigation userAnswers={userAnswers} confirm={true} lang={currentLanguage} />
                     <QuizContainer
                         setter={setQuestion}
-                        setIndex={setIndex} index={index}
                         type="depends" lang={currentLanguage} />
                 </>
             }

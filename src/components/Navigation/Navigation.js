@@ -12,17 +12,13 @@ import '../../styles/togglelanguages.css';
 
 const Navigation = (props) => {
 
-    let path = props.navigate || '/'; // Default route is home ( Intro )
+    let path = props.navigate || '/'; // Default route is intro
 
-    const handleBack = (e, index, lang) => {
+    const handleBack = (e, lang) => {
 
         if (props?.confirm) {
             let message = "";
-            if (lang) {
-                message = en.navigation.messageConfirmQuestion;
-            } else {
-                message = bg.navigation.messageConfirmQuestion;
-            }
+            message = lang ? en.navigation.messageConfirmQuestion : bg.navigation.messageConfirmQuestion;
 
             if (!window.confirm(message)) {
                 e.preventDefault();
@@ -38,7 +34,7 @@ const Navigation = (props) => {
     return (
         <>
             <div className='nav'>
-                <Link className='nav-back' onClick={(e) => handleBack(e, props?.index, props.lang)} to={path} state={{ lang: props.lang }}>{l.navigation.back}</Link>
+                <Link className='nav-back' onClick={(e) => handleBack(e, props.lang)} to={path} state={{ lang: props.lang }}>{l.navigation.back}</Link>
             </div>
         </>
     );

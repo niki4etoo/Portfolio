@@ -18,19 +18,16 @@ const NoAnswer = () => {
 
     const { state } = useLocation(); // getting user lang selection
 
-    const [index, setIndex] = useState(0); // index of the questions
-
     const [question, setQuestion] = useState({ toAnswer: true, answered: false });
 
     //Languages ( BG | EN)
-
     const [currentLanguage, setCurrentLanguage] = useState(state?.lang || false); // setting language by last user selection
 
     return (
         <>
             {question.answered &&
                 <>
-                    <Navigation confirm={false} lang={currentLanguage} index={index} />
+                    <Navigation confirm={false} lang={currentLanguage} />
                     <div className="answered-container__quiz">
                         <div className="answered__quiz">
                             <Messages success={true} lang={currentLanguage} />
@@ -42,10 +39,9 @@ const NoAnswer = () => {
             }
             {question.toAnswer &&
                 <>
-                    <Navigation confirm={true} userAnswers={userAnswers} lang={currentLanguage} index={index} />
+                    <Navigation confirm={true} userAnswers={userAnswers} lang={currentLanguage} />
                     <QuizContainer
                         setter={setQuestion}
-                        setIndex={setIndex} index={index}
                         type="no" lang={currentLanguage} />
                 </>
             }
