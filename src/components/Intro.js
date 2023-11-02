@@ -253,7 +253,7 @@ const Intro = () => {
                     <AnswerDescriptions type="depends" lang={currentLanguage} />
                 }
             </div>
-            <Menu lang={currentLanguage} />
+            <Menu active="/" lang={currentLanguage} />
             <LanguageSwitch lang={currentLanguage} setter={setCurrentLanguage} />
         </div>
     );

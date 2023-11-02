@@ -148,7 +148,7 @@ const QuestionsCategories = (props) => {
                     </div>
                 }
             </div>
-            <Menu lang={currentLanguage} />
+            <Menu active={"/questions"} lang={currentLanguage} />
             <LanguageSwitch lang={currentLanguage} setter={setCurrentLanguage} />
         </>
     );

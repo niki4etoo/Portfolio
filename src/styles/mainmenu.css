@@ -69,6 +69,17 @@ li:last-child {
 
 }
 
+ul li.active-page {
+    font-size: 1.2rem;
+    background-color: rgba(0, 42, 182, 0.11);
+    pointer-events: "none";
+    cursor: crosshair;
+
+    letter-spacing: 0.2em;
+}
+
+
+
 /** Tablets, Ipads **/
 
 @media (min-width: 768px) and (max-width: 1024px) {
@@ -123,6 +134,15 @@ li:last-child {
         align-items: center;
 
         padding: 0;
+    }
+
+    ul li.active-page {
+        font-size: 0.8rem;
+        background-color: white;
+        pointer-events: "none";
+        cursor: crosshair;
+    
+        transition: all 550ms ease-in;
     }
 }
 
@@ -185,6 +205,15 @@ li:last-child {
         align-items: center;
 
         padding: 0;
+    }
+
+    ul li.active-page {
+        font-size: 0.8rem;
+        background-color: white;
+        pointer-events: "none";
+        cursor: crosshair;
+    
+        transition: all 500ms ease-in;
     }
 
 }

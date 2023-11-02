@@ -18,6 +18,8 @@ import '../styles/about.css';
 import profileQuestion from '../images/profile.png';
 import profilePhoto from '../images/profile_photo.png';
 
+
+
 const About = () => {
 
     const { state } = useLocation();
@@ -36,21 +38,21 @@ const About = () => {
     useLayoutEffect(() => {
         let ctx = gsap.context((self) => {
             self.add("hover", (e) => {
-                gsap.to(figureRef.current, { 
-                    opacity: 0, duration: 0.5,
+                gsap.to(figureRef.current, {
+                    opacity: 0, duration: 0.25,
                     onComplete: () => {
-                        gsap.set(imgRef.current, { attr: { src: profilePhoto }});
-                        gsap.to(figureRef.current, { opacity: 1, duration: 0.5, borderColor: "blue" });
+                        gsap.set(imgRef.current, { attr: { src: profilePhoto } });
+                        gsap.to(figureRef.current, { opacity: 1, duration: 0.25, borderColor: "blue" });
                     }
-                 });
+                });
             });
 
             self.add("leave", (e) => {
                 gsap.to(figureRef.current, {
-                    opacity: 0, duration: 0.5,
+                    opacity: 0, duration: 0.25,
                     onComplete: () => {
-                        gsap.set(imgRef.current, { attr: { src: profileQuestion }});
-                        gsap.to(figureRef.current, { opacity: 1, duration: 0.5 });
+                        gsap.set(imgRef.current, { attr: { src: profileQuestion } });
+                        gsap.to(figureRef.current, { opacity: 1, duration: 0.25 });
                     }
                 })
             });
@@ -102,7 +104,7 @@ const About = () => {
                 </section>
 
             </div>
-            <Menu lang={currentLanguage} />
+            <Menu active={"/about"} lang={currentLanguage} />
             <LanguageSwitch lang={currentLanguage} setter={setCurrentLanguage} />
         </div>
     );

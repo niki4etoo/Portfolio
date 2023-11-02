@@ -55,7 +55,7 @@ const Contacts = (props) => {
                     <ButtonContact label={l.contacts.label} mailto="mailto:niki.nanev.94.work@gmail.com" />
                 </div>
             </div>
-            <Menu lang={currentLanguage} />
+            <Menu active={"/contacts"} lang={currentLanguage} />
             <LanguageSwitch lang={currentLanguage} setter={setCurrentLanguage} />
         </>
     );

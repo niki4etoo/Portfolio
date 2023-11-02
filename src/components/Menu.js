@@ -13,13 +13,32 @@ const Menu = (props) => {
     let l = {};
     (props.lang) ? l = en : l = bg;
 
+    let pages = [
+        { link: "/about", label: l.menu.about, active: false },
+        { link: "/", label: l.menu.intro, active: false },
+        { link: "/contacts", label: l.menu.contacts, active: false },
+        { link: "/questions", label: l.menu.questions, active: false },
+    ]
+
+    pages.map((page) => {
+        if (page.link === props.active) {
+            page.active = true; // setting the page to active
+        }
+        return null;
+    })
+
     return (
         <>
             <ul className="menu">
-                <li><Link to='/about' state={{ lang: props.lang }}>{l.menu.about}</Link></li>
-                <li><Link to='/' state={{ lang: props.lang }}>{l.menu.intro}</Link></li>
-                <li><Link to='/contacts' state={{ lang: props.lang }}>{l.menu.contacts}</Link></li>
-                <li><Link to='/questions' state={{ lang: props.lang }}>{l.menu.questions}</Link></li>
+                {
+                    pages.map((page, index) => {
+                        if (page.active) {
+                            return <li className="active-page" key={index}>{page.label}</li>
+                        } else {
+                            return <li key={index}><Link to={page.link} state={{ lang: props.lang }}>{page.label}</Link></li>
+                        }
+                    })
+                }
             </ul>
         </>
     );
