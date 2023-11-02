@@ -1,5 +1,4 @@
-import React, { useState, useRef, useLayoutEffect } from "react";
-import gsap from 'gsap';
+import React, { useState, useRef } from "react";
 
 //import QuestionAnimations from "./Animations/QuestionAnimations";
 
@@ -15,54 +14,7 @@ const QuizContainer = (props) => {
     const scope = useRef();
     const answersRef = useRef([]);
 
-    const [startAnimation, setStartAnimation] = useState(false);
-    const setIndex = props.setIndex;
-
-    // Animations
-    useLayoutEffect(() => { // to do
-        if (!startAnimation) return;
-
-        let ctx = gsap.context(() => {
-
-            const timeline = gsap.timeline();
-            timeline.set(answersRef.current, { pointerEvents: "none" });
-
-            timeline.to(questionRef.current, {
-                y: -300,
-                ease: "Power4.easeOut",
-                duration: 0.5,
-            }).to([answersRef.current[0], answersRef.current[1], answersRef.current[2]], {
-                opacity: 0,
-                stagger: 0.25,
-                ease: "Power4.easeOut",
-            }).to(answersRef.current[3], {
-                opacity: 0,
-                ease: "Power4.easeOut",
-                onComplete: () => {
-                    setIndex(index => index + 1); // Moving to the next question and answers
-                    console.log(answersRef.current);
-                    gsap.set(answersRef.current, { pointerEvents: "auto" });
-                    if (props.index === lengthQuestions - 1) {
-                        props.setter((state) => { return { toAnswer: !state.toAnswer, answered: !state.answered } }); // Questions are answered (true), there are no more questions to answer (false)
-                    } else {
-                        timeline.to(questionRef.current, { // Next question
-                            y: 0,
-                            ease: "Power4.easeIn",
-                            duration: 0.5,
-                        }).to([answersRef.current[3], answersRef.current[2], answersRef.current[1], answersRef.current[0]], { // revert the opacity for each answer back to 1
-                            opacity: 1,
-                            stagger: 0.25,
-                            ease: "Power4.easeOut",
-                        });
-                    }
-                }
-            });
-
-        }, scope);
-
-        return () => ctx.revert(); // cleanup
-
-    }, [startAnimation, setIndex]);
+    const [index, setIndex] = useState(0);
 
     let lengthQuestions = 0;
 
@@ -81,7 +33,12 @@ const QuizContainer = (props) => {
 
     const handle = (answer) => {
         userAnswers.push(answer);
-        setStartAnimation(prev => (prev = { startAnimation: true }));
+
+        if(lengthQuestions === index + 1){
+            props.setter((state) => { return { toAnswer: !state.toAnswer, answered: !state.answered } });
+        } else {
+            setIndex(index => index + 1);
+        }
     }
 
     let l = {};
@@ -92,12 +49,12 @@ const QuizContainer = (props) => {
         case "yes":
             result = <div className="quiz-container__quiz" ref={scope}>
                 <div ref={questionRef} className="quiz-question__quiz">
-                    {l.quiz.yes.questions[props.index].question}
+                    {l.quiz.yes.questions[index].question}
                 </div>
 
                 <div className="quiz-answers__quiz">
                     {
-                        l.quiz.yes.questions[props.index].answers.map((answer, index) => {
+                        l.quiz.yes.questions[index].answers.map((answer, index) => {
                             return <div key={answer} ref={(element) => answersRef.current[index] = element} className="quiz-answer__quiz" onClick={() => handle(answer)}>
                                 {answer}
                             </div>
@@ -109,12 +66,12 @@ const QuizContainer = (props) => {
         case "no":
             result = <div className="quiz-container__quiz" ref={scope}>
                 <div ref={questionRef} className="quiz-question__quiz">
-                    {l.quiz.no.questions[props.index].question}
+                    {l.quiz.no.questions[index].question}
                 </div>
 
                 <div className="quiz-answers__quiz">
                     {
-                        l.quiz.no.questions[props.index].answers.map((answer, index) => {
+                        l.quiz.no.questions[index].answers.map((answer, index) => {
                             return <div key={answer} ref={(element) => answersRef.current[index] = element} className="quiz-answer__quiz" onClick={() => handle(answer)}>
                                 {answer}
                             </div>
@@ -126,12 +83,12 @@ const QuizContainer = (props) => {
         case "depends":
             result = <div className="quiz-container__quiz" ref={scope}>
                 <div ref={questionRef} className="quiz-question__quiz">
-                    {l.quiz.depends.questions[props.index].question}
+                    {l.quiz.depends.questions[index].question}
                 </div>
 
                 <div className="quiz-answers__quiz">
                     {
-                        l.quiz.depends.questions[props.index].answers.map((answer, index) => {
+                        l.quiz.depends.questions[index].answers.map((answer, index) => {
                             return <div key={answer} ref={(element) => answersRef.current[index] = element} className="quiz-answer__quiz" onClick={() => handle(answer)}>
                                 {answer}
                             </div>
