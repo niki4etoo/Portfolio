@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import Select, { components } from 'react-select';
-import { v4 as uuidv4 } from 'uuid';
 
 //Languages
 
@@ -126,13 +125,6 @@ const QuestionsCategories = (props) => {
             </>
         );
     }
-
-    // Convert categories into an array with unique ids
-    const entries = Object.entries(l.questions.categories);
-    const categories = [];
-    entries.map((value) => {
-        return categories.push([value[0], value[1], uuidv4()]); // value[0] -> label; value[0] -> content/translation
-    })
 
     return (
         <>
