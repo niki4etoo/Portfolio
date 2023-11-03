@@ -22,8 +22,10 @@
             "message": "Done!"
         },
         "navigation": {
-            "back": "Back to the category questions",
-            "home": "Intro"
+            "backCategory": "Back to the category questions",
+            "home": "Intro",
+            "prevQuestion": "Previous",
+            "nextQuestion": "Next"
         }
     }
 }

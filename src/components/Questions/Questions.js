@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { Link } from "react-router-dom";
 
 //Styles
@@ -8,20 +8,15 @@ import '../../styles/questions.css';
 import bg from '../../languages/bg-questions.json';
 import en from '../../languages/en-questions.json';
 
-
-const QuestionsNavigation = () => {
-
-    return (
-        <>
-
-        </>
-    );
-}
+const userAnswers = { category: "", difficulty: "", answers: [] }; // Storing user answers
 
 const Questions = (props) => {
 
-    //Languages ( BG | EN)
+    //User Answers object - setting category and difficulty
+    userAnswers.category = props.category;
+    userAnswers.difficulty = props.difficulty;
 
+    //Languages ( BG | EN)
     let l = {}; // Object for language from the selected category ( examples bg-work, en-technical etc.)
     let ll = {}; // Object for language from the bg-questions/en-questions
 
@@ -47,8 +42,13 @@ const Questions = (props) => {
     const [isThereMoreQuestions, setIsThereMoreQuestions] = useState(true);
     const [isDone, setDone] = useState(false);
 
+    const [disableButton, setDisableButton] = useState({ next: false, prev: true });
+
+    //Navigation References ( previous and next )
+    const nextRef = useRef(null);
+    const prevRef = useRef(null);
+
     const handleAnswers = (e) => {
-        console.log(e);
 
         if (questions[next + 1] !== undefined) {
             setNext(next => next + 1);
@@ -59,6 +59,48 @@ const Questions = (props) => {
             setIsThereMoreQuestions(false);
             setDone(true);
         }
+    }
+
+    const QuestionsNavigation = (props) => {
+
+        const navigateNext = () => {
+            if (next + 1 === questions.length - 1) {
+                setDisableButton((state) => { return { ...state, next: true } }); // disable next questions
+            }
+
+            if (questions[next + 1] !== undefined) {
+                setDisableButton((state) => { return { ...state, prev: false } }); //enable prev questions
+                setNext(next => next + 1);
+            }
+
+            if (questions[next + 1] === undefined) { //Quiz Finished
+                setIsThereMoreQuestions(false);
+                setDone(true);
+            }
+        }
+
+        const navigateBack = () => {
+            if (next - 1 === 0) {
+                setDisableButton((state) => { return { ...state, prev: true } }); //disable prev button
+                setNext(next => next - 1);
+            }
+
+            if (next - 1 > 0) {
+                setDisableButton((state) => { return { ...state, next: false } });; //enable next button
+                setNext(next => next - 1);
+            }
+        }
+
+        return (
+            <div className="navigation-container__questions">
+                <div ref={prevRef} className="navigation-back__questions">
+                    <button onClick={() => navigateBack()} disabled={disableButton.prev}>{ll.questions.navigation.prevQuestion}</button>
+                </div>
+                <div ref={nextRef} className="navigation-next__questions">
+                    <button onClick={() => navigateNext()} disabled={disableButton.next}>{ll.questions.navigation.nextQuestion}</button>
+                </div>
+            </div>
+        );
     }
 
     return (
@@ -77,7 +119,7 @@ const Questions = (props) => {
                                 ))
                             }
                         </div>
-                        <QuestionsNavigation next={next} />
+                        <QuestionsNavigation />
                     </>
                 }
                 {
@@ -87,7 +129,7 @@ const Questions = (props) => {
                             <h3>{ll.questions.success.message}</h3>
                             <div className="navigation__questions">
                                 <div className="navigation__questions item">
-                                    <Link to='/questions'>{ll.questions.navigation.back}</Link>
+                                    <Link to='/questions'>{ll.questions.navigation.backCategory}</Link>
                                 </div>
                                 <div className="navigation__questions item">
                                     <Link to='/'>{ll.questions.navigation.home}</Link>
@@ -98,7 +140,6 @@ const Questions = (props) => {
                         </div>
                     </>
                 }
-                <QuestionsNavigation />
             </div>
         </>
     );
