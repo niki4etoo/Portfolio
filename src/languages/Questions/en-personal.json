@@ -15,16 +15,16 @@
             { "question": "How do you like to spend your vacation?", "answers": [ "No way", "Sleeping with understanding", "Reading with understanding" ]}
         ],
         "medium": [
-            { "question": "", "answers": [ "", "", "" ]},
-            { "question": "", "answers": [ "", "", "" ]},
-            { "question": "", "answers": [ "", "", "" ]},
-            { "question": "", "answers": [ "", "", "" ]}
+            { "question": "How do you do business?", "answers": [ "I work", "Communication", "Reading/Listening" ]},
+            { "question": "Do you have kids?", "answers": [ "Yes, plenty", "No, not yet", "I am making one" ]},
+            { "question": "Do you have car?", "answers": [ "No, I have two", "using teleports", "No, I have plane" ]},
+            { "question": "What do you want?", "answers": [ "Books", "Rabbits", "Carrots" ]}
         ],
         "hard": [
-            { "question": "", "answers": [ "", "", "" ]},
-            { "question": "", "answers": [ "", "", "" ]},
-            { "question": "", "answers": [ "", "", "" ]},
-            { "question": "", "answers": [ "", "", "" ]}
+            { "question": "Do you have spouse/husband?", "answers": [ "Yes", "No", "I don't know" ]},
+            { "question": "Does your kid listen to you?", "answers": [ "Yes, of course", "No", "Maybe" ]},
+            { "question": "Where is the toilet?", "answers": [ "At home", "Clouds", "5th Avenue" ]},
+            { "question": "How much money do you make?", "answers": [ "A lot", "Enough", "Work in progress" ]}
         ]
     }
 }

@@ -9,22 +9,22 @@
     },
     "questions": {
         "easy": [
-            { "question": "", "answers": [ "", "", "" ]},
-            { "question": "", "answers": [ "", "", "" ]},
-            { "question": "", "answers": [ "", "", "" ]},
-            { "question": "", "answers": [ "", "", "" ]}
+            { "question": "What is funny?", "answers": [ "Everything", "Please, get serious", "Are you okay?" ]},
+            { "question": "Where is the coffee?", "answers": [ "Why?", "Coconut", "I am driving, thank you" ]},
+            { "question": "How to play piano?", "answers": [ "Do push ups", "Eating banana", "Move your fingers" ]},
+            { "question": "Where is the moon?", "answers": [ "What is the moon?", "Why?", "On the left, sixth avenue" ]}
         ],
         "medium": [
-            { "question": "", "answers": [ "", "", "" ]},
-            { "question": "", "answers": [ "", "", "" ]},
-            { "question": "", "answers": [ "", "", "" ]},
-            { "question": "", "answers": [ "", "", "" ]}
+            { "question": "What is not funny?", "answers": [ "You", "My uncle", "women (sometimes)" ]},
+            { "question": "Where is the bed?", "answers": [ "Why?", "Who are you?", "I already sleep" ]},
+            { "question": "Why are there cars?", "answers": [ "You can live better", "No reason", "Coconut" ]},
+            { "question": "Do you want candies?", "answers": [ "No, they are dangerous", "Yes, this is important", "Why, I have plenty" ]}
         ],
         "hard": [
-            { "question": "", "answers": [ "", "", "" ]},
-            { "question": "", "answers": [ "", "", "" ]},
-            { "question": "", "answers": [ "", "", "" ]},
-            { "question": "", "answers": [ "", "", "" ]}
+            { "question": "Yes", "answers": [ "Do you go to toilet?", "Do you eat?", "Do you use computer?" ]},
+            { "question": "No", "answers": [ "Do you use condoms?", "Do you ask questions?", "That is not funny" ]},
+            { "question": "Where are you?", "answers": [ "I am here", "Planet Earth", "Somewhere remote" ]},
+            { "question": "How to play Kingdom Rush?", "answers": [ "Install it", "I don't know", "You don't know" ]}
         ]
     }
 }

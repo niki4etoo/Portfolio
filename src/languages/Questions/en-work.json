@@ -9,22 +9,22 @@
     },
     "questions": {
         "easy": [
-            { "question": "", "answers": [ "", "", "" ]},
-            { "question": "", "answers": [ "", "", "" ]},
-            { "question": "", "answers": [ "", "", "" ]},
-            { "question": "", "answers": [ "", "", "" ]}
+            { "question": "What number of working hours do you prefer per day?", "answers": [ "8", "4", "16" ]},
+            { "question": "Where do you prefer to work?", "answers": [ "Somewhere remote", "In office", "Among collegues" ]},
+            { "question": "What does working place means to you?", "answers": [ "Second Life", "Chair", "Approriate conditions" ]},
+            { "question": "Is the number of working hours related with the quality of work?", "answers": [ "No", "Depends", "Yes" ]}
         ],
         "medium": [
-            { "question": "", "answers": [ "", "", "" ]},
-            { "question": "", "answers": [ "", "", "" ]},
-            { "question": "", "answers": [ "", "", "" ]},
-            { "question": "", "answers": [ "", "", "" ]}
+            { "question": "Is rest important?", "answers": [ "It is vital", "No", "Depends" ]},
+            { "question": "Desire/will for work?", "answers": [ "Yes, it's important", "Discipline", "Motivation/Causality" ]},
+            { "question": "Quality of work done?", "answers": [ "big quantity of practice", "Focusing", "Comunnication" ]},
+            { "question": "What is the good working process (workflow)?", "answers": [ "Organizing/approaches", "Methodical", "Practice and experience" ]}
         ],
         "hard": [
-            { "question": "", "answers": [ "", "", "" ]},
-            { "question": "", "answers": [ "", "", "" ]},
-            { "question": "", "answers": [ "", "", "" ]},
-            { "question": "", "answers": [ "", "", "" ]}
+            { "question": "Achieving high standard?", "answers": [ "Work with high quality", "Experience", "Discipline" ]},
+            { "question": "Vacation?", "answers": [ "Yes, of course", "No, it is not possible", "There is no such thing" ]},
+            { "question": "Order in working process (workflow)?", "answers": [ "Target, Practice, Results", "Target, Focusing, Results", "Target, Organizing, Results" ]},
+            { "question": "Results from work?", "answers": [ "High, due to quality", "Positive, due to experience", "Something else ..." ]}
         ]
     }
 }
