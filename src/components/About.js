@@ -1,4 +1,4 @@
-import React, { useState, useRef, useLayoutEffect, Suspense } from "react";
+import React, { useState, useRef, useLayoutEffect } from "react";
 import { useLocation } from "react-router-dom";
 
 import gsap from 'gsap';
@@ -15,7 +15,7 @@ import en from '../languages/en.json';
 import '../styles/about.css';
 
 // images
-import profilePhoto from '../images/profile_photo.png';
+import profilePhoto from '../images/profile_photo.jpeg';
 
 
 
@@ -62,9 +62,7 @@ const About = () => {
                 <div className="title__about"><h1><a href="https://github.com/niki4etoo/">{l.about.title}</a></h1></div>
                 <section className="profile__about">
                     <figure ref={figureRef}>
-                        <Suspense fallback={<div>Loading ... </div>}>
-                            <a href="https://github.com/niki4etoo/"><img ref={imgRef} src={profilePhoto} width={200} height={200} alt="Profile" loading="lazy" /></a>
-                        </Suspense>
+                        <a href="https://github.com/niki4etoo/"><img ref={imgRef} src={profilePhoto} width={200} height={200} alt="Profile" loading="lazy" /></a>
                     </figure>
                 </section>
                 <section className="intro__about">
