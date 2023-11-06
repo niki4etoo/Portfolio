@@ -15,7 +15,6 @@ import en from '../languages/en.json';
 import '../styles/about.css';
 
 // images
-import profileQuestion from '../images/profile.png';
 import profilePhoto from '../images/profile_photo.png';
 
 
@@ -39,21 +38,13 @@ const About = () => {
         let ctx = gsap.context((self) => {
             self.add("hover", (e) => {
                 gsap.to(figureRef.current, {
-                    opacity: 0, duration: 0.25,
-                    onComplete: () => {
-                        gsap.set(imgRef.current, { attr: { src: profilePhoto } });
-                        gsap.to(figureRef.current, { opacity: 1, duration: 0.25, borderColor: "blue" });
-                    }
+                    opacity: 0.8, duration: 0.5,
                 });
             });
 
             self.add("leave", (e) => {
                 gsap.to(figureRef.current, {
-                    opacity: 0, duration: 0.25,
-                    onComplete: () => {
-                        gsap.set(imgRef.current, { attr: { src: profileQuestion } });
-                        gsap.to(figureRef.current, { opacity: 1, duration: 0.25 });
-                    }
+                    opacity: 1, duration: 0.5,
                 })
             });
         }, main);
@@ -71,7 +62,7 @@ const About = () => {
                 <div className="title__about"><h1><a href="https://github.com/niki4etoo/">{l.about.title}</a></h1></div>
                 <section className="profile__about">
                     <figure ref={figureRef}>
-                        <a href="https://github.com/niki4etoo/"><img ref={imgRef} src={profileQuestion} width={200} height={200} alt="Profile" /></a>
+                        <a href="https://github.com/niki4etoo/"><img ref={imgRef} src={profilePhoto} width={200} height={200} alt="Profile" /></a>
                     </figure>
                 </section>
                 <section className="intro__about">

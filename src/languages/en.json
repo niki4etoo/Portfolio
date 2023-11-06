@@ -164,10 +164,10 @@
     },
     "about": {
         "title": "About Me",
-        "intro": "My name is Nikolai. I was born on Earth. I love to write code.",
+        "intro": "My name is Nikolai. I love to write code and to resolve problems.",
         "subintro": {
             "title": "Extra info",
-            "description": "I frequently drink coffee ( I am trying not to drink in production quantities ). I workout - street workout . Watching my kids ( joking ). I have interest and passion related with developing animations in web apps. In the domain of animations, there is a lot to learn ( did I mention a lot ), which inspires me and fuel me to progress up each day."
+            "description": "I frequently drink coffee ( trying not to drink in production quantities ). I workout - street workout . Watching my kids ( joking ). Interest and passion related with developing animations in web apps. In the domain of animations, there is a lot to learn ( did I mention a lot ), which inspires me and fuel me to progress up each day."
         },
         "techStack": "Technology Stack",
         "tech": {
