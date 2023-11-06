@@ -27,7 +27,7 @@ const DependsAnswer = () => {
         <>
             {question.answered &&
                 <>
-                    <Navigation userAnswers={userAnswers} confirm={false} lang={currentLanguage} />
+                    <Navigation userAnswers={userAnswers} lang={currentLanguage} />
                     <div className="answered-container__quiz">
                         <div className="answered__quiz">
                             <Messages success={true} lang={currentLanguage} />
@@ -38,7 +38,7 @@ const DependsAnswer = () => {
             }
             {question.toAnswer &&
                 <>
-                    <Navigation userAnswers={userAnswers} confirm={true} lang={currentLanguage} />
+                    <Navigation userAnswers={userAnswers} lang={currentLanguage} />
                     <QuizContainer
                         setter={setQuestion}
                         type="depends" lang={currentLanguage} />

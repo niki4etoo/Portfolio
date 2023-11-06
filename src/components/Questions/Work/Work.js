@@ -52,7 +52,7 @@ const Work = () => {
 
     return (
         <>
-            <Navigation navigate="/questions" confirm={false} lang={currentLanguage} />
+            <Navigation navigate="/questions" lang={currentLanguage} />
             <Title lang={currentLanguage} />
             <Questions category={l.type} questions={questions} lang={currentLanguage} />
         </>

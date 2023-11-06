@@ -27,7 +27,7 @@ const NoAnswer = () => {
         <>
             {question.answered &&
                 <>
-                    <Navigation confirm={false} lang={currentLanguage} />
+                    <Navigation lang={currentLanguage} />
                     <div className="answered-container__quiz">
                         <div className="answered__quiz">
                             <Messages success={true} lang={currentLanguage} />
@@ -39,7 +39,7 @@ const NoAnswer = () => {
             }
             {question.toAnswer &&
                 <>
-                    <Navigation confirm={true} userAnswers={userAnswers} lang={currentLanguage} />
+                    <Navigation userAnswers={userAnswers} lang={currentLanguage} />
                     <QuizContainer
                         setter={setQuestion}
                         type="no" lang={currentLanguage} />

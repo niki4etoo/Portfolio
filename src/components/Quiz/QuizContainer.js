@@ -11,7 +11,6 @@ export const userAnswers = [];
 const QuizContainer = (props) => {
 
     const questionRef = useRef(null);
-    const scope = useRef();
     const answersRef = useRef([]);
 
     const [index, setIndex] = useState(0);
@@ -47,7 +46,7 @@ const QuizContainer = (props) => {
 
     switch (props.type) {
         case "yes":
-            result = <div className="quiz-container__quiz" ref={scope}>
+            result = <div className="quiz-container__quiz">
                 <div ref={questionRef} className="quiz-question__quiz">
                     {l.quiz.yes.questions[index].question}
                 </div>
@@ -64,7 +63,7 @@ const QuizContainer = (props) => {
             </div>;
             break;
         case "no":
-            result = <div className="quiz-container__quiz" ref={scope}>
+            result = <div className="quiz-container__quiz">
                 <div ref={questionRef} className="quiz-question__quiz">
                     {l.quiz.no.questions[index].question}
                 </div>
@@ -81,7 +80,7 @@ const QuizContainer = (props) => {
             </div>;
             break;
         case "depends":
-            result = <div className="quiz-container__quiz" ref={scope}>
+            result = <div className="quiz-container__quiz">
                 <div ref={questionRef} className="quiz-question__quiz">
                     {l.quiz.depends.questions[index].question}
                 </div>
