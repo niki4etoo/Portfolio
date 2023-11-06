@@ -1,15 +1,3 @@
-:root {
-
-    /** Spacing **/
-    --LETTER-SPACING-ABOUT: 0.12rem;
-    --LETTER-SPACING-ABOUT-MOBILE: 0.5rem;
-    /** Borders **/
-    --BORDER-BLUE: 1px solid blue;
-
-    /** Transitions **/
-    --TRANSITION-SHORT: all 0.5s ease-in;
-}
-
 .container__about {
     min-height: 80vh;
 }

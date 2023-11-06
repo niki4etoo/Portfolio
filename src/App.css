@@ -14,6 +14,19 @@
   /** Colors **/
   --MAIN-COLOR: blue;
   --PRIMARY-COLOR: black;
+
+  /** Spacing **/
+  --LETTER-SPACING-ABOUT: 0.12rem;
+  --LETTER-SPACING-ABOUT-MOBILE: 0.5rem;
+  /** Borders **/
+  --BORDER-BLUE: 1px solid blue;
+  --BORDER-RADIUS: 30px;
+  
+  /** Transitions **/
+  --TRANSITION-SHORT: all 0.5s ease-in;
+  --TRANSITION-HEADER: 1.5s ease;
+  --TRANSITION-QUESTIONS: 0.5s ease-in;
+  --TRANSITION-LINKS: 0.3s ease;
 }
 
 #main-color {

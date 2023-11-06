@@ -1,9 +1,3 @@
-:root {
-    /* BORDERS */
-    --BORDER-RADIUS: 30px;
-    --BORDER: 1px solid blue;
-}
-
 .buttons {
     margin: auto 5%;
 
@@ -12,7 +6,7 @@
     cursor: pointer;
 
     padding: 10px;
-    border: var(--BORDER);
+    border: var(--BORDER-BLUE);
     background-color: aliceblue;
 }
 
@@ -93,7 +87,7 @@
         cursor: pointer;
     
         padding: 10px;
-        border: var(--BORDER);
+        border: var(--BORDER-BLUE);
         background-color: aliceblue;
     }
 
