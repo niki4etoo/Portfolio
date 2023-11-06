@@ -1,23 +1,21 @@
 import React, { useState, useRef, useLayoutEffect } from "react";
 import { useLocation } from "react-router-dom";
-
-import gsap from 'gsap';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import gsap from "gsap";
 
 import LanguageSwitch from "./LanguageSwitch";
 import Navigation from "./Navigation/Navigation";
-import Menu from './Menu';
+import Menu from "./Menu";
 
 //Languages
-import bg from '../languages/bg.json';
-import en from '../languages/en.json';
+import bg from "../languages/bg.json";
+import en from "../languages/en.json";
 
 // styles
-import '../styles/about.css';
+import "../styles/about.css";
 
-// images
+// image
 import profilePhoto from '../images/profile_photo.jpeg';
-
-
 
 const About = () => {
 
@@ -29,8 +27,7 @@ const About = () => {
 
     let l = {};
     (currentLanguage) ? l = en : l = bg;
-
-    const imgRef = useRef();
+    
     const figureRef = useRef();
     const main = useRef();
 
@@ -49,8 +46,8 @@ const About = () => {
             });
         }, main);
 
-        imgRef.current.addEventListener("mouseenter", (e) => ctx.hover(e));
-        imgRef.current.addEventListener("mouseleave", (e) => ctx.leave(e));
+        figureRef.current.addEventListener("mouseenter", (e) => ctx.hover(e));
+        figureRef.current.addEventListener("mouseleave", (e) => ctx.leave(e));
 
         return () => ctx.revert();
     }, []);
@@ -62,7 +59,13 @@ const About = () => {
                 <div className="title__about"><h1><a href="https://github.com/niki4etoo/">{l.about.title}</a></h1></div>
                 <section className="profile__about">
                     <figure ref={figureRef}>
-                        <a href="https://github.com/niki4etoo/"><img ref={imgRef} src={profilePhoto} width={200} height={200} alt="Profile" loading="lazy" /></a>
+                        <a href="https://github.com/niki4etoo/">
+                            <LazyLoadImage
+                                src={profilePhoto}
+                                effect="blur"
+                                width={200}
+                                height={200} />
+                        </a>
                     </figure>
                 </section>
                 <section className="intro__about">
