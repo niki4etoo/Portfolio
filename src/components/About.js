@@ -1,4 +1,4 @@
-import React, { useState, useRef, useLayoutEffect } from "react";
+import React, { useState, useRef, useLayoutEffect, Suspense } from "react";
 import { useLocation } from "react-router-dom";
 
 import gsap from 'gsap';
@@ -62,7 +62,9 @@ const About = () => {
                 <div className="title__about"><h1><a href="https://github.com/niki4etoo/">{l.about.title}</a></h1></div>
                 <section className="profile__about">
                     <figure ref={figureRef}>
-                        <a href="https://github.com/niki4etoo/"><img ref={imgRef} src={profilePhoto} width={200} height={200} alt="Profile" /></a>
+                        <Suspense fallback={<div>Loading ... </div>}>
+                            <a href="https://github.com/niki4etoo/"><img ref={imgRef} src={profilePhoto} width={200} height={200} alt="Profile" loading="lazy" /></a>
+                        </Suspense>
                     </figure>
                 </section>
                 <section className="intro__about">
