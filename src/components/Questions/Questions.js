@@ -43,7 +43,7 @@ const Questions = (props) => {
             setQuestions((questions) => {
                 return questions.toSpliced(index, 1); // removing the answered question
             });
-            if(index+1 === questions.length) setIndex(index => index - 1); // last question, so index must be decremented ( last question is removed )
+            if (index + 1 === questions.length) setIndex(index => index - 1); // last question, so index must be decremented ( last question is removed )
         }
     }
 
@@ -60,7 +60,7 @@ const Questions = (props) => {
             }
         }
 
-        const navigateBack = () => {
+        const navigatePrevious = () => {
             if (index - 1 === 0) {
                 setDisableButton((state) => { return { ...state, prev: true } }); // disable prev button
                 setIndex(index => index - 1);
@@ -75,7 +75,7 @@ const Questions = (props) => {
         return (
             <div className="navigation-container__questions">
                 <div ref={prevRef} className="navigation-back__questions">
-                    <button onClick={() => navigateBack()} disabled={disableButton.prev}>{ll.questions.navigation.prevQuestion}</button>
+                    <button onClick={() => navigatePrevious()} disabled={disableButton.prev}>{ll.questions.navigation.prevQuestion}</button>
                 </div>
                 <div ref={nextRef} className="navigation-next__questions">
                     <button onClick={() => navigateNext()} disabled={disableButton.next}>{ll.questions.navigation.nextQuestion}</button>

@@ -1,18 +1,18 @@
 import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
 
-import LanguageSwitch from "../LanguageSwitch";
-import Navigation from "../Navigation/Navigation";
-import MainQuiz, { userAnswers } from './MainQuiz';
-import AnsweredQuestions from './AnsweredQuestions';
-import Messages from './Messages';
+import LanguageSwitch from "../../LanguageSwitch";
+import Navigation from "../../Navigation/Navigation";
+import MainQuiz, { userAnswers } from '../MainQuiz';
+import AnsweredQuestions from '../AnsweredQuestions';
+import Messages from '../Messages';
 
 // language
-import en from '../../languages/en.json';
+import en from '../../../languages/en.json';
 
 // styles
-import './quiz.css';
-import '../../styles/togglelanguages.css';
+import '../quiz.css';
+import '../../../styles/togglelanguages.css';
 
 const NoAnswer = () => {
 
