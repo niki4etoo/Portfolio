@@ -4,23 +4,24 @@ import { useLocation } from "react-router-dom";
 import Navigation from '../../Navigation/Navigation';
 import Questions from '../Questions';
 
-//Languages
+// languages
 import bg from '../../../languages/Questions/bg-personal.json';
 import en from '../../../languages/Questions/en-personal.json';
 
-//Styles
-import '../../../styles/questions.css';
+// styles
+import '../questions.css';
 
 const Personal = () => {
     
-    //Languages ( BG | EN)
-    const { state } = useLocation(); //using location hook with state for difficulty options
+    // languages ( BG | EN)
+    const { state } = useLocation();
 
     const [currentLanguage] = useState(state?.lang || false);
 
     let l = {};
     (currentLanguage) ? l = en : l = bg;
-    //Personal Questions
+
+    // personal questions
     let option = "";
     let questions = [];
     switch (state.difficulty.value) {

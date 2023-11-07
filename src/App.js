@@ -2,19 +2,20 @@ import './App.css';
 
 import {Routes, Route, useLocation } from 'react-router-dom';
 
-import Intro from './components/Intro';
+import Intro from './components/Intro/Intro';
 
-// About & Contacts
-import About from './components/About';
-import Contacts from './components/Contacts';
-import QuestionsCategories from './components/QuestionsCategories';
+// about & Contacts
+import About from './components/About/About';
+import Contacts from './components/Contacts/Contacts';
 
-// Quiz 
+
+// main quiz 
 import YesAnswer from './components/Quiz/YesAnswer';
 import NoAnswer from './components/Quiz/NoAnswer';
 import DependsAnswer from './components/Quiz/DependsAnswer';
 
-// Questions
+// questions
+import QuestionsSelector from './components/Questions/QuestionsSelector';
 import Technical from './components/Questions/Technical/Technical';
 import Work from './components/Questions/Work/Work';
 import Entertainment from './components/Questions/Entertainment/Entertainment';
@@ -30,7 +31,7 @@ function App() {
 				<Route path='/*' element={<Intro />}></Route>
         <Route path='/about' element={<About />}></Route>
         <Route path='/contacts' element={<Contacts />}></Route>
-        <Route path='/questions' element={<QuestionsCategories />}></Route>
+        <Route path='/questions' element={<QuestionsSelector />}></Route>
 
 				<Route path='/yes' element={<YesAnswer />}></Route>
 				<Route path='/no' element={<NoAnswer />}></Route>

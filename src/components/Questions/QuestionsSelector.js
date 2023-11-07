@@ -2,17 +2,16 @@ import React, { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import Select, { components } from 'react-select';
 
-//Languages
+import LanguageSwitch from "../LanguageSwitch";
+import Navigation from "../Navigation/Navigation";
+import Menu from "../Menu/Menu";
 
-import bg from '../languages/bg-questions.json';
-import en from '../languages/en-questions.json';
+// languages
+import bg from '../../languages/bg-questions.json';
+import en from '../../languages/en-questions.json';
 
-import LanguageSwitch from "./LanguageSwitch";
-import Navigation from "./Navigation/Navigation";
-import Menu from "./Menu";
-
-//Styles
-import '../styles/questionscategories.css';
+// styles
+import './questionsselection.css';
 
 const portfolioStyle = {
     container: (defaultStyles) => ({
@@ -52,9 +51,9 @@ const portfolioStyle = {
     }),
 };
 
-const QuestionsCategories = (props) => {
+const Questions = (props) => {
 
-    //Languages ( BG | EN)
+    // languages ( BG | EN)
     let { state } = useLocation();
 
     const [currentLanguage, setCurrentLanguage] = useState(state?.lang || false);
@@ -147,4 +146,4 @@ const QuestionsCategories = (props) => {
 
 }
 
-export default QuestionsCategories;
+export default Questions;

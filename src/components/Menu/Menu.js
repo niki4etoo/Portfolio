@@ -1,15 +1,16 @@
 import React from "react";
 import { Link } from 'react-router-dom';
 
-import '../styles/mainmenu.css';
+// languages
+import bg from '../../languages/bg.json';
+import en from '../../languages/en.json';
 
-//Languages
-import bg from '../languages/bg.json';
-import en from '../languages/en.json';
+// style
+import './menu.css';
 
 const Menu = (props) => {
 
-    //Languages ( BG | EN)
+    // languages ( BG | EN)
     let l = {};
     (props.lang) ? l = en : l = bg;
 
@@ -22,7 +23,7 @@ const Menu = (props) => {
 
     pages.map((page) => {
         if (page.link === props.active) {
-            page.active = true; // setting the page to active
+            page.active = true;
         }
         return null;
     })

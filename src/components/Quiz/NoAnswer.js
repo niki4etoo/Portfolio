@@ -3,15 +3,15 @@ import { useLocation } from "react-router-dom";
 
 import LanguageSwitch from "../LanguageSwitch";
 import Navigation from "../Navigation/Navigation";
-import QuizContainer, { userAnswers } from './QuizContainer';
+import MainQuiz, { userAnswers } from './MainQuiz';
 import AnsweredQuestions from './AnsweredQuestions';
 import Messages from './Messages';
 
-//Languages
+// language
 import en from '../../languages/en.json';
 
-//Styles
-import '../../styles/quiz.css';
+// styles
+import './quiz.css';
 import '../../styles/togglelanguages.css';
 
 const NoAnswer = () => {
@@ -20,7 +20,7 @@ const NoAnswer = () => {
 
     const [question, setQuestion] = useState({ toAnswer: true, answered: false });
 
-    //Languages ( BG | EN)
+    // languages ( BG | EN)
     const [currentLanguage, setCurrentLanguage] = useState(state?.lang || false); // setting language by last user selection
 
     return (
@@ -40,7 +40,7 @@ const NoAnswer = () => {
             {question.toAnswer &&
                 <>
                     <Navigation userAnswers={userAnswers} lang={currentLanguage} />
-                    <QuizContainer
+                    <MainQuiz
                         setter={setQuestion}
                         type="no" lang={currentLanguage} />
                 </>

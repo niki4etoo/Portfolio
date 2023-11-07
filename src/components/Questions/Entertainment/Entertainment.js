@@ -5,24 +5,24 @@ import { useLocation } from "react-router-dom";
 import Navigation from "../../Navigation/Navigation";
 import Questions from "../Questions";
 
-//Languages
+// languages
 import bg from '../../../languages/Questions/bg-entertainment.json';
 import en from '../../../languages/Questions/en-entertainment.json';
 
-//Styles
-import '../../../styles/questions.css';
+// styles
+import '../questions.css';
 
 const Entertainment = () => {
 
-    //Languages ( BG | EN)
-    const { state } = useLocation(); // getting user lang selection
+    // languages ( BG | EN)
+    const { state } = useLocation();
 
     const [currentLanguage] = useState(state?.lang || false); // setting language by last user selection
 
     let l = {};
     (currentLanguage) ? l = en : l = bg;
 
-    //Entertainment Questions
+    // entertainment questions
     let option = "";
     let questions = [];
 

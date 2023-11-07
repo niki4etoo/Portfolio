@@ -1,24 +1,24 @@
 import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 
-import linkedLogo from '../images/logo/linkedin.svg';
-import githubLogo from '../images/logo/github.svg';
-import twitterLogo from '../images/logo/twitter.svg';
+import linkedLogo from '../../images/logo/linkedin.svg';
+import githubLogo from '../../images/logo/github.svg';
+import twitterLogo from '../../images/logo/twitter.svg';
 
-//Languages
-import bg from '../languages/bg.json';
-import en from '../languages/en.json';
+// languages
+import bg from '../../languages/bg.json';
+import en from '../../languages/en.json';
 
-import LanguageSwitch from "./LanguageSwitch";
-import Navigation from "./Navigation/Navigation";
-import Menu from "./Menu";
+import LanguageSwitch from "../LanguageSwitch";
+import Navigation from "../Navigation/Navigation";
+import Menu from "../Menu/Menu";
 
-//Styles
-import '../styles/contacts.css';
+// style
+import './contacts.css';
 
 const Contacts = () => {
 
-    //Languages ( BG | EN)
+    // languages ( BG | EN)
     const { state } = useLocation();
 
     const [currentLanguage, setCurrentLanguage] = useState(state?.lang || false);

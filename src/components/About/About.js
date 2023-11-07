@@ -3,19 +3,19 @@ import { useLocation } from "react-router-dom";
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import gsap from "gsap";
 
-import LanguageSwitch from "./LanguageSwitch";
-import Navigation from "./Navigation/Navigation";
-import Menu from "./Menu";
+import LanguageSwitch from "../LanguageSwitch";
+import Navigation from "../Navigation/Navigation";
+import Menu from "../Menu/Menu";
 
-//Languages
-import bg from "../languages/bg.json";
-import en from "../languages/en.json";
+// languages
+import bg from "../../languages/bg.json";
+import en from "../../languages/en.json";
 
-// styles
-import "../styles/about.css";
+// style
+import "./about.css";
 
 // image
-import profilePhoto from '../images/profile_photo.jpeg';
+import profilePhoto from '../../images/profile_photo.jpeg';
 
 const About = () => {
 

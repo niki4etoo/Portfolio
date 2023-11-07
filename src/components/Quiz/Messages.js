@@ -1,6 +1,6 @@
 import React from "react";
 
-//Languages
+// languages
 import bg from '../../languages/bg.json';
 import en from '../../languages/en.json';
 

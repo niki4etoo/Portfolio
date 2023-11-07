@@ -1,41 +1,38 @@
 import React, { useState, useRef } from "react";
 import { Link } from "react-router-dom";
 
-//Styles
-import '../../styles/questions.css';
-
-//Languages
+// languages
 import bg from '../../languages/bg-questions.json';
 import en from '../../languages/en-questions.json';
 
-const userAnswers = { category: "", difficulty: "", answers: [] }; // Storing user answers
+// styles
+import './questions.css';
+
+const userAnswers = { category: "", difficulty: "", answers: [] };
 
 const Questions = (props) => {
 
-    //Getting questions in a state
     const [questions, setQuestions] = useState(props.questions);
 
-    //User Answers object - setting category and difficulty
     userAnswers.category = props.category;
     userAnswers.difficulty = props.difficulty;
 
-    //Languages ( BG | EN)
+    // languages ( BG | EN)
     let ll = {}; // Object for language from the bg-questions/en-questions
     (props.lang) ? ll = en : ll = bg;
 
-    //Questions states
+    // questions states
     const [index, setIndex] = useState(0);
     const [isThereMoreQuestions, setIsThereMoreQuestions] = useState(true);
     const [isDone, setDone] = useState(false);
 
     const [disableButton, setDisableButton] = useState({ next: false, prev: true });
 
-    //Navigation References ( previous and next )
+    // navigation references ( previous and next )
     const nextRef = useRef(null);
     const prevRef = useRef(null);
 
     const handleAnswers = (e) => {
-        //Storing answer and changing questions length
         userAnswers.answers.push(e.target.outerText);
         if (questions.length - 1 === 0) {
             console.log("Done!");
@@ -44,7 +41,7 @@ const Questions = (props) => {
             setDone(true);
         } else {
             setQuestions((questions) => {
-                return questions.toSpliced(index, 1); //removing the answered question
+                return questions.toSpliced(index, 1); // removing the answered question
             });
             if(index+1 === questions.length) setIndex(index => index - 1); // last question, so index must be decremented ( last question is removed )
         }
@@ -58,19 +55,19 @@ const Questions = (props) => {
             }
 
             if (questions[index + 1] !== undefined) {
-                setDisableButton((state) => { return { ...state, prev: false } }); //enable prev questions
+                setDisableButton((state) => { return { ...state, prev: false } }); // enable prev questions
                 setIndex(index => index + 1);
             }
         }
 
         const navigateBack = () => {
             if (index - 1 === 0) {
-                setDisableButton((state) => { return { ...state, prev: true } }); //disable prev button
+                setDisableButton((state) => { return { ...state, prev: true } }); // disable prev button
                 setIndex(index => index - 1);
             }
 
             if (index - 1 > 0) {
-                setDisableButton((state) => { return { ...state, next: false } });; //enable next button
+                setDisableButton((state) => { return { ...state, next: false } }); // enable next button
                 setIndex(index => index - 1);
             }
         }

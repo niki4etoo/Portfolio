@@ -1,8 +1,6 @@
 import React, { useState, useRef } from "react";
 
-//import QuestionAnimations from "./Animations/QuestionAnimations";
-
-//Languages
+// languages
 import bg from '../../languages/bg.json';
 import en from '../../languages/en.json';
 

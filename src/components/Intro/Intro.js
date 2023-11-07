@@ -2,18 +2,18 @@ import React, { useState, useRef, useLayoutEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { gsap } from 'gsap';
 
-import { getRandomRotation } from './Utilities';
+import { getRandomRotation } from '../Utilities';
 
-import LanguageSwitch from './LanguageSwitch';
-import Menu from './Menu';
+import LanguageSwitch from '../LanguageSwitch';
+import Menu from '../Menu/Menu';
 
-//Languages
-import bg from '../languages/bg.json';
-import en from '../languages/en.json';
+// languages
+import bg from '../../languages/bg.json';
+import en from '../../languages/en.json';
 
-//Styling
-import '../styles/intro.css';
-import '../styles/togglelanguages.css';
+// styles
+import './intro.css';
+import '../../styles/togglelanguages.css';
 
 const Intro = () => {
 
@@ -34,7 +34,7 @@ const Intro = () => {
 
     let { state } = useLocation(); // using language set by user
 
-    //Languages ( BG | EN)
+    // languages ( BG | EN)
 
     const [currentLanguage, setCurrentLanguage] = useState(state?.lang || false);
 
@@ -107,7 +107,7 @@ const Intro = () => {
         return result;
     }
 
-    //Animation on Header
+    // animation on Header
     useLayoutEffect(() => {
         if (!isHeaderClicked) return;
 
@@ -154,7 +154,7 @@ const Intro = () => {
 
     }, []);
 
-    // Animation on Answer Descriptions
+    // animation on Answer Descriptions
     useLayoutEffect(() => {
         if (!isDescriptionShowed) return;
 
@@ -185,7 +185,7 @@ const Intro = () => {
         });
     }
 
-    // Description for each answer
+    // description for each answer
 
     const showDescription = (answer) => {
         switch (answer) {

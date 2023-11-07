@@ -1,11 +1,12 @@
 import React from "react";
 import { Link } from 'react-router-dom';
 
-//Languages
+// languages
 import bg from '../../languages/bg.json';
 import en from '../../languages/en.json';
 
-import '../../styles/quiz.css';
+// styles
+import './quiz.css';
 import '../../styles/togglelanguages.css';
 
 
