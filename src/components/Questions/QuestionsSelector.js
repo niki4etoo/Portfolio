@@ -51,7 +51,7 @@ const portfolioStyle = {
     }),
 };
 
-const Questions = (props) => {
+const QuestionsSelector = () => {
 
     // languages ( BG | EN)
     let { state } = useLocation();
@@ -89,8 +89,6 @@ const Questions = (props) => {
         { value: "Hard", label: l.questions.select.hard },
     ];
 
-    const navigate = useNavigate();
-
     const ControlCategories = ({ children, ...props }) => (
         <components.Control {...props}>
             {l.questions.category} → {children}
@@ -103,6 +101,8 @@ const Questions = (props) => {
         </components.Control>
     );
 
+    const navigate = useNavigate();
+
     const Buttons = (props) => {
         let l = {};
         (props.lang) ? l = en : l = bg;
@@ -114,7 +114,7 @@ const Questions = (props) => {
         const handleStart = () => {
             console.log("Start with: ", selected.difficulty);
 
-            navigate(`/questions/${props.category.value}/`, { state: { difficulty: props.difficulty, lang: currentLanguage } });
+            navigate(`/questions/${props.category.value}/`, { state: { category: props.category.value, difficulty: props.difficulty.value, lang: currentLanguage } });
         }
 
         return (
@@ -146,4 +146,4 @@ const Questions = (props) => {
 
 }
 
-export default Questions;
+export default QuestionsSelector;

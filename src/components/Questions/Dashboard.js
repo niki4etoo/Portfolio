@@ -1,17 +1,26 @@
 import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
 
-import Navigation from "../../Navigation/Navigation";
-import Questions from '../Questions';
+import Navigation from "../Navigation/Navigation";
+import Questions from './Questions';
 
 // languages
-import bg from '../../../languages/Questions/bg-technical.json';
-import en from '../../../languages/Questions/en-technical.json';
+import bgTechnical from '../../languages/Questions/bg-technical.json';
+import enTechnical from '../../languages/Questions/en-technical.json';
+
+import bgPersonal from '../../languages/Questions/bg-personal.json';
+import enPersonal from '../../languages/Questions/en-personal.json';
+
+import bgWork from '../../languages/Questions/bg-work.json';
+import enWork from '../../languages/Questions/en-work.json';
+
+import bgEntertainment from '../../languages/Questions/bg-entertainment.json';
+import enEntertainment from '../../languages/Questions/en-entertainment.json';
 
 // styles
-import '../questions.css';
+import './questions.css';
 
-const Technical = () => {
+const Dashboard = () => {
 
     // languages ( BG | EN)
     const { state } = useLocation();
@@ -19,13 +28,37 @@ const Technical = () => {
     const [currentLanguage] = useState(state?.lang || false); // setting language by last user selection
 
     let l = {};
-    (currentLanguage) ? l = en : l = bg;
 
-    // technical questions
+    let en = {};
+    let bg = {};
+    
+    switch (state.category) {
+        case "technical":
+            en = enTechnical;
+            bg = bgTechnical;
+            break;
+        case "work":
+            en = enWork;
+            bg = bgWork;
+            break;
+        case "personal":
+            en = enPersonal;
+            bg = bgPersonal;
+            break;
+        case "entertainment":
+            en = enEntertainment;
+            bg = bgEntertainment;
+            break;
+        default:
+    }
+
+    (currentLanguage) ? l = en : l = bg;
+    
+    // questions
     let option = "";
     let questions = [];
 
-    switch (state.difficulty.value) {
+    switch (state.difficulty) {
         case "Easy":
             option = l.difficultyOptions.easy;
             questions = l.questions.easy;
@@ -40,7 +73,7 @@ const Technical = () => {
             break;
         default:
     }
-
+    console.log(questions);
     const Title = (props) => {
         (props.lang) ? l = en : l = bg;
 
@@ -62,4 +95,4 @@ const Technical = () => {
     );
 }
 
-export default Technical;
+export default Dashboard;
