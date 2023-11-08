@@ -1,19 +1,18 @@
-import React, { useState, useRef } from "react";
+import { useRef, useState } from 'react';
 
 // languages
 import bg from '../../languages/bg.json';
 import en from '../../languages/en.json';
 
-export const userAnswers = [];
+export const userAnswers: string[] = [];
+let lengthQuestions = 0;
 
-const QuizContainer = (props) => {
+const QuizContainer = (props: any) => {
 
-    const questionRef = useRef(null);
-    const answersRef = useRef([]);
+    const questionRef = useRef<any>(null);
+    const answersRef = useRef<any>([]);
 
     const [index, setIndex] = useState(0);
-
-    let lengthQuestions = 0;
 
     switch (props.type) {
         case "yes":
@@ -28,19 +27,18 @@ const QuizContainer = (props) => {
         default:
     }
 
-    const handle = (answer) => {
+    const handle = (answer: string) => {
         userAnswers.push(answer);
 
-        if(lengthQuestions === index + 1){
-            props.setter((state) => { return { toAnswer: !state.toAnswer, answered: !state.answered } });
+        if (lengthQuestions === index + 1) {
+            props.setter((state: any) => { return { toAnswer: !state.toAnswer, answered: !state.answered } });
         } else {
             setIndex(index => index + 1);
         }
     }
 
-    let l = {};
     let result;
-    (props.lang) ? l = en : l = bg;
+    let l = props.lang ? en : bg;
 
     switch (props.type) {
         case "yes":
@@ -51,7 +49,7 @@ const QuizContainer = (props) => {
 
                 <div className="quiz-answers__quiz">
                     {
-                        l.quiz.yes.questions[index].answers.map((answer, index) => {
+                        l.quiz.yes.questions[index].answers.map((answer: string, index: number) => {
                             return <div key={answer} ref={(element) => answersRef.current[index] = element} className="quiz-answer__quiz" onClick={() => handle(answer)}>
                                 {answer}
                             </div>
@@ -68,7 +66,7 @@ const QuizContainer = (props) => {
 
                 <div className="quiz-answers__quiz">
                     {
-                        l.quiz.no.questions[index].answers.map((answer, index) => {
+                        l.quiz.no.questions[index].answers.map((answer: string, index: number) => {
                             return <div key={answer} ref={(element) => answersRef.current[index] = element} className="quiz-answer__quiz" onClick={() => handle(answer)}>
                                 {answer}
                             </div>

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 
 import linkedLogo from '../../images/logo/linkedin.svg';
@@ -23,10 +23,10 @@ const Contacts = () => {
 
     const [currentLanguage, setCurrentLanguage] = useState(state?.lang || false);
 
-    let l = {};
-    (currentLanguage) ? l = en : l = bg;
 
-    const ButtonContact = ({ label, mailto }) => {
+    let l = currentLanguage ? en : bg;
+
+    const ButtonContact = ({ label, mailto }: any) => {
         return (
             <Link
                 to="#"

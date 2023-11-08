@@ -1,4 +1,3 @@
-import React from "react";
 import { Link } from 'react-router-dom';
 
 // languages
@@ -8,11 +7,10 @@ import en from '../../languages/en.json';
 // style
 import './menu.css';
 
-const Menu = (props) => {
+const Menu = (props: any) => {
 
     // languages ( BG | EN)
-    let l = {};
-    (props.lang) ? l = en : l = bg;
+    let l = props.lang ? en : bg;
 
     let pages = [
         { link: "/about", label: l.menu.about, active: false },

@@ -1,10 +1,11 @@
-import React from 'react';
 
-const Status = (props) => {
+const Status = (props: any) => {
 
+    console.log(props);
+    
     return (
         <>
-        
+
         </>
     );
 }

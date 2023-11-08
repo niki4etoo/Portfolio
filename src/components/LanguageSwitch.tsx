@@ -1,12 +1,10 @@
-import React from 'react';
+const LanguageSwitch = (props: any) => {
 
-const LanguageSwitch = (props) => {
-
-    const changeLanguage = (e) => {
+    const changeLanguage = (e: any) => {
         if (e.target.checked) {
-            props.setter(prev => true); //Switched to EN
+            props.setter(true); //Switched to EN
         } else {
-            props.setter(prev => false); //Switched to BG
+            props.setter(false); //Switched to BG
         }
     }
 

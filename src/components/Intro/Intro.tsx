@@ -1,4 +1,4 @@
-import React, { useState, useRef, useLayoutEffect } from 'react';
+import { useState, useRef, useLayoutEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { gsap } from 'gsap';
 
@@ -14,6 +14,8 @@ import en from '../../languages/en.json';
 // styles
 import './intro.css';
 import '../../styles/togglelanguages.css';
+
+let result = "";
 
 const Intro = () => {
 
@@ -37,16 +39,13 @@ const Intro = () => {
     // languages ( BG | EN)
 
     const [currentLanguage, setCurrentLanguage] = useState(state?.lang || false);
+    const language = currentLanguage ? en : bg;
 
-    const HeaderTitle = (props) => {
-        if (props.lang) {
-            return <><span id='main-color'>{en.header.titleFirstPart}</span>{en.header.titleSecondPart}</>;
-        } else {
-            return <><span id='main-color'>{bg.header.titleFirstPart}</span>{bg.header.titleSecondPart}</>;
-        }
+    const HeaderTitle = () => {
+        return <><span id='main-color'>{language.header.titleFirstPart}</span>{language.header.titleSecondPart}</>;
     }
 
-    const MainQuestion = (props) => {
+    const MainQuestion = (props: any) => {
         if (props.lang) {
             return <>{en.header.mainQuestionBegin} <span id='main-color'>{en.header.mainQuestionAccentWord}</span> {en.header.mainQuestionEnd}?</>;
         } else {
@@ -55,20 +54,17 @@ const Intro = () => {
     }
 
 
-    const Answers = (props) => {
-        let l = {};
-        let result = "";
-        (props.lang) ? l = en : l = bg;
+    const Answers = (props: any) => {
 
         switch (props.type) {
             case "yes":
-                result = l.header.mainAnswersYes;
+                result = language.header.mainAnswersYes;
                 break;
             case "no":
-                result = l.header.mainAnswersNo;
+                result = language.header.mainAnswersNo;
                 break;
             case "depends":
-                result = l.header.mainAnswersDepends;
+                result = language.header.mainAnswersDepends;
                 break;
             default:
         }
@@ -76,30 +72,28 @@ const Intro = () => {
         return result;
     }
 
-    const AnswerDescriptions = (props) => {
-        let l = {};
-        let result;
-        (props.lang) ? l = en : l = bg;
+    const AnswerDescriptions = (props: any) => {
+        let result: any;
         switch (props.type) {
             case "yes":
                 result = <div className='answer-description__intro'>
-                    <h1>{l.answers.yes.title}</h1>
-                    <h3>{l.answers.yes.description}</h3>
-                    <Link to='/yes' state={{ lang: props.lang }}>{l.answers.learnMore}</Link>
+                    <h1>{language.answers.yes.title}</h1>
+                    <h3>{language.answers.yes.description}</h3>
+                    <Link to='/yes' state={{ lang: props.lang }}>{language.answers.learnMore}</Link>
                 </div>;
                 break;
             case "no":
                 result = <div className='answer-description__intro'>
-                    <h1>{l.answers.no.title}</h1>
-                    <h3>{l.answers.no.description}</h3>
-                    <Link to='/no' state={{ lang: props.lang }}>{l.answers.learnMore}</Link>
+                    <h1>{language.answers.no.title}</h1>
+                    <h3>{language.answers.no.description}</h3>
+                    <Link to='/no' state={{ lang: props.lang }}>{language.answers.learnMore}</Link>
                 </div>;
                 break;
             case "depends":
                 result = <div className='answer-description__intro'>
-                    <h1>{l.answers.depends.title}</h1>
-                    <h3>{l.answers.depends.description}</h3>
-                    <Link to='/depends' state={{ lang: props.lang }}>{l.answers.learnMore}</Link>
+                    <h1>{language.answers.depends.title}</h1>
+                    <h3>{language.answers.depends.description}</h3>
+                    <Link to='/depends' state={{ lang: props.lang }}>{language.answers.learnMore}</Link>
                 </div>;
                 break;
             default:
@@ -137,16 +131,16 @@ const Intro = () => {
 
         let ctx = gsap.context(() => {
 
-            gsap.fromTo('.header__intro', 
-            {
-                opacity: 0,
-                rotation: getRandomRotation()
-            },
-            {
-                opacity: 1,
-                rotation: 0,
-                duration: 0.5
-            });
+            gsap.fromTo('.header__intro',
+                {
+                    opacity: 0,
+                    rotation: getRandomRotation()
+                },
+                {
+                    opacity: 1,
+                    rotation: 0,
+                    duration: 0.5
+                });
 
         }, main);
 
@@ -187,7 +181,7 @@ const Intro = () => {
 
     // description for each answer
 
-    const showDescription = (answer) => {
+    const showDescription = (answer: string) => {
         switch (answer) {
             case "yes":
                 setIntro((state) => {
@@ -213,7 +207,7 @@ const Intro = () => {
     return (
         <div ref={main} className='container__intro'>
             <div className='header__intro'>
-                <h1 ref={portfolioRef} onClick={() => { setIsHeaderClicked(prev => !prev) }}><HeaderTitle lang={currentLanguage} /></h1>
+                <h1 ref={portfolioRef} onClick={() => { setIsHeaderClicked(prev => !prev) }}><HeaderTitle /></h1>
             </div>
             {
                 intro.question &&
@@ -227,15 +221,15 @@ const Intro = () => {
                 <div className='answers__intro'>
                     <div className='answer__intro' onClick={() => {
                         showDescription("yes");
-                        setIsDescriptionShowed(prev => true);
+                        setIsDescriptionShowed(() => true);
                     }}><Answers type="yes" lang={currentLanguage} /></div>
                     <div className='answer__intro' onClick={() => {
                         showDescription("no");
-                        setIsDescriptionShowed(prev => true);
+                        setIsDescriptionShowed(() => true);
                     }}><Answers type="no" lang={currentLanguage} /></div>
                     <div className='answer__intro' onClick={() => {
                         showDescription("depends");
-                        setIsDescriptionShowed(prev => true);
+                        setIsDescriptionShowed(() => true);
                     }}><Answers type="depends" lang={currentLanguage} /></div>
                 </div>
             }

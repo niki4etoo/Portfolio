@@ -1,4 +1,4 @@
-import React, { useState, useRef, useLayoutEffect } from "react";
+import { useState, useRef, useLayoutEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import gsap from "gsap";
@@ -25,29 +25,29 @@ const About = () => {
 
     const [currentLanguage, setCurrentLanguage] = useState(state?.lang || false);
 
-    let l = {};
-    (currentLanguage) ? l = en : l = bg;
+    let l = currentLanguage ? en : bg;
     
-    const figureRef = useRef();
-    const main = useRef();
+    const figureRef = useRef<any>(null);
+    const main = useRef(null);
 
     useLayoutEffect(() => {
         let ctx = gsap.context((self) => {
-            self.add("hover", (e) => {
+            self.add("hover", () => {
                 gsap.to(figureRef.current, {
                     opacity: 0.8, duration: 0.5,
                 });
             });
 
-            self.add("leave", (e) => {
+            self.add("leave", () => {
                 gsap.to(figureRef.current, {
                     opacity: 1, duration: 0.5,
                 })
             });
         }, main);
-
-        figureRef.current.addEventListener("mouseenter", (e) => ctx.hover(e));
-        figureRef.current.addEventListener("mouseleave", (e) => ctx.leave(e));
+        if(figureRef.current !== undefined && figureRef.current !== null){
+            figureRef.current.addEventListener("mouseenter", (e:any) => ctx.hover(e));
+            figureRef.current.addEventListener("mouseleave", (e:any) => ctx.leave(e));
+        }
 
         return () => ctx.revert();
     }, []);

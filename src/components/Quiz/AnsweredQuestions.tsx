@@ -1,4 +1,3 @@
-import React from "react";
 import { Link } from 'react-router-dom';
 
 // languages
@@ -10,8 +9,9 @@ import './quiz.css';
 import '../../styles/togglelanguages.css';
 
 
-const AnsweredQuestions = (props) => {
-
+const AnsweredQuestions = (props: any) => {
+    console.log(props.page);
+    
     if (props.lang) {
         return (
             <>
@@ -21,7 +21,7 @@ const AnsweredQuestions = (props) => {
                     <div className="user-answer-times__quiz">{en.times.list[(props.questions.length / props.questionsCount) - 1]}</div>
                     <ol className="roman__quiz">
                         {
-                            props.questions.map((a, k) => {
+                            props.questions.map((a: any, k: any) => {
                                 return (
                                     <li key={k}>&nbsp;{a}</li>
                                 )
@@ -42,7 +42,7 @@ const AnsweredQuestions = (props) => {
                     <div className="user-answer-times__quiz">{bg.times.list[(props.questions.length / props.questionsCount) - 1]}</div>
                     <ol className="roman__quiz">
                         {
-                            props.questions.map((a, k) => {
+                            props.questions.map((a: any, k: any) => {
                                 return (
                                     <li key={k}>&nbsp;{a}</li>
                                 )
@@ -50,7 +50,7 @@ const AnsweredQuestions = (props) => {
                         }
                     </ol>
                     <div className="back-again__quiz">
-                        <Link to={props.page} state={{ lang: props.lang }}>{bg.stats.again}</Link>
+                        <Link to={props.page} state={{ lang: props.lang,  }}>{bg.stats.again}</Link>
                     </div>
                 </div>
             </>

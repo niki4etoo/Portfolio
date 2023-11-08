@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import { useState, useRef } from "react";
 import { Link } from "react-router-dom";
 
 // languages
@@ -8,18 +8,16 @@ import en from '../../languages/en-questions.json';
 // styles
 import './questions.css';
 
-const userAnswers = { category: "", difficulty: "", answers: [] };
+const userAnswers: { category: string, difficulty: string, answers: string[] } = { category: "", difficulty: "", answers: [] };
 
-const Questions = (props) => {
+const Questions = (props: any) => {
 
     const [questions, setQuestions] = useState(props.questions);
 
     userAnswers.category = props.category;
     userAnswers.difficulty = props.difficulty;
-
     // languages ( BG | EN)
-    let ll = {}; // Object for language from the bg-questions/en-questions
-    (props.lang) ? ll = en : ll = bg;
+    let ll = props.lang ? en : bg;// Object for language from the bg-questions/en-questions
 
     // questions states
     const [index, setIndex] = useState(0);
@@ -32,7 +30,7 @@ const Questions = (props) => {
     const nextRef = useRef(null);
     const prevRef = useRef(null);
 
-    const handleAnswers = (e) => {
+    const handleAnswers = (e: any) => {
         userAnswers.answers.push(e.target.outerText);
         if (questions.length - 1 === 0) {
             console.log("Done!");
@@ -40,7 +38,7 @@ const Questions = (props) => {
             setIsThereMoreQuestions(false);
             setDone(true);
         } else {
-            setQuestions((questions) => {
+            setQuestions((questions: any) => {
                 return questions.toSpliced(index, 1); // removing the answered question
             });
             if (index + 1 === questions.length) setIndex(index => index - 1); // last question, so index must be decremented ( last question is removed )
@@ -95,7 +93,7 @@ const Questions = (props) => {
                         </div>
                         <div className="answers__questions">
                             {
-                                questions[index].answers.map(answer => (
+                                questions[index].answers.map((answer: string) => (
                                     <div key={answer} className="answer__questions" onClick={(e) => handleAnswers(e)}>{answer}</div>
                                 ))
                             }

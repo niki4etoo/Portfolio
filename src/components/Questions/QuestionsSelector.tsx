@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import Select, { components } from 'react-select';
 
@@ -14,18 +14,18 @@ import en from '../../languages/en-questions.json';
 import './questionsselection.css';
 
 const portfolioStyle = {
-    container: (defaultStyles) => ({
+    container: (defaultStyles: any) => ({
         ...defaultStyles,
         display: "flex",
         width: "100%",
     }),
-    option: (defaultStyles, state) => ({
+    option: (defaultStyles: any, state: any) => ({
         ...defaultStyles,
         color: state.isSelected ? "#fff" : "#000",
         backgroundColor: state.isSelected ? "#000" : "#fff",
     }),
 
-    control: (defaultStyles) => ({
+    control: (defaultStyles: any) => ({
         ...defaultStyles,
         display: "flex",
         width: "100%",
@@ -38,7 +38,7 @@ const portfolioStyle = {
             backgroundColor: "#ffe",
         }
     }),
-    singleValue: (base) => ({
+    singleValue: (base: any) => ({
         ...base,
         padding: "5px 10px",
         borderRadius: 5,
@@ -58,18 +58,17 @@ const QuestionsSelector = () => {
 
     const [currentLanguage, setCurrentLanguage] = useState(state?.lang || false);
 
-    let l = {};
-    (currentLanguage) ? l = en : l = bg;
+    let l = currentLanguage ? en : bg;
 
     const [selected, setSelected] = useState({ category: '', difficulty: '', isCategorySelected: false, isDifficultySelected: false });
 
-    const handleCategoryOption = (selected) => {
+    const handleCategoryOption = (selected: any) => {
         setSelected((state) => {
             return { ...state, category: selected, isCategorySelected: true }
         });
     }
 
-    const handleDifficultyOption = (selected) => {
+    const handleDifficultyOption = (selected: any) => {
         setSelected((state) => {
             return { ...state, difficulty: selected, isDifficultySelected: true }
         });
@@ -89,13 +88,13 @@ const QuestionsSelector = () => {
         { value: "Hard", label: l.questions.select.hard },
     ];
 
-    const ControlCategories = ({ children, ...props }) => (
+    const ControlCategories = ({ children, ...props }: any) => (
         <components.Control {...props}>
             {l.questions.category} → {children}
         </components.Control>
     );
-    
-    const ControlDifficulty = ({ children, ...props }) => (
+
+    const ControlDifficulty = ({ children, ...props }: any) => (
         <components.Control {...props}>
             {l.questions.difficulty} → {children}
         </components.Control>
@@ -103,9 +102,7 @@ const QuestionsSelector = () => {
 
     const navigate = useNavigate();
 
-    const Buttons = (props) => {
-        let l = {};
-        (props.lang) ? l = en : l = bg;
+    const Buttons = (props: any) => {
 
         const handleStatus = () => {
             //to do
@@ -135,7 +132,7 @@ const QuestionsSelector = () => {
                 </div>
                 {selected.isCategorySelected && selected.isDifficultySelected &&
                     <div className='buttons__selection'>
-                        <Buttons difficulty={selected.difficulty} category={selected.category} lang={currentLanguage} />
+                        <Buttons difficulty={selected.difficulty} category={selected.category} />
                     </div>
                 }
             </div>

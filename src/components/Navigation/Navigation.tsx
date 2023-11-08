@@ -1,4 +1,3 @@
-import React from "react";
 import { Link } from 'react-router-dom';
 
 // languages
@@ -9,12 +8,11 @@ import en from '../../languages/en.json';
 import './navigation.css';
 import '../../styles/togglelanguages.css';
 
-const Navigation = (props) => {
+const Navigation = (props:any) => {
 
     let path = props.navigate || '/'; // Default route is intro
 
-    let l = {};
-    (props.lang) ? l = en : l = bg;
+    let l = props.lang ? en : bg;
 
     return (
         <>

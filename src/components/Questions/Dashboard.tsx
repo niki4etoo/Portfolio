@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { useLocation } from "react-router-dom";
 
 import Navigation from "../Navigation/Navigation";
@@ -27,33 +27,23 @@ const Dashboard = () => {
 
     const [currentLanguage] = useState(state?.lang || false); // setting language by last user selection
 
-    let l = {};
-
-    let en = {};
-    let bg = {};
-    
+    let l:any;
     switch (state.category) {
         case "technical":
-            en = enTechnical;
-            bg = bgTechnical;
+            l = currentLanguage ? enTechnical : bgTechnical;
             break;
         case "work":
-            en = enWork;
-            bg = bgWork;
+            l = currentLanguage ? enWork : bgWork;
             break;
         case "personal":
-            en = enPersonal;
-            bg = bgPersonal;
+            l = currentLanguage ? enPersonal : bgPersonal;
             break;
         case "entertainment":
-            en = enEntertainment;
-            bg = bgEntertainment;
+            l = currentLanguage ? enEntertainment : bgEntertainment;
             break;
         default:
     }
 
-    (currentLanguage) ? l = en : l = bg;
-    
     // questions
     let option = "";
     let questions = [];
@@ -73,23 +63,20 @@ const Dashboard = () => {
             break;
         default:
     }
-    console.log(questions);
-    const Title = (props) => {
-        (props.lang) ? l = en : l = bg;
-
+    
+    const Title = () => {
         return (
             <div className="container__titles__questions">
                 <h2>{l.category}: <span className="italic">{l.title}</span></h2>
                 <h3>{l.difficulty}: <span className="italic">{option}</span></h3>
             </div>
         );
-
     }
 
     return (
         <>
             <Navigation navigate="/questions" lang={currentLanguage} />
-            <Title lang={currentLanguage} />
+            <Title />
             <Questions category={l.type} questions={questions} lang={currentLanguage} />
         </>
     );
