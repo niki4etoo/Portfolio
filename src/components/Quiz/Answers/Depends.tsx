@@ -31,7 +31,7 @@ const DependsAnswer = () => {
                     <div className="answered-container__quiz">
                         <div className="answered__quiz">
                             <Messages success={true} lang={currentLanguage} />
-                            <AnsweredQuestions lang={currentLanguage} questions={userAnswers} questionsCount={en.quiz.depends.questions.length} page="/depends" />
+                            <AnsweredQuestions setter={setQuestion} lang={currentLanguage} questions={userAnswers} questionsCount={en.quiz.depends.questions.length} page="/depends" />
                         </div>
                     </div>
                 </>

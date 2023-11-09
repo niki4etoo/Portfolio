@@ -31,7 +31,7 @@ const NoAnswer = () => {
                     <div className="answered-container__quiz">
                         <div className="answered__quiz">
                             <Messages success={true} lang={currentLanguage} />
-                            <AnsweredQuestions lang={currentLanguage} questions={userAnswers} questionsCount={en.quiz.no.questions.length} page="/no" />
+                            <AnsweredQuestions setter={setQuestion} lang={currentLanguage} questions={userAnswers} questionsCount={en.quiz.no.questions.length} page="/no" />
                         </div>
                     </div>
 

@@ -22,7 +22,7 @@ const YesAnswer = () => {
 
     // languages ( BG | EN)
     const [currentLanguage, setCurrentLanguage] = useState(state?.lang || false); // Setting language by last user selection
-
+    
     return (
         <>
 
@@ -32,7 +32,7 @@ const YesAnswer = () => {
                     <div className="answered-container__quiz">
                         <div className="answered__quiz">
                             <Messages success={true} lang={currentLanguage} />
-                            <AnsweredQuestions lang={currentLanguage} questions={userAnswers} questionsCount={en.quiz.yes.questions.length} page="/yes" />
+                            <AnsweredQuestions setter={setQuestion} lang={currentLanguage} questions={userAnswers} questionsCount={en.quiz.yes.questions.length} page="/yes" />
                         </div>
                     </div>
                 </>

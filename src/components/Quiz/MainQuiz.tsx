@@ -7,7 +7,7 @@ import en from '../../languages/en.json';
 export const userAnswers: string[] = [];
 let lengthQuestions = 0;
 
-const QuizContainer = (props: any) => {
+const MainQuiz = (props: any) => {
 
     const questionRef = useRef<any>(null);
     const answersRef = useRef<any>([]);
@@ -31,7 +31,7 @@ const QuizContainer = (props: any) => {
         userAnswers.push(answer);
 
         if (lengthQuestions === index + 1) {
-            props.setter((state: any) => { return { toAnswer: !state.toAnswer, answered: !state.answered } });
+            props.setter((state: any) => { return { toAnswer: !state.toAnswer, answered: !state.answered } }); //no more questions -> to answer false, answered true
         } else {
             setIndex(index => index + 1);
         }
@@ -97,4 +97,4 @@ const QuizContainer = (props: any) => {
     return result;
 }
 
-export default QuizContainer;
+export default MainQuiz;

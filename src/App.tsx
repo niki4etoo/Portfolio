@@ -22,19 +22,19 @@ function App() {
   return (
     <BrowserRouter>
       <Routes >
-        <Route path='/*' Component={Intro}></Route>
-        <Route path='/about' Component={About}></Route>
-        <Route path='/contacts' Component={Contacts}></Route>
-        <Route path='/questions' Component={QuestionsSelector}></Route>
+        <Route path='/*' element={<Intro />}></Route>
+        <Route path='/about' element={<About />}></Route>
+        <Route path='/contacts' element={<Contacts />}></Route>
+        <Route path='/questions' element={<QuestionsSelector />}></Route>
 
-        <Route path='/yes' Component={Yes}></Route>
-        <Route path='/no' Component={No}></Route>
-        <Route path='/depends' Component={Depends}></Route>
+        <Route path='/yes' element={<Yes />}></Route>
+        <Route path='/no' element={<No />}></Route>
+        <Route path='/depends' element={<Depends />}></Route>
 
-        <Route path='/questions/technical/' Component={Dashboard}></Route>
-        <Route path='/questions/work/' Component={Dashboard}></Route>
-        <Route path='/questions/entertainment/' Component={Dashboard}></Route>
-        <Route path='/questions/personal/' Component={Dashboard}></Route>
+        <Route path='/questions/technical/' element={<Dashboard />}></Route>
+        <Route path='/questions/work/' element={<Dashboard />}></Route>
+        <Route path='/questions/entertainment/' element={<Dashboard />}></Route>
+        <Route path='/questions/personal/' element={<Dashboard />}></Route>
       </Routes>
     </BrowserRouter>
   );
