@@ -1,6 +1,7 @@
 {
     "questions": {
         "category": "Category",
+        "title": "Questions with answers",
         "categories": {
             "technical": "Technical",
             "personal": "Personal",

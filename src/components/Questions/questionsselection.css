@@ -10,6 +10,16 @@
     background-color: aliceblue;
 }
 
+.title_selection {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    letter-spacing: 0.1rem;
+    word-spacing: 0.3rem;
+}
+
 .container__selection {
     display: flex;
 

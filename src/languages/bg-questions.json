@@ -1,6 +1,7 @@
 {
     "questions": {
         "category": "Категория",
+        "title": "Въпроси с отговори",
         "categories": {
             "technical": "Технически",
             "personal": "Лични",

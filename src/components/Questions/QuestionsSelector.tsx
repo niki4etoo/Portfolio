@@ -1,10 +1,10 @@
-import { useState } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useState } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 import Select, { components } from 'react-select';
 
-import LanguageSwitch from "../LanguageSwitch";
-import Navigation from "../Navigation/Navigation";
-import Menu from "../Menu/Menu";
+import LanguageSwitch from '../LanguageSwitch';
+import Navigation from '../Navigation/Navigation';
+import Menu from '../Menu/Menu';
 
 // languages
 import bg from '../../languages/bg-questions.json';
@@ -16,38 +16,38 @@ import './questionsselection.css';
 const portfolioStyle = {
     container: (defaultStyles: any) => ({
         ...defaultStyles,
-        display: "flex",
-        width: "100%",
+        display: 'flex',
+        width: '100%',
     }),
     option: (defaultStyles: any, state: any) => ({
         ...defaultStyles,
-        color: state.isSelected ? "#fff" : "#000",
-        backgroundColor: state.isSelected ? "#000" : "#fff",
+        color: state.isSelected ? '#fff' : '#000',
+        backgroundColor: state.isSelected ? '#000' : '#fff',
     }),
 
     control: (defaultStyles: any) => ({
         ...defaultStyles,
-        display: "flex",
-        width: "100%",
-        backgroundColor: "#fff",
-        margin: "2vh auto",
-        padding: "10px",
-        border: "3px solid blue",
-        boxShadow: "none",
+        display: 'flex',
+        width: '100%',
+        backgroundColor: '#fff',
+        margin: '2vh auto',
+        padding: '10px',
+        border: '3px solid blue',
+        boxShadow: 'none',
         ':hover': {
-            backgroundColor: "#ffe",
+            backgroundColor: '#ffe',
         }
     }),
     singleValue: (base: any) => ({
         ...base,
-        padding: "5px 10px",
+        padding: '5px 10px',
         borderRadius: 5,
-        backgroundColor: "#000",
-        color: "#fff",
-        display: "flex",
-        justifyContent: "center",
+        backgroundColor: '#000',
+        color: '#fff',
+        display: 'flex',
+        justifyContent: 'center',
 
-        width: "fit-content",
+        width: 'fit-content',
     }),
 };
 
@@ -76,16 +76,16 @@ const QuestionsSelector = () => {
 
 
     const optionsCategories = [
-        { value: "technical", label: l.questions.categories.technical },
-        { value: "personal", label: l.questions.categories.personal },
-        { value: "work", label: l.questions.categories.work },
-        { value: "entertainment", label: l.questions.categories.entertainment },
+        { value: 'technical', label: l.questions.categories.technical },
+        { value: 'personal', label: l.questions.categories.personal },
+        { value: 'work', label: l.questions.categories.work },
+        { value: 'entertainment', label: l.questions.categories.entertainment },
     ];
 
     const optionsDifficulty = [
-        { value: "Easy", label: l.questions.select.easy },
-        { value: "Medium", label: l.questions.select.medium },
-        { value: "Hard", label: l.questions.select.hard },
+        { value: 'Easy', label: l.questions.select.easy },
+        { value: 'Medium', label: l.questions.select.medium },
+        { value: 'Hard', label: l.questions.select.hard },
     ];
 
     const ControlCategories = ({ children, ...props }: any) => (
@@ -109,22 +109,27 @@ const QuestionsSelector = () => {
         }
 
         const handleStart = () => {
-            console.log("Start with: ", selected.difficulty);
+            console.log('Start with: ', selected.difficulty);
 
             navigate(`/questions/${props.category.value}/`, { state: { category: props.category.value, difficulty: props.difficulty.value, lang: currentLanguage } });
         }
 
         return (
             <>
-                <button className="buttons" type="button" onClick={handleStatus}>{l.questions.buttons.status}</button>
-                <button className="buttons" type="button" onClick={handleStart}>{l.questions.buttons.start}</button>
+                <button className='buttons' type='button' onClick={handleStatus}>{l.questions.buttons.status}</button>
+                <button className='buttons' type='button' onClick={handleStart}>{l.questions.buttons.start}</button>
             </>
         );
     }
 
+    //to do: passing an args to LanguageSwitch components to switch the selected values to the language
+
     return (
         <>
             <Navigation lang={currentLanguage} />
+            <div className='title_selection'>
+                <h2>{l.questions.title}</h2>
+            </div>
             <div className='container__selection'>
                 <div className='categories__selection'>
                     <Select components={{ Control: ControlCategories }} options={optionsCategories} onChange={handleCategoryOption} styles={portfolioStyle} />
@@ -136,8 +141,8 @@ const QuestionsSelector = () => {
                     </div>
                 }
             </div>
-            <Menu active={"/questions"} lang={currentLanguage} />
-            <LanguageSwitch lang={currentLanguage} setter={setCurrentLanguage} />
+            <Menu active={'/questions'} lang={currentLanguage} />
+            <LanguageSwitch lang={currentLanguage} setter={setCurrentLanguage} /> 
         </>
     );
 
