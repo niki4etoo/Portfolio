@@ -1,9 +1,9 @@
-import { useState } from "react";
-import { useLocation } from "react-router-dom";
+import { useState } from 'react';
+import { useLocation } from 'react-router-dom';
 
-import LanguageSwitch from "../../LanguageSwitch";
-import Navigation from "../../Navigation/Navigation";
-import MainQuiz, { userAnswers } from "../MainQuiz";
+import LanguageSwitch from '../../LanguageSwitch';
+import Navigation from '../../Navigation/Navigation';
+import MainQuiz, { userAnswers } from '../MainQuiz';
 import AnsweredQuestions from '../AnsweredQuestions';
 import Messages from '../Messages';
 
@@ -28,10 +28,10 @@ const DependsAnswer = () => {
             {question.answered &&
                 <>
                     <Navigation userAnswers={userAnswers} lang={currentLanguage} />
-                    <div className="answered-container__quiz">
-                        <div className="answered__quiz">
+                    <div className='answered-container__quiz'>
+                        <div className='answered__quiz'>
                             <Messages success={true} lang={currentLanguage} />
-                            <AnsweredQuestions setter={setQuestion} lang={currentLanguage} questions={userAnswers} questionsCount={en.depends.questions.length} page="/depends" />
+                            <AnsweredQuestions setter={setQuestion} lang={currentLanguage} questions={userAnswers} questionsCount={en.depends.questions.length} page='/depends' />
                         </div>
                     </div>
                 </>
@@ -41,7 +41,7 @@ const DependsAnswer = () => {
                     <Navigation userAnswers={userAnswers} lang={currentLanguage} />
                     <MainQuiz
                         setter={setQuestion}
-                        type="depends" lang={currentLanguage} />
+                        type='depends' lang={currentLanguage} />
                 </>
             }
             <LanguageSwitch lang={currentLanguage} setter={setCurrentLanguage} />

@@ -15,7 +15,7 @@ import en from '../../languages/en.json';
 import './intro.css';
 import '../../styles/togglelanguages.css';
 
-let result = "";
+let result = '';
 
 const Intro = () => {
 
@@ -56,13 +56,13 @@ const Intro = () => {
     const Answers = (props: any) => {
 
         switch (props.type) {
-            case "yes":
+            case 'yes':
                 result = language.header.mainAnswersYes;
                 break;
-            case "no":
+            case 'no':
                 result = language.header.mainAnswersNo;
                 break;
-            case "depends":
+            case 'depends':
                 result = language.header.mainAnswersDepends;
                 break;
             default:
@@ -74,21 +74,21 @@ const Intro = () => {
     const AnswerDescriptions = (props: any) => {
         let result: any;
         switch (props.type) {
-            case "yes":
+            case 'yes':
                 result = <div className='answer-description__intro'>
                     <h1>{language.answers.yes.title}</h1>
                     <h3>{language.answers.yes.description}</h3>
                     <Link to='/yes' state={{ lang: props.lang }}>{language.answers.learnMore}</Link>
                 </div>;
                 break;
-            case "no":
+            case 'no':
                 result = <div className='answer-description__intro'>
                     <h1>{language.answers.no.title}</h1>
                     <h3>{language.answers.no.description}</h3>
                     <Link to='/no' state={{ lang: props.lang }}>{language.answers.learnMore}</Link>
                 </div>;
                 break;
-            case "depends":
+            case 'depends':
                 result = <div className='answer-description__intro'>
                     <h1>{language.answers.depends.title}</h1>
                     <h3>{language.answers.depends.description}</h3>
@@ -110,9 +110,9 @@ const Intro = () => {
             mainTimeline.to(portfolioRef.current, {
                 y: -300,
                 opacity: 0,
-                ease: "Power4.easeOut"
+                ease: 'Power4.easeOut'
             }).to('.header__intro', {
-                height: "10vh",
+                height: '10vh',
                 stagger: 1.5,
                 onComplete: () => {
                     setIntro((state) => {
@@ -156,12 +156,12 @@ const Intro = () => {
             mt.fromTo('.answer-description__intro',
                 {
                     opacity: 0,
-                    x: "-5%"
+                    x: '-5%'
                 },
                 {
                     x: 0,
                     opacity: 1,
-                    ease: "Power4.easeOut",
+                    ease: 'Power4.easeOut',
                     duration: 1.5
                 });
 
@@ -182,17 +182,17 @@ const Intro = () => {
 
     const showDescription = (answer: string) => {
         switch (answer) {
-            case "yes":
+            case 'yes':
                 setIntro((state) => {
                     return { ...state, yes: true }
                 });
                 break;
-            case "no":
+            case 'no':
                 setIntro((state) => {
                     return { ...state, no: true }
                 });
                 break;
-            case "depends":
+            case 'depends':
                 setIntro((state) => {
                     return { ...state, depends: true }
                 });
@@ -219,34 +219,34 @@ const Intro = () => {
 
                 <div className='answers__intro'>
                     <div className='answer__intro' onClick={() => {
-                        showDescription("yes");
+                        showDescription('yes');
                         setIsDescriptionShowed(() => true);
-                    }}><Answers type="yes" lang={currentLanguage} /></div>
+                    }}><Answers type='yes' lang={currentLanguage} /></div>
                     <div className='answer__intro' onClick={() => {
-                        showDescription("no");
+                        showDescription('no');
                         setIsDescriptionShowed(() => true);
-                    }}><Answers type="no" lang={currentLanguage} /></div>
+                    }}><Answers type='no' lang={currentLanguage} /></div>
                     <div className='answer__intro' onClick={() => {
-                        showDescription("depends");
+                        showDescription('depends');
                         setIsDescriptionShowed(() => true);
-                    }}><Answers type="depends" lang={currentLanguage} /></div>
+                    }}><Answers type='depends' lang={currentLanguage} /></div>
                 </div>
             }
             <div className='answer-descriptions__intro'>
                 {
                     intro.yes &&
-                    <AnswerDescriptions type="yes" lang={currentLanguage} />
+                    <AnswerDescriptions type='yes' lang={currentLanguage} />
                 }
                 {
                     intro.no &&
-                    <AnswerDescriptions type="no" lang={currentLanguage} />
+                    <AnswerDescriptions type='no' lang={currentLanguage} />
                 }
                 {
                     intro.depends &&
-                    <AnswerDescriptions type="depends" lang={currentLanguage} />
+                    <AnswerDescriptions type='depends' lang={currentLanguage} />
                 }
             </div>
-            <Menu active="/" lang={currentLanguage} />
+            <Menu active='/' lang={currentLanguage} />
             <LanguageSwitch lang={currentLanguage} setter={setCurrentLanguage} />
         </div>
     );

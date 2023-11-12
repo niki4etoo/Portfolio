@@ -21,7 +21,6 @@ const Navigation = (props:any) => {
             </div>
         </>
     );
-
 }
 
 export default Navigation;

@@ -1,7 +1,7 @@
-import { useState } from "react";
-import { useLocation } from "react-router-dom";
+import { useState } from 'react';
+import { useLocation } from 'react-router-dom';
 
-import Navigation from "../Navigation/Navigation";
+import Navigation from '../Navigation/Navigation';
 import Questions from './Questions';
 
 // languages
@@ -29,35 +29,35 @@ const Dashboard = () => {
 
     let l:any;
     switch (state.category) {
-        case "technical":
+        case 'technical':
             l = currentLanguage ? enTechnical : bgTechnical;
             break;
-        case "work":
+        case 'work':
             l = currentLanguage ? enWork : bgWork;
             break;
-        case "personal":
+        case 'personal':
             l = currentLanguage ? enPersonal : bgPersonal;
             break;
-        case "entertainment":
+        case 'entertainment':
             l = currentLanguage ? enEntertainment : bgEntertainment;
             break;
         default:
     }
 
     // questions
-    let option = "";
+    let option = '';
     let questions = [];
 
     switch (state.difficulty) {
-        case "Easy":
+        case 'Easy':
             option = l.difficultyOptions.easy;
             questions = l.questions.easy;
             break;
-        case "Medium":
+        case 'Medium':
             option = l.difficultyOptions.medium;
             questions = l.questions.medium;
             break;
-        case "Hard":
+        case 'Hard':
             option = l.difficultyOptions.hard;
             questions = l.questions.hard;
             break;
@@ -66,16 +66,16 @@ const Dashboard = () => {
     
     const Title = () => {
         return (
-            <div className="container__titles__questions">
-                <h2>{l.category}: <span className="italic">{l.title}</span></h2>
-                <h3>{l.difficulty}: <span className="italic">{option}</span></h3>
+            <div className='container__titles__questions'>
+                <h2>{l.category}: <span className='italic'>{l.title}</span></h2>
+                <h3>{l.difficulty}: <span className='italic'>{option}</span></h3>
             </div>
         );
     }
 
     return (
         <>
-            <Navigation navigate="/questions" lang={currentLanguage} />
+            <Navigation navigate='/questions' lang={currentLanguage} />
             <Title />
             <Questions category={l.type} questions={questions} lang={currentLanguage} />
         </>

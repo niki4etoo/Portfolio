@@ -9,9 +9,9 @@ const LanguageSwitch = (props: any) => {
     }
 
     return (
-        <label className="switch">
-            <input type="checkbox" onChange={(e) => changeLanguage(e)} checked={props.lang} />
-            <span className="slider round"></span>
+        <label className='switch'>
+            <input type='checkbox' onChange={(e) => changeLanguage(e)} checked={props.lang} />
+            <span className='slider round'></span>
         </label>
     );
 }

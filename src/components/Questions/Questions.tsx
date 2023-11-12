@@ -1,5 +1,5 @@
-import { useState, useRef } from "react";
-import { Link } from "react-router-dom";
+import { useState, useRef } from 'react';
+import { Link } from 'react-router-dom';
 
 // languages
 import bg from '../../languages/bg-questions.json';
@@ -8,7 +8,7 @@ import en from '../../languages/en-questions.json';
 // styles
 import './questions.css';
 
-const userAnswers: { category: string, difficulty: string, answers: string[] } = { category: "", difficulty: "", answers: [] };
+const userAnswers: { category: string, difficulty: string, answers: string[] } = { category: '', difficulty: '', answers: [] };
 
 const Questions = (props: any) => {
 
@@ -33,8 +33,8 @@ const Questions = (props: any) => {
     const handleAnswers = (e: any) => {
         userAnswers.answers.push(e.target.outerText);
         if (questions.length - 1 === 0) {
-            console.log("Done!");
-            console.log("Answers: ", userAnswers.answers);
+            console.log('Done!');
+            console.log('Answers: ', userAnswers.answers);
             setIsThereMoreQuestions(false);
             setDone(true);
         } else {
@@ -71,11 +71,11 @@ const Questions = (props: any) => {
         }
 
         return (
-            <div className="navigation-container__questions">
-                <div ref={prevRef} className="navigation-back__questions">
+            <div className='navigation-container__questions'>
+                <div ref={prevRef} className='navigation-back__questions'>
                     <button onClick={() => navigatePrevious()} disabled={disableButton.prev}>{ll.questions.navigation.prevQuestion}</button>
                 </div>
-                <div ref={nextRef} className="navigation-next__questions">
+                <div ref={nextRef} className='navigation-next__questions'>
                     <button onClick={() => navigateNext()} disabled={disableButton.next}>{ll.questions.navigation.nextQuestion}</button>
                 </div>
             </div>
@@ -84,17 +84,17 @@ const Questions = (props: any) => {
 
     return (
         <>
-            <div className="container__questions">
+            <div className='container__questions'>
                 {
                     isThereMoreQuestions &&
                     <>
-                        <div className="question__questions">
+                        <div className='question__questions'>
                             <h2>{questions[index].question}</h2>
                         </div>
-                        <div className="answers__questions">
+                        <div className='answers__questions'>
                             {
                                 questions[index].answers.map((answer: string) => (
-                                    <div key={answer} className="answer__questions" onClick={(e) => handleAnswers(e)}>{answer}</div>
+                                    <div key={answer} className='answer__questions' onClick={(e) => handleAnswers(e)}>{answer}</div>
                                 ))
                             }
                         </div>
@@ -104,13 +104,13 @@ const Questions = (props: any) => {
                 {
                     isDone &&
                     <>
-                        <div className="success__message__questions">
+                        <div className='success__message__questions'>
                             <h3>{ll.questions.success.message}</h3>
-                            <div className="navigation__questions">
-                                <div className="navigation__questions item">
+                            <div className='navigation__questions'>
+                                <div className='navigation__questions item'>
                                     <Link to='/questions' state={{ lang: props.lang }}>{ll.questions.navigation.backCategory}</Link>
                                 </div>
-                                <div className="navigation__questions item">
+                                <div className='navigation__questions item'>
                                     <Link to='/' state={{ lang: props.lang }}>{ll.questions.navigation.home}</Link>
                                 </div>
 
