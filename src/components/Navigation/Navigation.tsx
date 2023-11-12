@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom';
 
 // languages
-import bg from '../../languages/bg.json';
-import en from '../../languages/en.json';
+import bg from '../../languages/bg-navigation.json';
+import en from '../../languages/en-navigation.json';
 
 // styles
 import './navigation.css';
@@ -17,7 +17,7 @@ const Navigation = (props:any) => {
     return (
         <>
             <div className='nav'>
-                <Link className='nav-back' to={path} state={{ lang: props.lang }}>{l.navigation.back}</Link>
+                <Link className='nav-back' to={path} state={{ lang: props.lang }}>{l.back}</Link>
             </div>
         </>
     );

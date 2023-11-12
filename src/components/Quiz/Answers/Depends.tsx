@@ -8,7 +8,7 @@ import AnsweredQuestions from '../AnsweredQuestions';
 import Messages from '../Messages';
 
 // languages
-import en from '../../../languages/en.json';
+import en from '../../../languages/en-mainquiz.json';
 
 // styles
 import '../quiz.css';
@@ -31,7 +31,7 @@ const DependsAnswer = () => {
                     <div className="answered-container__quiz">
                         <div className="answered__quiz">
                             <Messages success={true} lang={currentLanguage} />
-                            <AnsweredQuestions setter={setQuestion} lang={currentLanguage} questions={userAnswers} questionsCount={en.quiz.depends.questions.length} page="/depends" />
+                            <AnsweredQuestions setter={setQuestion} lang={currentLanguage} questions={userAnswers} questionsCount={en.depends.questions.length} page="/depends" />
                         </div>
                     </div>
                 </>

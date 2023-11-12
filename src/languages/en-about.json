@@ -1,0 +1,21 @@
+{
+    "title": "About Me",
+    "intro": "My name is Nikolai. I love to write code and to resolve problems.",
+    "subintro": {
+        "title": "Extra info",
+        "description": "I frequently drink coffee ( trying not to drink in production quantities ). I workout - street workout . Watching my kids ( joking ). Interest and passion related with developing animations in web apps. In the domain of animations, there is a lot to learn ( did I mention a lot ), which inspires me and fuel me to progress up each day."
+    },
+    "techStack": "Technology Stack",
+    "tech": {
+        "used": "Using now",
+        "js": "Javascript",
+        "ts": "Typescript",
+        "html": "HTML5",
+        "css": "CSS3",
+        "react": "React",
+        "learning": "Learning now",
+        "gsap": "GSAP",
+        "reactSpring": "React-Spring",
+        "node": "Node.js"
+    }
+}

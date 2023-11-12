@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom';
 
 // languages
-import bg from '../../languages/bg.json';
-import en from '../../languages/en.json';
+import bg from '../../languages/bg-menu.json';
+import en from '../../languages/en-menu.json';
 
 // style
 import './menu.css';
@@ -13,10 +13,10 @@ const Menu = (props: any) => {
     let l = props.lang ? en : bg;
 
     let pages = [
-        { link: "/about", label: l.menu.about, active: false },
-        { link: "/", label: l.menu.intro, active: false },
-        { link: "/contacts", label: l.menu.contacts, active: false },
-        { link: "/questions", label: l.menu.questions, active: false },
+        { link: "/about", label: l.about, active: false },
+        { link: "/", label: l.intro, active: false },
+        { link: "/contacts", label: l.contacts, active: false },
+        { link: "/questions", label: l.questions, active: false },
     ]
 
     pages.map((page) => {

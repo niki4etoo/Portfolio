@@ -93,6 +93,7 @@ img {
 .tech-stack-column__about {
     display: flex;
     flex-direction: column;
+    gap: 1rem;
 }
 
 .tech-stack__about h1 {

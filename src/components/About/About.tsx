@@ -8,8 +8,8 @@ import Navigation from "../Navigation/Navigation";
 import Menu from "../Menu/Menu";
 
 // languages
-import bg from "../../languages/bg.json";
-import en from "../../languages/en.json";
+import bg from "../../languages/bg-about.json";
+import en from "../../languages/en-about.json";
 
 // style
 import "./about.css";
@@ -56,7 +56,7 @@ const About = () => {
         <div ref={main}>
             <Navigation lang={currentLanguage} />
             <div className="container__about">
-                <div className="title__about"><h1><a href="https://github.com/niki4etoo/">{l.about.title}</a></h1></div>
+                <div className="title__about"><h1><a href="https://github.com/niki4etoo/">{l.title}</a></h1></div>
                 <section className="profile__about">
                     <figure ref={figureRef}>
                         <a href="https://github.com/niki4etoo/">
@@ -69,29 +69,29 @@ const About = () => {
                     </figure>
                 </section>
                 <section className="intro__about">
-                    <p>{l.about.intro}</p>
+                    <p>{l.intro}</p>
                 </section>
                 <section className="subintro__about">
-                    <h3>{l.about.subintro.title}</h3>
-                    <p>{l.about.subintro.description}</p>
+                    <h3>{l.subintro.title}</h3>
+                    <p>{l.subintro.description}</p>
                 </section>
                 <section className="tech-stack__about">
-                    <h1>{l.about.techStack}</h1>
+                    <h1>{l.techStack}</h1>
                     <div className="tech-stack-row__about">
                         <div className="tech-stack-column__about">
-                            <h2>{l.about.tech.used}</h2>
+                            <h2>{l.tech.used}</h2>
                             <ul>
-                                <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">{l.about.tech.js}</a></li>
-                                <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML">{l.about.tech.html}</a> & <a href="https://developer.mozilla.org/en-US/docs/Web/CSS">{l.about.tech.css}</a></li>
-                                <li><a href="https://react.dev/">{l.about.tech.react}</a></li>
+                                <li><a href="https://www.typescriptlang.org/">{l.tech.ts}</a> & <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">{l.tech.js}</a></li>
+                                <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML">{l.tech.html}</a> & <a href="https://developer.mozilla.org/en-US/docs/Web/CSS">{l.tech.css}</a></li>
+                                <li><a href="https://react.dev/">{l.tech.react}</a></li>
                             </ul>
                         </div>
                         <div className="tech-stack-column__about">
-                            <h2>{l.about.tech.learning}</h2>
+                            <h2>{l.tech.learning}</h2>
                             <ul>
-                                <li><a href="https://gsap.com/">{l.about.tech.gsap}</a></li>
-                                <li><a href="https://www.react-spring.dev/">{l.about.tech.reactSpring}</a></li>
-                                <li><a href="https://nodejs.org/en">{l.about.tech.node}</a></li>
+                                <li><a href="https://gsap.com/">{l.tech.gsap}</a></li>
+                                <li><a href="https://www.react-spring.dev/">{l.tech.reactSpring}</a></li>
+                                <li><a href="https://nodejs.org/en">{l.tech.node}</a></li>
                             </ul>
                         </div>
                     </div>

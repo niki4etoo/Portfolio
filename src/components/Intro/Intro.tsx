@@ -33,7 +33,6 @@ const Intro = () => {
         depends: false
     });
 
-
     let { state } = useLocation(); // using language set by user
 
     // languages ( BG | EN)
