@@ -108,10 +108,10 @@ const Questions = (props: any) => {
                             <h3>{ll.questions.success.message}</h3>
                             <div className="navigation__questions">
                                 <div className="navigation__questions item">
-                                    <Link to='/questions'>{ll.questions.navigation.backCategory}</Link>
+                                    <Link to='/questions' state={{ lang: props.lang }}>{ll.questions.navigation.backCategory}</Link>
                                 </div>
                                 <div className="navigation__questions item">
-                                    <Link to='/'>{ll.questions.navigation.home}</Link>
+                                    <Link to='/' state={{ lang: props.lang }}>{ll.questions.navigation.home}</Link>
                                 </div>
 
                             </div>
