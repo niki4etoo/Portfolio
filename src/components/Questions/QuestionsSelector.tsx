@@ -105,12 +105,10 @@ const QuestionsSelector = () => {
     const Buttons = (props: any) => {
 
         const handleStatus = () => {
-            //to do
+            navigate(`/questions/status/`, { state: { category: props.category.value, difficulty: props.difficulty.value, lang: currentLanguage } })
         }
 
         const handleStart = () => {
-            console.log('Start with: ', selected.difficulty);
-
             navigate(`/questions/${props.category.value}/`, { state: { category: props.category.value, difficulty: props.difficulty.value, lang: currentLanguage } });
         }
 
@@ -121,8 +119,6 @@ const QuestionsSelector = () => {
             </>
         );
     }
-
-    //to do: passing an args to LanguageSwitch components to switch the selected values to the language
 
     return (
         <>

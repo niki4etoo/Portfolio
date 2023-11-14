@@ -1,0 +1,23 @@
+.container__status {
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+}
+
+.header__status {
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+}
+
+.header__status h1 {
+    margin: 4vh 0;
+    font-size: 2.8rem;
+    letter-spacing: 0.2rem;
+}

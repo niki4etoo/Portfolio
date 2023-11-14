@@ -4,7 +4,7 @@ import { Routes, Route, BrowserRouter } from 'react-router-dom';
 
 import Intro from './components/Intro/Intro';
 
-// about & Contacts
+// about & contacts
 import About from './components/About/About';
 import Contacts from './components/Contacts/Contacts';
 
@@ -16,6 +16,7 @@ import Depends from './components/Quiz/Answers/Depends';
 // questions
 import QuestionsSelector from './components/Questions/QuestionsSelector';
 import Dashboard from './components/Questions/Dashboard';
+import Status from './components/Questions/Status';
 
 function App() {
 
@@ -31,6 +32,7 @@ function App() {
         <Route path='/no' element={<No />}></Route>
         <Route path='/depends' element={<Depends />}></Route>
 
+        <Route path='/questions/status/' element={<Status />}></Route>
         <Route path='/questions/technical/' element={<Dashboard />}></Route>
         <Route path='/questions/work/' element={<Dashboard />}></Route>
         <Route path='/questions/entertainment/' element={<Dashboard />}></Route>
