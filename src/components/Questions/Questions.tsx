@@ -17,7 +17,7 @@ const Questions = (props: any) => {
     userAnswers.category = props.category;
     userAnswers.difficulty = props.difficulty;
     // languages ( BG | EN)
-    let ll = props.lang ? en : bg;// Object for language from the bg-questions/en-questions
+    let l = props.lang ? en : bg;// Object for language from the bg-questions/en-questions
 
     // questions states
     const [index, setIndex] = useState(0);
@@ -73,10 +73,10 @@ const Questions = (props: any) => {
         return (
             <div className='navigation-container__questions'>
                 <div ref={prevRef} className='navigation-back__questions'>
-                    <button onClick={() => navigatePrevious()} disabled={disableButton.prev}>{ll.questions.navigation.prevQuestion}</button>
+                    <button onClick={() => navigatePrevious()} disabled={disableButton.prev}>{l.questions.navigation.prevQuestion}</button>
                 </div>
                 <div ref={nextRef} className='navigation-next__questions'>
-                    <button onClick={() => navigateNext()} disabled={disableButton.next}>{ll.questions.navigation.nextQuestion}</button>
+                    <button onClick={() => navigateNext()} disabled={disableButton.next}>{l.questions.navigation.nextQuestion}</button>
                 </div>
             </div>
         );
@@ -105,13 +105,13 @@ const Questions = (props: any) => {
                     isDone &&
                     <>
                         <div className='success__message__questions'>
-                            <h3>{ll.questions.success.message}</h3>
+                            <h3>{l.questions.success.message}</h3>
                             <div className='navigation__questions'>
                                 <div className='navigation__questions item'>
-                                    <Link to='/questions' state={{ lang: props.lang }}>{ll.questions.navigation.backCategory}</Link>
+                                    <Link to='/questions' state={{ lang: props.lang }}>{l.questions.navigation.backCategory}</Link>
                                 </div>
                                 <div className='navigation__questions item'>
-                                    <Link to='/' state={{ lang: props.lang }}>{ll.questions.navigation.home}</Link>
+                                    <Link to='/' state={{ lang: props.lang }}>{l.questions.navigation.home}</Link>
                                 </div>
 
                             </div>

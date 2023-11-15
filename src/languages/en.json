@@ -1,26 +1,24 @@
 {
     "header": {
-        "titleFirstPart": "Port",
-        "titleSecondPart": "folio",
-        "mainQuestionBegin": "Is",
-        "mainQuestionAccentWord": "simplicity",
-        "mainQuestionEnd": "important",
-        "mainAnswersYes": "Yes",
-        "mainAnswersNo": "No",
-        "mainAnswersDepends": "Depends"
+        "title": "Welcome",
+        "mainQuestion": "What does it mean",
+        "mainQuestionAccentWord": "achieving results",
+        "mainAnswerFirst": "Goal-driven",
+        "mainAnswerSecond": "Discipline",
+        "mainAnswerThird": "Focus"
     },
     "answers": {
-        "yes": {
-            "title": "Yes",
-            "description": "Simplicity is the most important thing in our life. It is easier to work, learn and earn."
+        "first": {
+            "title": "Goal-Oriented",
+            "description": "When there is clear goal, the instruments for achieving it is easily found. The orientation on the goal, the results comes faster."
         },
-        "no": {
-            "title": "No",
-            "description": "Complex and complicated is the opposite of the simplicity. They are also as important as simplicity, because understading each of them, we can deepen the understanding about the simplicity."
+        "second": {
+            "title": "Discipline",
+            "description": "Discipline and consistency come together. Achieving results with them is very easy."
         },
-        "depends": {
-            "title": "Depends",
-            "description": "Yes, there are different factors that make the simplicity to depend. One of the key factors is perceiving."
+        "third": {
+            "title": "Focus",
+            "description": "One of the most important skill for achieving results. Deepening on the solution of some task require focus/concentration."
         },
         "learnMore": "Learn More"
     }

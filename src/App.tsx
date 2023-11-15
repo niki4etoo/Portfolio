@@ -9,9 +9,9 @@ import About from './components/About/About';
 import Contacts from './components/Contacts/Contacts';
 
 // main quiz 
-import Yes from './components/Quiz/Answers/Yes';
-import No from './components/Quiz/Answers/No';
-import Depends from './components/Quiz/Answers/Depends';
+import First from './components/Quiz/Answers/First';
+import Second from './components/Quiz/Answers/Second';
+import Third from './components/Quiz/Answers/Third';
 
 // questions
 import QuestionsSelector from './components/Questions/QuestionsSelector';
@@ -28,9 +28,9 @@ function App() {
         <Route path='/contacts' element={<Contacts />}></Route>
         <Route path='/questions' element={<QuestionsSelector />}></Route>
 
-        <Route path='/yes' element={<Yes />}></Route>
-        <Route path='/no' element={<No />}></Route>
-        <Route path='/depends' element={<Depends />}></Route>
+        <Route path='/first' element={<First />}></Route>
+        <Route path='/second' element={<Second />}></Route>
+        <Route path='/third' element={<Third />}></Route>
 
         <Route path='/questions/status/' element={<Status />}></Route>
         <Route path='/questions/technical/' element={<Dashboard />}></Route>

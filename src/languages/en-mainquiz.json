@@ -1,134 +1,146 @@
 {
-    "yes": {
+    "first": {
         "questions": [
             {
-                "question": "How old are you?",
+                "question": "Which of the following best defines goal-oriented skills?",
                 "answers": [
-                    "0 - 16",
-                    "17 - 25",
-                    "26 - 50",
-                    "50 - infinity"
+                    "Soft skills",
+                    "Specific abilities to achieve objectives",
+                    "Technical expertise"
                 ]
             },
             {
-                "question": "Why simplicity?",
+                "question": "Why are goal-oriented skills crucial in personal and professional development?",
                 "answers": [
-                    "Makes it easier",
-                    "Simplicity is simplicity",
-                    "Why not",
-                    "Something else ..."
+                    "Optional for success",
+                    "Enhance focus and productivity",
+                    "Not applicable"
                 ]
             },
             {
-                "question": "Where are you from?",
+                "question": "Which is an example of a goal-oriented skill?",
                 "answers": [
-                    "Planet Earth",
-                    "Another universe",
-                    "You don't know",
-                    "Something else ..."
+                    "Time management",
+                    "Random activities",
+                    "Procrastination"
                 ]
             },
             {
-                "question": "Why our Earth?",
+                "question": "What is the appropriate strategy to overcome obstacles in achieving a goal?",
                 "answers": [
-                    "The best place to live",
-                    "I have to learn",
-                    "To make better decisions",
-                    "something else ..."
+                    "Ignore challenges",
+                    "Seek guidance and support",
+                    "Give up on the goal"
                 ]
             },
             {
-                "question": "How can I help you?",
+                "question": "How do goal-oriented skills vary across domains?",
                 "answers": [
-                    "You can't",
-                    "I can make it on my own",
-                    "there are better solutions",
-                    "do you think, is that worth it?"
+                    "They remain constant",
+                    "They adapt to the context",
+                    "Irrelevant in different domains"
                 ]
             }
         ]
     },
-    "no": {
+    "second": {
         "questions": [
             {
-                "question": "What is the scale of the complexity?",
+                "question": "What is discipline skill primarily associated with?",
                 "answers": [
-                    "There is no such thing",
-                    "Did you mean big O notation?",
-                    "See complexity analysis",
-                    "Something else ..."
+                    "Technical expertise",
+                    "Consistency and self-control",
+                    "Social intelligence"
                 ]
             },
             {
-                "question": "Is there a difference between complex and complicated?",
+                "question": "Why is discipline skill important in achieving long-term goals?",
                 "answers": [
-                    "There is no difference",
-                    "Complex is ordered, complicated is not",
-                    "complex - system | complicated - woman",
-                    " See complexity analysis"
+                    "It is not relevant",
+                    "Ensures consistent effort and focus",
+                    "Creates chaos"
                 ]
             },
             {
-                "question": "Why not simplicity?",
+                "question": "Which of the following is a characteristic of disciplined individuals?",
                 "answers": [
-                    "Everything is complex",
-                    "There is no such thing",
-                    "Everything is complicated",
-                    "Something else ..."
+                    "Random behavior",
+                    "Inconsistency",
+                    "Commitment and reliability"
                 ]
             },
             {
-                "question": "Are you okay?",
+                "question": "Which one is the correct approach to develop discipline skills?",
                 "answers": [
-                    "Yes, I am",
-                    "No, I am not",
-                    "Why?",
-                    "Something else ..."
+                    "Embrace procrastination",
+                    "Set clear routines and deadlines",
+                    "Avoid setting goals"
+                ]
+            },
+            {
+                "question": "How does discipline skill contribute to personal and professional success?",
+                "answers": [
+                    "It doesn't make a difference",
+                    "Enhances productivity and reliability",
+                    "Causes stress and burnout"
                 ]
             }
         ]
     },
-    "depends": {
+    "third": {
         "questions": [
             {
-                "question": "Could you give me an example?",
+                "question": "What is the primary benefit of honing focus/concentration skills?",
                 "answers": [
-                    "It depends on the world",
-                    "It depends on me",
-                    "It doesn't matter",
-                    "Something else ..."
+                    "Increased distractibility",
+                    "Enhanced productivity and efficiency",
+                    "Unchanged performance"
                 ]
             },
             {
-                "question": "Why dependency?",
+                "question": "Which of the following is a characteristic of individuals with strong focus/concentration skills?",
                 "answers": [
-                    "The system that way is more interesting",
-                    "There is no dependancy",
-                    "WTF?",
-                    "Something not else ..."
+                    "Scatterbrained",
+                    "Difficulty completing tasks",
+                    "Ability to stay on task with minimal distractions"
                 ]
             },
             {
-                "question": "Do you hesitate for something?",
+                "question": "How can one improve focus/concentration skills?",
                 "answers": [
-                    "I am firm",
-                    "There is no such thing",
-                    "I am confident",
-                    "May be"
+                    "Multitasking",
+                    "Regular breaks and diversions",
+                    "Mindfulness techniques and minimizing distractions"
+                ]
+            },
+            {
+                "question": "What is the appropriate response for maintaining focus during a challenging task?",
+                "answers": [
+                    "Constantly check phone and emails",
+                    "Take frequent breaks",
+                    "Stay engaged and minimize interruptions"
+                ]
+            },
+            {
+                "question": "In what ways does enhanced focus/concentration contribute to personal and professional success?",
+                "answers": [
+                    "No significant impact",
+                    "Improved decision-making and task completion",
+                    "Increased chaos and disorganization"
                 ]
             }
         ]
     },
     "messages": {
-        "success": "You answered all the questions. Congratulations! You win a gum with a few coins!"
+        "success": "You answered all the questions. Congratulations! The answers speaks for themselves."
     },
     "times": {
         "list": [
             "First Time",
             "Second Time",
             "Third Time",
-            "I think this is enough",
-            "Are you okay? Fifth time"
+            "Fourth Time",
+            "Fifth Time"
         ]
     },
     "stats": {

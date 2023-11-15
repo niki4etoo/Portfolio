@@ -14,7 +14,7 @@ import en from '../../../languages/en-mainquiz.json';
 import '../quiz.css';
 import '../../../styles/togglelanguages.css';
 
-const YesAnswer = () => {
+const First = () => {
 
     const { state } = useLocation(); // getting user choice for lang
 
@@ -22,17 +22,24 @@ const YesAnswer = () => {
 
     // languages ( BG | EN)
     const [currentLanguage, setCurrentLanguage] = useState(state?.lang || false); // Setting language by last user selection
-    
+
     return (
         <>
-
             {question.answered &&
                 <>
-                    <Navigation lang={currentLanguage} />
+                    <Navigation
+                        lang={currentLanguage} />
                     <div className='answered-container__quiz'>
                         <div className='answered__quiz'>
-                            <Messages success={true} lang={currentLanguage} />
-                            <AnsweredQuestions setter={setQuestion} lang={currentLanguage} questions={userAnswers} questionsCount={en.yes.questions.length} page='/yes' />
+                            <Messages
+                                success={true}
+                                lang={currentLanguage} />
+                            <AnsweredQuestions
+                                setter={setQuestion}
+                                lang={currentLanguage}
+                                questions={userAnswers}
+                                questionsCount={en.first.questions.length}
+                                page='/first' />
                         </div>
                     </div>
                 </>
@@ -40,15 +47,20 @@ const YesAnswer = () => {
             {
                 question.toAnswer &&
                 <>
-                    <Navigation userAnswers={userAnswers} lang={currentLanguage} />
+                    <Navigation
+                        userAnswers={userAnswers}
+                        lang={currentLanguage} />
                     <MainQuiz
                         setter={setQuestion}
-                        type='yes' lang={currentLanguage} />
+                        type='first'
+                        lang={currentLanguage} />
                 </>
             }
-            <LanguageSwitch lang={currentLanguage} setter={setCurrentLanguage} />
+            <LanguageSwitch
+                lang={currentLanguage}
+                setter={setCurrentLanguage} />
         </>
     );
 }
 
-export default YesAnswer;
+export default First;

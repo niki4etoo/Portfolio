@@ -72,7 +72,7 @@ const Dashboard = () => {
             </div>
         );
     }
-
+    console.log(currentLanguage);
     return (
         <>
             <Navigation navigate='/questions' lang={currentLanguage} />

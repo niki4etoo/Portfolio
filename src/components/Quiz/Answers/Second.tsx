@@ -14,7 +14,7 @@ import en from '../../../languages/en-mainquiz.json';
 import '../quiz.css';
 import '../../../styles/togglelanguages.css';
 
-const NoAnswer = () => {
+const Second = () => {
 
     const { state } = useLocation(); // getting user lang selection
 
@@ -30,8 +30,15 @@ const NoAnswer = () => {
                     <Navigation lang={currentLanguage} />
                     <div className='answered-container__quiz'>
                         <div className='answered__quiz'>
-                            <Messages success={true} lang={currentLanguage} />
-                            <AnsweredQuestions setter={setQuestion} lang={currentLanguage} questions={userAnswers} questionsCount={en.no.questions.length} page='/no' />
+                            <Messages
+                                success={true}
+                                lang={currentLanguage} />
+                            <AnsweredQuestions
+                                setter={setQuestion}
+                                lang={currentLanguage}
+                                questions={userAnswers}
+                                questionsCount={en.second.questions.length}
+                                page='/second' />
                         </div>
                     </div>
 
@@ -39,15 +46,20 @@ const NoAnswer = () => {
             }
             {question.toAnswer &&
                 <>
-                    <Navigation userAnswers={userAnswers} lang={currentLanguage} />
+                    <Navigation
+                        userAnswers={userAnswers}
+                        lang={currentLanguage} />
                     <MainQuiz
                         setter={setQuestion}
-                        type='no' lang={currentLanguage} />
+                        type='second'
+                        lang={currentLanguage} />
                 </>
             }
-            <LanguageSwitch lang={currentLanguage} setter={setCurrentLanguage} />
+            <LanguageSwitch
+                lang={currentLanguage}
+                setter={setCurrentLanguage} />
         </>
     );
 }
 
-export default NoAnswer;
+export default Second;

@@ -28,9 +28,9 @@ const Intro = () => {
 
     const [intro, setIntro] = useState({
         question: false, answers: false,
-        yes: false,
-        no: false,
-        depends: false
+        first: false,
+        second: false,
+        third: false
     });
 
     let { state } = useLocation(); // using language set by user
@@ -41,29 +41,25 @@ const Intro = () => {
     const language = currentLanguage ? en : bg;
 
     const HeaderTitle = () => {
-        return <><span id='main-color'>{language.header.titleFirstPart}</span>{language.header.titleSecondPart}</>;
+        return <span id='main-color'>{language.header.title}</span>;
     }
 
-    const MainQuestion = (props: any) => {
-        if (props.lang) {
-            return <>{en.header.mainQuestionBegin} <span id='main-color'>{en.header.mainQuestionAccentWord}</span> {en.header.mainQuestionEnd}?</>;
-        } else {
-            return <>{bg.header.mainQuestion} <span id='main-color'>{bg.header.mainQuestionAccentWord}</span>?</>;
-        }
+    const MainQuestion = () => {
+        return <>{language.header.mainQuestion}<span id='main-color'>&nbsp;{language.header.mainQuestionAccentWord}</span>?</>;
     }
 
 
     const Answers = (props: any) => {
 
         switch (props.type) {
-            case 'yes':
-                result = language.header.mainAnswersYes;
+            case 'first':
+                result = language.header.mainAnswerFirst;
                 break;
-            case 'no':
-                result = language.header.mainAnswersNo;
+            case 'second':
+                result = language.header.mainAnswerSecond;
                 break;
-            case 'depends':
-                result = language.header.mainAnswersDepends;
+            case 'third':
+                result = language.header.mainAnswerThird;
                 break;
             default:
         }
@@ -74,25 +70,25 @@ const Intro = () => {
     const AnswerDescriptions = (props: any) => {
         let result: any;
         switch (props.type) {
-            case 'yes':
+            case 'first':
                 result = <div className='answer-description__intro'>
-                    <h1>{language.answers.yes.title}</h1>
-                    <h3>{language.answers.yes.description}</h3>
-                    <Link to='/yes' state={{ lang: props.lang }}>{language.answers.learnMore}</Link>
+                    <h1>{language.answers.first.title}</h1>
+                    <h3>{language.answers.first.description}</h3>
+                    <Link to='/first' state={{ lang: props.lang }}>{language.answers.learnMore}</Link>
                 </div>;
                 break;
-            case 'no':
+            case 'second':
                 result = <div className='answer-description__intro'>
-                    <h1>{language.answers.no.title}</h1>
-                    <h3>{language.answers.no.description}</h3>
-                    <Link to='/no' state={{ lang: props.lang }}>{language.answers.learnMore}</Link>
+                    <h1>{language.answers.second.title}</h1>
+                    <h3>{language.answers.second.description}</h3>
+                    <Link to='/second' state={{ lang: props.lang }}>{language.answers.learnMore}</Link>
                 </div>;
                 break;
-            case 'depends':
+            case 'third':
                 result = <div className='answer-description__intro'>
-                    <h1>{language.answers.depends.title}</h1>
-                    <h3>{language.answers.depends.description}</h3>
-                    <Link to='/depends' state={{ lang: props.lang }}>{language.answers.learnMore}</Link>
+                    <h1>{language.answers.third.title}</h1>
+                    <h3>{language.answers.third.description}</h3>
+                    <Link to='/third' state={{ lang: props.lang }}>{language.answers.learnMore}</Link>
                 </div>;
                 break;
             default:
@@ -182,19 +178,19 @@ const Intro = () => {
 
     const showDescription = (answer: string) => {
         switch (answer) {
-            case 'yes':
+            case 'first':
                 setIntro((state) => {
-                    return { ...state, yes: true }
+                    return { ...state, first: true }
                 });
                 break;
-            case 'no':
+            case 'second':
                 setIntro((state) => {
-                    return { ...state, no: true }
+                    return { ...state, second: true }
                 });
                 break;
-            case 'depends':
+            case 'third':
                 setIntro((state) => {
-                    return { ...state, depends: true }
+                    return { ...state, third: true }
                 });
                 break;
             default:
@@ -211,7 +207,7 @@ const Intro = () => {
             {
                 intro.question &&
                 <div className='questions__intro'>
-                    <h1 onClick={showAnswers}><MainQuestion lang={currentLanguage} /></h1>
+                    <h1 onClick={showAnswers}><MainQuestion /></h1>
                 </div>
             }
             {
@@ -219,31 +215,31 @@ const Intro = () => {
 
                 <div className='answers__intro'>
                     <div className='answer__intro' onClick={() => {
-                        showDescription('yes');
+                        showDescription('first');
                         setIsDescriptionShowed(() => true);
-                    }}><Answers type='yes' lang={currentLanguage} /></div>
+                    }}><Answers type='first' lang={currentLanguage} /></div>
                     <div className='answer__intro' onClick={() => {
-                        showDescription('no');
+                        showDescription('second');
                         setIsDescriptionShowed(() => true);
-                    }}><Answers type='no' lang={currentLanguage} /></div>
+                    }}><Answers type='second' lang={currentLanguage} /></div>
                     <div className='answer__intro' onClick={() => {
-                        showDescription('depends');
+                        showDescription('third');
                         setIsDescriptionShowed(() => true);
-                    }}><Answers type='depends' lang={currentLanguage} /></div>
+                    }}><Answers type='third' lang={currentLanguage} /></div>
                 </div>
             }
             <div className='answer-descriptions__intro'>
                 {
-                    intro.yes &&
-                    <AnswerDescriptions type='yes' lang={currentLanguage} />
+                    intro.first &&
+                    <AnswerDescriptions type='first' lang={currentLanguage} />
                 }
                 {
-                    intro.no &&
-                    <AnswerDescriptions type='no' lang={currentLanguage} />
+                    intro.second &&
+                    <AnswerDescriptions type='second' lang={currentLanguage} />
                 }
                 {
-                    intro.depends &&
-                    <AnswerDescriptions type='depends' lang={currentLanguage} />
+                    intro.third &&
+                    <AnswerDescriptions type='third' lang={currentLanguage} />
                 }
             </div>
             <Menu active='/' lang={currentLanguage} />

@@ -19,7 +19,7 @@
 
 .header__intro h1 {
     font-size: 4em;
-    letter-spacing: 0.7em;
+    letter-spacing: 0.4em;
     transition: var(--TRANSITION-HEADER);
     cursor: pointer;
 }
@@ -27,7 +27,7 @@
 
 
 .header__intro h1:hover {
-    letter-spacing: 0.4em;
+    letter-spacing: 0.2em;
     text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.4);
     transition: var(--TRANSITION-HEADER);
     cursor: pointer;
@@ -48,12 +48,12 @@
 
 .questions__intro h1 {
     font-size: 3em;
-    letter-spacing: 0.25em;
+    letter-spacing: 0.15em;
     transition: var(--TRANSITION-QUESTIONS);
 }
 
 .questions__intro h1:hover {
-    letter-spacing: 0.15em;
+    letter-spacing: 0.05em;
     text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.4);
     transition: var(--TRANSITION-QUESTIONS);
 }

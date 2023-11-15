@@ -11,8 +11,6 @@ import '../../styles/togglelanguages.css';
 
 const AnsweredQuestions = (props: any) => {
 
-    let path: string = props.page;
-
     const resetQuestionStates = () => {
         props.setter({ toAnswer: true, answered: false }); // restore default state of question to answer and answered
     }
@@ -33,7 +31,7 @@ const AnsweredQuestions = (props: any) => {
                         }
                     </ol>
                     <div className='back-again__quiz'>
-                        <Link to={props.page} state={{ lang: props.lang }}>{en.stats.again}</Link>
+                        <Link to={props.page} state={{ lang: props.lang }} onClick={resetQuestionStates}>{en.stats.again}</Link>
                     </div>
                 </div>
             </>
@@ -54,7 +52,7 @@ const AnsweredQuestions = (props: any) => {
                         }
                     </ol>
                     <div className='back-again__quiz'>
-                        <Link to={path} state={{ lang: props.lang }} onClick={resetQuestionStates}>{bg.stats.again}</Link>
+                        <Link to={props.page} state={{ lang: props.lang }} onClick={resetQuestionStates}>{bg.stats.again}</Link>
                     </div>
                 </div>
             </>

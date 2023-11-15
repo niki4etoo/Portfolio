@@ -100,8 +100,12 @@ const QuestionsSelector = () => {
                     </div>
                 }
             </div>
-            <Menu active={'/questions'} lang={currentLanguage} />
-            <LanguageSwitch lang={currentLanguage} setter={setCurrentLanguage} /> 
+            <Menu
+                active={'/questions'}
+                lang={currentLanguage} />
+            <LanguageSwitch
+                lang={currentLanguage}
+                setter={setCurrentLanguage} />
         </>
     );
 

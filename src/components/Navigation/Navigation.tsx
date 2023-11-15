@@ -9,9 +9,8 @@ import './navigation.css';
 import '../../styles/togglelanguages.css';
 
 const Navigation = (props:any) => {
-
     let path = props.navigate || '/'; // Default route is intro
-
+    
     let l = props.lang ? en : bg;
 
     return (

@@ -15,14 +15,14 @@ const MainQuiz = (props: any) => {
     const [index, setIndex] = useState(0);
 
     switch (props.type) {
-        case 'yes':
-            lengthQuestions = en.yes.questions.length;
+        case 'first':
+            lengthQuestions = en.first.questions.length;
             break;
-        case 'no':
-            lengthQuestions = en.no.questions.length;
+        case 'second':
+            lengthQuestions = en.second.questions.length;
             break;
-        case 'depends':
-            lengthQuestions = en.depends.questions.length;
+        case 'third':
+            lengthQuestions = en.third.questions.length;
             break;
         default:
     }
@@ -31,7 +31,7 @@ const MainQuiz = (props: any) => {
         userAnswers.push(answer);
 
         if (lengthQuestions === index + 1) {
-            props.setter((state: any) => { return { toAnswer: !state.toAnswer, answered: !state.answered } }); //no more questions -> to answer false, answered true
+            props.setter((state: any) => { return { toAnswer: !state.toAnswer, answered: !state.answered } }); //second more questions -> to answer false, answered true
         } else {
             setIndex(index => index + 1);
         }
@@ -41,15 +41,15 @@ const MainQuiz = (props: any) => {
     let l = props.lang ? en : bg;
 
     switch (props.type) {
-        case 'yes':
+        case 'first':
             result = <div className='quiz-container__quiz'>
                 <div ref={questionRef} className='quiz-question__quiz'>
-                    {l.yes.questions[index].question}
+                    {l.first.questions[index].question}
                 </div>
 
                 <div className='quiz-answers__quiz'>
                     {
-                        l.yes.questions[index].answers.map((answer: string, index: number) => {
+                        l.first.questions[index].answers.map((answer: string, index: number) => {
                             return <div key={answer} ref={(element) => answersRef.current[index] = element} className='quiz-answer__quiz' onClick={() => handle(answer)}>
                                 {answer}
                             </div>
@@ -58,15 +58,15 @@ const MainQuiz = (props: any) => {
                 </div>
             </div>;
             break;
-        case 'no':
+        case 'second':
             result = <div className='quiz-container__quiz'>
                 <div ref={questionRef} className='quiz-question__quiz'>
-                    {l.no.questions[index].question}
+                    {l.second.questions[index].question}
                 </div>
 
                 <div className='quiz-answers__quiz'>
                     {
-                        l.no.questions[index].answers.map((answer: string, index: number) => {
+                        l.second.questions[index].answers.map((answer: string, index: number) => {
                             return <div key={answer} ref={(element) => answersRef.current[index] = element} className='quiz-answer__quiz' onClick={() => handle(answer)}>
                                 {answer}
                             </div>
@@ -75,15 +75,15 @@ const MainQuiz = (props: any) => {
                 </div>
             </div>;
             break;
-        case 'depends':
+        case 'third':
             result = <div className='quiz-container__quiz'>
                 <div ref={questionRef} className='quiz-question__quiz'>
-                    {l.depends.questions[index].question}
+                    {l.third.questions[index].question}
                 </div>
 
                 <div className='quiz-answers__quiz'>
                     {
-                        l.depends.questions[index].answers.map((answer, index) => {
+                        l.third.questions[index].answers.map((answer, index) => {
                             return <div key={answer} ref={(element) => answersRef.current[index] = element} className='quiz-answer__quiz' onClick={() => handle(answer)}>
                                 {answer}
                             </div>
