@@ -74,8 +74,8 @@ const About = () => {
                 <section className='subintro__about'>
                     <h3>{l.subintro.title}</h3>
                     <section className='subintro-cols__about'>
-                        <div className='col-extra__about'>{l.subintro.descriptionFirst}</div>
                         <div className='col-extra__about'>{l.subintro.descriptionSecond}</div>
+                        <div className='col-extra__about'>{l.subintro.descriptionFirst}</div>
                     </section>
                 </section>
                 <section className='tech-stack__about'>
