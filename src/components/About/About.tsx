@@ -26,7 +26,7 @@ const About = () => {
     const [currentLanguage, setCurrentLanguage] = useState(state?.lang || false);
 
     let l = currentLanguage ? en : bg;
-    
+
     const figureRef = useRef<any>(null);
     const main = useRef(null);
 
@@ -44,9 +44,9 @@ const About = () => {
                 })
             });
         }, main);
-        if(figureRef.current !== undefined && figureRef.current !== null){
-            figureRef.current.addEventListener('mouseenter', (e:any) => ctx.hover(e));
-            figureRef.current.addEventListener('mouseleave', (e:any) => ctx.leave(e));
+        if (figureRef.current !== undefined && figureRef.current !== null) {
+            figureRef.current.addEventListener('mouseenter', (e: any) => ctx.hover(e));
+            figureRef.current.addEventListener('mouseleave', (e: any) => ctx.leave(e));
         }
 
         return () => ctx.revert();
@@ -73,7 +73,10 @@ const About = () => {
                 </section>
                 <section className='subintro__about'>
                     <h3>{l.subintro.title}</h3>
-                    <p>{l.subintro.description}</p>
+                    <section className='subintro-cols__about'>
+                        <div className='col-extra__about'>{l.subintro.descriptionFirst}</div>
+                        <div className='col-extra__about'>{l.subintro.descriptionSecond}</div>
+                    </section>
                 </section>
                 <section className='tech-stack__about'>
                     <h1>{l.techStack}</h1>

@@ -47,7 +47,8 @@ section {
 }
 
 section.subintro__about {
-    width: 60vw;
+    width: 50vw;
+    
 }
 
 section.subintro__about h3 {
@@ -55,13 +56,17 @@ section.subintro__about h3 {
     margin: 2vh;
 }
 
-section.subintro__about p {
+.subintro-cols__about {
+    display: flex;
+    flex-direction: row;
+}
+section.subintro__about .col-extra__about {
     font-size: 1.2rem;
-    padding: 5vh;
+    padding: 3vh;
 
-    align-items: flex-start;
+    width: 50%;
     letter-spacing: var(--LETTER-SPACING-ABOUT);
-    word-spacing: 0.25rem;
+    word-spacing: 0.05rem;
     word-wrap: break-word;
     text-indent: 3vh;
 }
