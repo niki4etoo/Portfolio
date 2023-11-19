@@ -49,7 +49,7 @@
 
 .questions__intro h1 {
     font-size: 3em;
-    letter-spacing: 0.15em;
+    letter-spacing: 0.1em;
     transition: var(--TRANSITION-QUESTIONS);
 }
 
