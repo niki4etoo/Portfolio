@@ -134,7 +134,8 @@ const Intro = () => {
                 {
                     opacity: 1,
                     rotation: 0,
-                    duration: 0.5
+                    duration: 1.5,
+                    ease: "Expo.out"
                 });
 
         }, main);
