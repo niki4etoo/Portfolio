@@ -1,4 +1,4 @@
-import { useState, useRef, useLayoutEffect } from 'react';
+import { useState, useRef, useLayoutEffect, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import gsap from 'gsap';
@@ -30,6 +30,7 @@ const About = () => {
     const figureRef = useRef<any>(null);
     const main = useRef(null);
 
+    //Animation on profile photo
     useLayoutEffect(() => {
         let ctx = gsap.context((self) => {
             self.add('hover', () => {
@@ -51,6 +52,21 @@ const About = () => {
 
         return () => ctx.revert();
     }, []);
+
+    //Handling mobile view
+    const [width, setWidth] = useState<number>(window.innerWidth);
+
+    function handleWindowSizeChange() {
+        setWidth(window.innerWidth);
+    }
+    useEffect(() => {
+        window.addEventListener('resize', handleWindowSizeChange);
+        return () => {
+            window.removeEventListener('resize', handleWindowSizeChange);
+        }
+    }, []);
+
+    const isMobile = width <= 768;
 
     return (
         <div ref={main}>
@@ -74,8 +90,20 @@ const About = () => {
                 <section className='subintro__about'>
                     <h3>{l.subintro.title}</h3>
                     <section className='subintro-cols__about'>
-                        <div className='col-extra__about'>{l.subintro.descriptionSecond}</div>
-                        <div className='col-extra__about'>{l.subintro.descriptionFirst}</div>
+                        {
+                            isMobile &&
+                            <div className='col-extra__about'>
+                                {l.subintro.description}
+                            </div>
+                        }
+                        {
+                            !isMobile &&
+                            <>
+                                <div className='col-extra__about'>{l.subintro.descriptionSecond}</div>
+                                <div className='col-extra__about'>{l.subintro.descriptionFirst}</div>
+                            </>
+                        }
+
                     </section>
                 </section>
                 <section className='tech-stack__about'>
