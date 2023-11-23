@@ -4,12 +4,12 @@
     justify-content: flex-start;
     align-items: center;
 
-    min-height: 10vh;
+    min-height: 5vh;
 }
 
 .nav .nav-back {
     display: flex;
-    margin: auto 5vh;
+    margin: auto 2vw;
 }
 
 .nav-back a, a:visited, a:hover, a:any-link {
@@ -27,6 +27,8 @@
     transition: 0.5s ease-in;
 }
 
+
+/* Mobile */
 @media screen and (max-width: 768px) {
     
     .nav {
@@ -40,7 +42,7 @@
     
     .nav .nav-back {
         display: flex;
-        margin: auto 3vh;
+        margin: auto 3vw;
     }
     
     .nav-back a, a:visited, a:hover, a:any-link {

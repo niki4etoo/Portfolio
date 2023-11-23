@@ -86,7 +86,6 @@
     align-items: center;
 
     width: 100vw;
-    height: 60vh;
 
     font-size: 1.5em;
 
@@ -103,9 +102,9 @@
     color: white;
     background-color: #003D04;
     border-radius: 5px 35px;
-    padding: 2% 3%;
+    padding: 5vh 5vw;
 
-    margin-top: 20%;
+    margin-top: 2vh;
 }
 
 
@@ -133,9 +132,11 @@
 
     margin: auto 1vh;
 }
-
+.user-answer-times__quiz {
+    margin: 1vh auto;
+}
 .answered__quiz .answer-list__quiz {
-    margin: 30px;
+    margin: 1vh auto;
     min-width: 40vw;
 
     display: flex;
@@ -224,12 +225,12 @@
     .quiz-answers__quiz {
         display: flex;
 
-        flex-direction: row;
+        flex-direction: column;
 
         justify-content: space-around;
         align-items: center;
 
-        font-size: 0.7em;
+        font-size: 0.9em;
         height: 30vh;
     }
 
@@ -262,7 +263,6 @@
         justify-content: center;
         align-items: center;
 
-        height: 40vh;
         width: 95vw;
         font-size: 1em;
 
@@ -279,9 +279,9 @@
         color: white;
         background-color: #003D04;
         border-radius: 5px 35px;
-        padding: 2% 10%;
+        padding: 2vh 10vw;
 
-        margin-top: 20%;
+        margin-top: 2vh;
     }
 
 
@@ -291,7 +291,7 @@
         word-spacing: 0.1em;
         display: flex;
         justify-content: center;
-        margin: 2vh;
+        margin: 2vh auto;
 
         padding: 0px 10px 5px 10px;
 
@@ -310,9 +310,8 @@
         margin: auto 1vh;
     }
 
-    .answered__quiz .answer-list__quiz {
-        margin: 30px;
-        min-width: 40vw;
+    .answered__quiz {
+        margin: 1vh auto;
 
         display: flex;
         flex-direction: column;
@@ -401,7 +400,6 @@
         justify-content: center;
         align-items: center;
 
-        height: 40vh;
         width: 95vw;
         font-size: 1em;
 
@@ -418,9 +416,9 @@
         color: white;
         background-color: #003D04;
         border-radius: 5px 35px;
-        padding: 2% 10%;
+        padding: 2vh 10vw;
 
-        margin-top: 20%;
+        margin-top: 2vh;
     }
 
 
